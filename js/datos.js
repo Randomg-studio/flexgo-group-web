@@ -32,7 +32,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué servicios ofrecen?',
-    r: 'Hoy puedes usar Logrin Negocio y Mi Mercadito. FlexGo Content y Agentes de IA están en preparación. También conversamos sobre webs, chatbots y automatizaciones a medida.',
+    r: 'Hoy puedes usar Logrin Negocio y Mi Mercadito. CreaGo y Agentes de IA están en preparación. También conversamos sobre webs, chatbots y automatizaciones a medida.',
     c: ['servicios', 'ofrecen', 'productos', 'que tienen', 'soluciones'],
   },
   {
@@ -51,9 +51,9 @@ window.FLEXGO_FAQ = [
     c: ['mercadito', 'marketplace', 'tiendas', 'vender en linea', 'tienda online'],
   },
   {
-    p: '¿Qué es FlexGo Content?',
+    p: '¿Qué es CreaGo?',
     r: 'Es nuestro servicio para crear imágenes, textos y planificación de contenido para tu marca. Está en preparación. Escríbenos si quieres ser de los primeros en usarlo.',
-    c: ['content', 'contenido', 'publicaciones', 'imagenes', 'copy', 'redes sociales', 'planificacion', 'calendario'],
+    c: ['creago', 'crea go', 'content', 'contenido', 'publicaciones', 'imagenes', 'copy', 'redes sociales', 'planificacion', 'calendario'],
   },
   {
     p: '¿Qué son los Agentes de IA?',
