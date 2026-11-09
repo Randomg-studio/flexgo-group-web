@@ -11,8 +11,8 @@ window.FLEXGO = {
     tiktok: '',
   },
   enlaces: {
-    logrin: 'https://randomg-studio.github.io/Integra-System/',
-    mercadito: 'https://randomg-studio.github.io/Integra-System/?mercadito',
+    logrin: 'https://logrin.flexgogroup.com/',
+    mercadito: 'https://logrin.flexgogroup.com/?mercadito',
     content: '',
     agentes: '',
   },
