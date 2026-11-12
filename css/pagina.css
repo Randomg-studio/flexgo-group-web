@@ -1,0 +1,34 @@
+/* Páginas de producto (CreaGo): mismo diseño que la portada, sin escenas de scroll */
+.cg-portada { padding-block: clamp(48px, 8vw, 110px) clamp(40px, 6vw, 80px); background: radial-gradient(ellipse at 80% 30%, #0f6fb44d, transparent 60%), linear-gradient(180deg, #071529, #061427); }
+.cg-portada-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center; gap: clamp(28px, 5vw, 72px); }
+.cg-portada h1 { font-size: clamp(38px, 5.2vw, 76px); font-weight: 750; line-height: 1; letter-spacing: -.045em; text-wrap: balance; }
+.cg-portada h1 em { display: block; color: var(--bright); font-style: normal; }
+.cg-lead { max-width: 46ch; margin: 22px 0 28px; font-size: clamp(16px, 1.6vw, 20px); }
+.cg-mosaico { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cg-mosaico figure { position: relative; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; }
+.cg-mosaico img { display: block; width: 100%; height: auto; }
+.cg-mosaico figcaption { position: absolute; left: 12px; bottom: 12px; padding: 5px 12px; border-radius: 20px; background: #071529cc; color: #e6f7ff; font-size: 13px; }
+.cg-bloque { padding-block: clamp(56px, 7vw, 96px); background: #061427; }
+.cg-bloque + .cg-bloque { border-top: 1px solid var(--line); }
+.cg-bloque h2 { margin-bottom: 26px; font-size: clamp(30px, 3.6vw, 52px); text-align: center; }
+.cg-tarjetas, .cg-planes { display: grid; gap: 16px; padding: 0; margin: 0; list-style: none; }
+.cg-tarjetas { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cg-tarjetas li, .cg-planes li { padding: 26px 24px; border: 1px solid var(--line); border-radius: 22px; background: radial-gradient(ellipse at 20% 0%, #0e5c8b40, transparent 70%), #0a1f3a; }
+.cg-tarjetas h3 { margin-bottom: 10px; font-size: 21px; }
+.cg-tarjetas p, .cg-planes p { font-size: 15px; }
+.cg-planes { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 980px; margin-inline: auto; }
+.cg-planes h3 { font-size: 22px; }
+.cg-planes .cg-precio { margin: 10px 0 8px; color: #fff; font-size: 40px; font-weight: 750; letter-spacing: -.03em; }
+.cg-precio small { color: var(--muted); font-size: 15px; font-weight: 400; letter-spacing: 0; }
+.cg-planes .cg-destacado { border-color: #3fc8f4; box-shadow: 0 0 40px #3fc8f42e; }
+.cg-nota { max-width: 60ch; margin: 0 auto 24px; text-align: center; }
+.cg-planes + .cg-nota { margin-top: 22px; }
+.cg-centro { justify-content: center; }
+@media (max-width: 900px) {
+  .cg-portada-grid { grid-template-columns: 1fr; }
+  .cg-tarjetas { grid-template-columns: 1fr 1fr; }
+  .cg-planes { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .cg-tarjetas { grid-template-columns: 1fr; }
+}

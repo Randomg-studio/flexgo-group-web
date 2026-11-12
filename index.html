@@ -12,6 +12,65 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_PE">
 <meta property="og:url" content="https://flexgogroup.com/">
+<meta property="og:site_name" content="FlexGo Group">
+<meta property="og:image" content="https://flexgogroup.com/assets/imagenes/compartir.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Astronauta junto a un cohete, imagen de FlexGo Group">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://flexgogroup.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://flexgogroup.com/#organizacion",
+      "name": "FlexGo Group",
+      "url": "https://flexgogroup.com/",
+      "logo": "https://flexgogroup.com/assets/imagenes/logo-flexgo.png",
+      "email": "contacto@flexgogroup.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Tarapoto", "addressRegion": "San Martín", "addressCountry": "PE" },
+      "sameAs": ["https://web.facebook.com/flexgo.pe/"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+51-919-446-978",
+        "url": "https://wa.me/51919446978",
+        "email": "contacto@flexgogroup.com",
+        "areaServed": "PE",
+        "availableLanguage": "es"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://flexgogroup.com/#web",
+      "name": "FlexGo Group",
+      "url": "https://flexgogroup.com/",
+      "inLanguage": "es",
+      "publisher": { "@id": "https://flexgogroup.com/#organizacion" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "CreaGo",
+      "url": "https://creago.flexgogroup.com/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Planifica contenido y crea imágenes y textos con la voz de tu marca.",
+      "publisher": { "@id": "https://flexgogroup.com/#organizacion" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Logrin Negocio",
+      "url": "https://logrin.flexgogroup.com/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Organiza tus ventas, inventario, clientes, finanzas, marketing y metas desde el celular o la computadora.",
+      "publisher": { "@id": "https://flexgogroup.com/#organizacion" }
+    }
+  ]
+}
+</script>
 <link rel="icon" href="assets/imagenes/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fuentes/SpaceGrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/imagenes/kivo-portada.jpg" as="image">
@@ -32,6 +91,7 @@
       <div class="nav-links">
         <a href="#inicio" aria-current="location">Inicio</a>
         <a href="#ecosistema">Productos</a>
+        <a href="creago.html">CreaGo</a>
         <a href="#soluciones">Soluciones</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#preguntas">Preguntas</a>
@@ -69,6 +129,13 @@
     </div>
   </section>
 
+  <aside class="aviso-creago" aria-label="CreaGo">
+    <div class="shell aviso-creago-fila">
+      <p><b>Nuevo · CreaGo</b> Crea textos e imágenes para tus redes con la voz de tu marca. Prueba 7 días gratis.</p>
+      <a class="button button--glass" href="creago.html">Ver planes <span aria-hidden="true">→</span></a>
+    </div>
+  </aside>
+
   <!-- 02 · Ecosistema: cada producto ocupa la pantalla y se convierte en tarjeta al pasar al siguiente -->
   <section class="eco" id="ecosistema" aria-labelledby="eco-title" data-escena="eco">
     <div class="eco-pin">
@@ -93,8 +160,8 @@
             <h3><small>Contenido</small>CreaGo</h3>
             <p>Planifica contenido y crea imágenes y textos con la voz de tu marca.</p>
             <div class="button-row">
-              <a class="button button--primary" href="https://creago.flexgogroup.com/" target="_blank" rel="noopener">Entrar a CreaGo <span aria-hidden="true">↗</span></a>
-              <button class="button button--glass" type="button" data-detalle="creago">Conocer más</button>
+              <a class="button button--primary" href="https://creago.flexgogroup.com/" target="_blank" rel="noopener">Probar 7 días gratis <span aria-hidden="true">↗</span></a>
+              <a class="button button--glass" href="creago.html">Ver planes <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </article>
@@ -154,7 +221,7 @@
       </div>
       <div class="pantalla-marco">
         <article class="servicio" data-i="0">
-          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-paginas-web.jpg" width="900" height="840" alt="" loading="lazy" decoding="async"></figure>
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-paginas-web.jpg" width="900" height="840" alt="Página web en una pantalla, servicio de diseño web de FlexGo" loading="lazy" decoding="async"></figure>
           <div class="servicio-copia">
             <p class="section-label">Páginas web y landing pages</p>
             <h3>Webs que presentan <em>tu mejor versión.</em></h3>
@@ -163,7 +230,7 @@
           </div>
         </article>
         <article class="servicio" data-i="1">
-          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-chatbots.jpg" width="770" height="744" alt="" loading="lazy" decoding="async"></figure>
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-chatbots.jpg" width="770" height="744" alt="Chatbot respondiendo mensajes en web y WhatsApp" loading="lazy" decoding="async"></figure>
           <div class="servicio-copia">
             <p class="section-label">Chatbots</p>
             <h3>Atención <em>que acompaña.</em></h3>
@@ -172,7 +239,7 @@
           </div>
         </article>
         <article class="servicio" data-i="2">
-          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-automatizaciones.jpg" width="778" height="750" alt="" loading="lazy" decoding="async"></figure>
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-automatizaciones.jpg" width="778" height="750" alt="Tareas automatizadas conectadas entre sí" loading="lazy" decoding="async"></figure>
           <div class="servicio-copia">
             <p class="section-label">Automatizaciones</p>
             <h3>Menos repetición. <em>Más tiempo.</em></h3>
@@ -181,7 +248,7 @@
           </div>
         </article>
         <article class="servicio" data-i="3">
-          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-mantenimiento.jpg" width="780" height="748" alt="" loading="lazy" decoding="async"></figure>
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-mantenimiento.jpg" width="780" height="748" alt="Acompañamiento y mantenimiento de soluciones digitales" loading="lazy" decoding="async"></figure>
           <div class="servicio-copia">
             <p class="section-label">Acompañamiento</p>
             <h3>Un equipo para <em>seguir avanzando.</em></h3>
@@ -268,7 +335,7 @@
       <div class="footer-column">
         <h2>Productos</h2>
         <a href="https://logrin.flexgogroup.com/" target="_blank" rel="noopener noreferrer">Logrin Negocio</a>
-        <a href="https://creago.flexgogroup.com/" target="_blank" rel="noopener noreferrer">CreaGo</a>
+        <a href="creago.html">CreaGo</a>
         <button type="button" data-open-chat>Kivo</button>
         <a href="https://logrin.flexgogroup.com/?mercadito" target="_blank" rel="noopener noreferrer">Mi Mercadito</a>
       </div>

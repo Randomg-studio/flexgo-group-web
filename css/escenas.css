@@ -50,6 +50,13 @@ main > section { position: relative; }
 .modulo-flecha { color: #8be9ff; font-size: 18px; transition: transform .3s var(--ease); }
 .modulo:hover .modulo-flecha { transform: translate(3px, -2px); }
 
+/* Aviso de CreaGo, el producto del mes */
+.aviso-creago { position: relative; z-index: 1; padding-block: 18px; border-block: 1px solid var(--line); background: linear-gradient(90deg, #0a2a4d, #0b3a5e 50%, #0a2a4d); }
+.aviso-creago-fila { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.aviso-creago p { margin: 0; font-size: clamp(14px, 1.4vw, 17px); }
+.aviso-creago b { margin-right: 8px; color: var(--bright); }
+@media (max-width: 620px) { .aviso-creago-fila { flex-direction: column; align-items: flex-start; } }
+
 /* 02 · Ecosistema */
 .eco { background: linear-gradient(180deg, #08162a, #061427); padding-block: clamp(56px, 7vw, 96px); }
 .eco-pin { width: min(1500px, calc(100% - 42px)); margin-inline: auto; }

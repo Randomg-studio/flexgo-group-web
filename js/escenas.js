@@ -28,7 +28,7 @@
   menu.addEventListener('click', () => abrirMenu(!nav.classList.contains('is-open')));
   $$('a', nav).forEach((a) => a.addEventListener('click', () => abrirMenu(false)));
   document.addEventListener('pointerdown', (e) => { if (!e.target.closest('.site-header')) abrirMenu(false); });
-  const enlaces = $$('.nav-links a').map((link) => ({ link, destino: $(link.hash) }));
+  const enlaces = $$('.nav-links a[href^="#"]').map((link) => ({ link, destino: $(link.hash) }));
 
   /* Preguntas frecuentes: la misma lista que usa el chat */
   const lista = $('#faq-lista');
