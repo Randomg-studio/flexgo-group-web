@@ -24,11 +24,18 @@
 .cg-nota { max-width: 60ch; margin: 0 auto 24px; text-align: center; }
 .cg-planes + .cg-nota { margin-top: 22px; }
 .cg-centro { justify-content: center; }
+.cg-ejemplos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; padding: 0; margin: 0; list-style: none; }
+.cg-ejemplos figure { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: #0a1f3a; }
+.cg-ejemplos img { display: block; width: 100%; height: auto; }
+.cg-ejemplos figcaption { padding: 12px 16px; font-size: 14px; }
+.cg-ejemplos figcaption b { display: block; color: #fff; font-size: 16px; }
 @media (max-width: 900px) {
   .cg-portada-grid { grid-template-columns: 1fr; }
   .cg-tarjetas { grid-template-columns: 1fr 1fr; }
   .cg-planes { grid-template-columns: 1fr; }
+  .cg-ejemplos { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
   .cg-tarjetas { grid-template-columns: 1fr; }
+  .cg-ejemplos { gap: 12px; }
 }
