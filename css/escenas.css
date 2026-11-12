@@ -187,12 +187,69 @@ main > section { position: relative; }
 .chat-rapidas button { flex: none; min-height: 34px; padding: 6px 13px; border: 1px solid #fff9; border-radius: 24px; background: #f3fbffb3; color: #0d2c45; font-size: 13px; }
 .chat-rapidas button:hover { background: #fff; }
 
-/* Capas de transición (solo con recorrido) */
-.eco-salida, .mision-casco, .astro-oscuro { display: none; }
+/* Capas de la película (solo con recorrido) */
+.eco-salida, .peli, .proceso-fondo { display: none; }
 
-/* Recorrido con scroll: solo en pantallas amplias y con movimiento permitido */
+/* Película al hacer scroll: los videos se dibujan según el avance, en todas las pantallas */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-on .peli { position: absolute; inset: 0; z-index: -1; display: block; width: 100%; height: 100%; background: #020c1f; }
+  .motion-on .mision, .motion-on .astro, .motion-on .reloj, .motion-on .proceso { padding: 0; background: transparent; }
+  .motion-on .mision-pin, .motion-on .astro-pin, .motion-on .reloj-pin, .motion-on .proceso-pin { position: sticky; top: var(--header-height); height: var(--stage); min-height: 0; padding: 0; overflow: hidden; isolation: isolate; opacity: var(--visible, 0); }
+
+  /* 03 · Misión */
+  .motion-on .mision { height: 420vh; }
+  .motion-on .mision-pin { align-items: end; }
+  .motion-on .mision-pin > .mision-foto { display: none; }
+  .motion-on .mision-pin::after { opacity: var(--mv, 1); }
+  .motion-on .mision-texto { padding-block: 0 8vh; opacity: var(--tf, 1); }
+  .motion-on .mision-texto .pal { opacity: var(--po, 1); transition: opacity .25s linear; }
+  .motion-on .frase-2 .pal { color: color-mix(in srgb, #ffffff, var(--bright) var(--pc, 100%)); transition: opacity .25s linear, color .25s linear; }
+
+  /* 04 y 05 · Astronauta y servicios en la pantalla */
+  .motion-on .astro { height: 1000vh; margin-top: calc(-1 * var(--stage)); }
+  .motion-on .astro-figura { display: none; }
+  .motion-on .astro-texto { position: absolute; left: 21px; right: 21px; bottom: 7vh; width: auto; margin: 0; padding: 0; opacity: var(--to, 0); transform: translate3d(0, calc((1 - var(--to, 0)) * 30px), 0); text-shadow: 0 3px 22px #021124d0; }
+  .motion-on .pantalla-marco {
+    position: absolute; left: var(--ml, 0px); top: var(--mt, 0px); width: var(--mw, 100%); height: var(--mh, 100%); display: block; margin: 0; padding: 0; overflow: hidden;
+    border: 1px solid rgba(110, 200, 245, .42); border-radius: 18px; opacity: var(--mo, 0);
+    background: radial-gradient(ellipse at 22% 78%, #0e5c8b55, transparent 60%), linear-gradient(150deg, #0a2748f2, #061427f5 72%);
+    box-shadow: inset 0 1px rgba(210, 240, 255, .25), 0 0 60px rgba(63, 200, 244, .16);
+  }
+  .motion-on .pantalla-marco.apagada { visibility: hidden; }
+  .motion-on .servicio { position: absolute; inset: 0; border: 0; border-radius: 0; background: none; opacity: var(--so, 0); pointer-events: none; }
+  .motion-on .servicio.activo { pointer-events: auto; }
+  .motion-on .servicio-arte { transform: translate3d(var(--ax, 0px), 0, 0) scale(var(--as, 1)); }
+  .motion-on .servicio-copia { transform: translate3d(var(--cx, 0px), 0, 0); }
+  .motion-on .pantalla-puntos { position: absolute; left: 50%; bottom: 16px; display: flex; gap: 9px; padding: 0; margin: 0; list-style: none; transform: translateX(-50%); }
+  .motion-on .pantalla-puntos li { width: 26px; height: 4px; border-radius: 4px; background: #9fd8ff40; transition: background .3s, width .3s; }
+  .motion-on .pantalla-puntos li.activo { width: 44px; background: var(--bright); }
+
+  /* 06 · Preguntas: suben como una capa sobre la pantalla */
+  .motion-on .faq { margin-top: calc(-1 * var(--stage)); min-height: var(--stage); }
+
+  /* 07 · Reloj: queda debajo de las preguntas y aparece cuando se van */
+  .motion-on .reloj { height: 520vh; margin-top: calc(-1 * var(--stage)); overflow: visible; }
+  .motion-on .reloj-arte { display: none; }
+  .motion-on .reloj-grid { opacity: var(--eo, 1); }
+  .motion-on .r-paso { opacity: var(--o, 0); transform: translate3d(0, calc((1 - var(--o, 0)) * 34px), 0); }
+
+  /* 08 · Cómo trabajamos: la imagen final del video 6 con los botones en su pantalla */
+  .motion-on .proceso { height: 170vh; margin-top: calc(-1 * var(--stage)); overflow: visible; }
+  .motion-on .proceso-pin { width: 100%; }
+  .motion-on .proceso-fondo { position: absolute; inset: 0; z-index: -1; display: block; }
+  .motion-on .proceso-fondo img { width: 100%; height: 100%; object-fit: cover; }
+  .motion-on .proceso-intro { position: absolute; left: 0; right: 0; top: clamp(18px, 4.5vh, 48px); margin: 0; padding-inline: 21px; }
+  .motion-on .proceso-intro p { margin-top: 10px; }
+  .motion-on .proceso-linea { display: none; }
+  .motion-on .proceso-visual { position: absolute; inset: 0; left: 0; width: auto; aspect-ratio: auto; translate: none; overflow: visible; -webkit-mask-image: none; mask-image: none; transform: none; }
+  .motion-on .proceso-visual > img { display: none; }
+  .motion-on .proceso-pantalla { inset: auto; left: var(--pl, 0px); top: var(--pt, 0px); width: var(--pw, 100%); height: var(--ph, 100%); align-content: start; padding: 6% 6% 0; border-radius: 1.4%; background: radial-gradient(ellipse at 24% 16%, #0576c450, transparent 61%), linear-gradient(145deg, #071a3dcc, #071327e6 76%); }
+  .motion-on .process-description { position: absolute; left: var(--pl, 0px); width: var(--pw, 100%); top: calc(var(--pt, 0px) + var(--ph, 0px) * .72); margin: 0; padding: 0 5%; text-align: center; transform: none; }
+}
+
+/* Pantallas amplias: ecosistema en tarjetas y textos al costado de la imagen */
 @media (min-width: 851px) and (prefers-reduced-motion: no-preference) {
-  .motion-on .eco { height: 480vh; padding: 0; }
+  .motion-on .eco { height: 560vh; padding: 0; }
   .motion-on .eco-pin { position: sticky; top: var(--header-height); display: grid; grid-template-rows: auto 1fr; width: 100%; height: var(--stage); padding: 22px 0 26px; overflow: hidden; }
   .motion-on .eco-titulo { margin: 0 4vw 16px; font-size: clamp(24px, 2.4vw, 36px); }
   .motion-on .eco-titulo small { margin-top: 6px; font-size: 15px; }
@@ -201,47 +258,43 @@ main > section { position: relative; }
   .motion-on .eco-copia { position: absolute; left: 0; bottom: 0; padding-top: 0; opacity: var(--o, 1); transform: translate3d(0, calc((1 - var(--o, 1)) * 30px), 0); }
   .motion-on .contador { position: absolute; right: calc(4vw + 110px); bottom: 54px; z-index: 2; display: flex; align-items: center; gap: 14px; color: #dff6ff; font-size: 18px; letter-spacing: .1em; }
   .motion-on .contador i { width: 70px; height: 1px; background: #dff6ff88; }
-
-  .motion-on .eco { height: 580vh; }
   .motion-on .eco-pin > :not(.eco-salida) { transform: scale(var(--ez, 1)); opacity: var(--eo, 1); }
-  .motion-on .eco-salida { position: absolute; inset: 0; z-index: 3; display: block; overflow: hidden; opacity: var(--so, 0); pointer-events: none; }
-  .motion-on .eco-salida .mision-foto { transform-origin: 30% 45%; transform: translate(-50%, -50%) translate3d(var(--mx, 0px), 0, 0) scale(var(--mz, 1)); }
+  .motion-on .eco-salida { position: absolute; inset: 0; z-index: 3; display: block; overflow: hidden; isolation: isolate; opacity: var(--so, 0); pointer-events: none; }
+
   .motion-on .mision { height: 340vh; margin-top: calc(-1 * var(--stage)); }
-  .motion-on .mision-pin, .motion-on .astro-pin { opacity: var(--visible, 0); }
-  .motion-on .mision-casco, .motion-on .astro-oscuro { position: absolute; inset: 0; z-index: 2; display: block; background: radial-gradient(circle at 50% 45%, #0a2a55, #020c1f 70%); opacity: var(--co, 0); pointer-events: none; }
-  .motion-on .mision-pin { position: sticky; top: var(--header-height); height: var(--stage); min-height: 0; align-items: center; }
-  .motion-on .mision-foto { transform-origin: 30% 45%; transform: translate(-50%, -50%) translate3d(var(--mx, 0px), 0, 0) scale(var(--mz, 1)); will-change: transform; }
-  .motion-on .mision-pin::after { background: linear-gradient(90deg, transparent 20%, #05152922 45%, #031226d6 62%, #041224f5 100%), linear-gradient(0deg, #06152799, transparent 40%); opacity: var(--mv, 1); }
-  .motion-on .mision-texto { display: grid; grid-template-columns: 1.3fr 1fr; padding: 0; width: min(1400px, calc(100% - 96px)); opacity: var(--tf, 1); }
+  .motion-on .mision-pin { align-items: center; }
+  .motion-on .mision-pin::after { background: linear-gradient(90deg, transparent 22%, #05152922 45%, #031226c8 62%, #041224ee 100%), linear-gradient(0deg, #06152799, transparent 40%); }
+  .motion-on .mision-texto { display: grid; grid-template-columns: 1.3fr 1fr; width: min(1400px, calc(100% - 96px)); padding: 0; }
   .motion-on .mision-texto h2 { grid-column: 2; }
-  .motion-on .mision-texto .pal { opacity: var(--po, 1); transition: opacity .25s linear; }
-  .motion-on .frase-2 .pal { color: color-mix(in srgb, #ffffff, var(--bright) var(--pc, 100%)); transition: opacity .25s linear, color .25s linear; }
 
-  .motion-on .astro { height: 1100vh; padding: 0; margin-top: calc(-1 * var(--stage)); }
-  .motion-on .mision, .motion-on .astro { background: transparent; }
-  .motion-on .astro-pin { position: sticky; top: var(--header-height); height: var(--stage); overflow: hidden; background: radial-gradient(ellipse at 28% 50%, #0a3866, #031739 58%, #020f26); }
-  .motion-on .astro-figura { position: absolute; top: 0; left: 2vw; width: auto; height: 100%; aspect-ratio: 954 / 1050; margin: 0; opacity: var(--fo, 1); transform-origin: var(--ox, 50%) var(--oy, 23%); transform: translate3d(var(--tx, 0px), var(--ty, 0px), 0) scale(var(--sc, 1)); will-change: transform; }
-  .motion-on .astro-figura { overflow: visible; border-radius: 0; }
-  .motion-on .astro-figura img { width: auto; height: 100%; border-radius: 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5% 96%, transparent), linear-gradient(transparent, #000 5% 94%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 5% 96%, transparent), linear-gradient(transparent, #000 5% 94%, transparent); mask-composite: intersect; }
-  .motion-on .astro-texto { position: absolute; left: calc(2vw + var(--stage) * 0.93); right: 4vw; top: 50%; width: auto; margin: 0; padding: 0; opacity: var(--to, 0); transform: translate3d(0, calc(-50% + (1 - var(--to, 0)) * 36px), 0); }
-  .motion-on .pantalla-marco { position: absolute; inset: 18px 2.2vw 22px; display: block; width: auto; padding: 0; overflow: hidden; border: 1px solid rgba(110, 200, 245, .5); border-radius: calc(26px / var(--mk, 1)); opacity: var(--mo, 0); transform-origin: 0 0; transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(var(--mk, 1)); clip-path: inset(var(--mi, 0px) 0 var(--mi, 0px) 0 round calc(26px / var(--mk, 1))); will-change: transform; background: radial-gradient(ellipse at 22% 78%, #0e5c8b66, transparent 60%), linear-gradient(150deg, #0a2748, #061427 72%); box-shadow: inset 0 1px rgba(210, 240, 255, .25), 0 0 60px rgba(63, 200, 244, .16); }
-  .motion-on .pantalla-marco.apagada { visibility: hidden; }
-  .motion-on .servicio { position: absolute; inset: 0; padding: 4vh 5vw; border: 0; border-radius: 0; background: none; opacity: var(--so, 0); pointer-events: none; }
-  .motion-on .servicio.activo { pointer-events: auto; }
-  .motion-on .servicio-arte { transform: translate3d(var(--ax, 0px), 0, 0) scale(var(--as, 1)); }
-  .motion-on .servicio-arte img { max-height: calc(var(--stage) - 150px); width: auto; max-width: 100%; margin-inline: auto; }
-  .motion-on .servicio-copia { transform: translate3d(var(--cx, 0px), 0, 0); }
-  .motion-on .pantalla-puntos { position: absolute; left: 50%; bottom: 20px; display: flex; gap: 9px; padding: 0; margin: 0; list-style: none; transform: translateX(-50%); }
-  .motion-on .pantalla-puntos li { width: 26px; height: 4px; border-radius: 4px; background: #9fd8ff40; transition: background .3s, width .3s; }
-  .motion-on .pantalla-puntos li.activo { width: 44px; background: var(--bright); }
+  .motion-on .astro { height: 1100vh; }
+  .motion-on .astro-texto { left: 50%; right: 5vw; top: 50%; bottom: auto; transform: translate3d(0, calc(-50% + (1 - var(--to, 0)) * 36px), 0); }
+  .motion-on .pantalla-marco { border-radius: 1.6vw; }
+  .motion-on .servicio { padding: 4vh 5vw; }
+  .motion-on .servicio-arte img { max-height: calc(var(--stage) - 170px); width: auto; max-width: 100%; margin-inline: auto; }
 
-  .motion-on .faq { margin-top: calc(-1 * var(--stage)); min-height: var(--stage); }
+  .motion-on .reloj-pin { align-items: center; }
 
-  .motion-on .reloj { height: 250vh; }
-  .motion-on .reloj-pin { position: sticky; top: var(--header-height); height: var(--stage); padding: 0; overflow: hidden; }
-  .motion-on .reloj-grid, .motion-on .reloj-arte { opacity: var(--eo, 1); translate: var(--ex, 0px) 0; }
-  .motion-on .reloj-arte { opacity: calc(var(--eo, 1) * var(--o, 0)); transform: none; }
-  .motion-on .r-paso { opacity: var(--o, 0); transform: translate3d(0, calc((1 - var(--o, 0)) * 34px), 0); }
+  .motion-on .proceso-pantalla { padding-bottom: 0; }
+  .motion-on .process-description { font-size: clamp(12px, 1.05vw, 16px); }
+}
+
+/* Celular: la película en vertical, con los textos en la parte baja de cada escena */
+@media (max-width: 850px) and (prefers-reduced-motion: no-preference) {
+  .motion-on .mision-texto h2 { font-size: clamp(28px, 7.6vw, 46px); }
+  .motion-on .astro-texto h2 { font-size: clamp(30px, 8vw, 48px); }
+  .motion-on .servicio { display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 22px 20px 40px; }
+  .motion-on .servicio-arte img { max-height: 30vh; width: auto; max-width: 100%; margin-inline: auto; object-fit: contain; }
+  .motion-on .servicio-copia h3 { margin-bottom: 10px; font-size: clamp(26px, 7vw, 38px); }
+  .motion-on .servicio-copia > p:not(.section-label) { margin-bottom: 16px; font-size: 15px; }
+  .motion-on .reloj-pin { align-items: end; }
+  .motion-on .reloj-grid { grid-template-columns: 1fr; padding-bottom: 7vh; }
+  .motion-on .reloj-copia h2 { font-size: clamp(34px, 9vw, 52px); }
+  .motion-on .proceso-intro h2 { font-size: clamp(32px, 8.6vw, 46px); }
+  .motion-on .proceso-intro p { font-size: 15px; }
+  .motion-on .proceso-pantalla { grid-template-rows: 1fr 1fr; gap: 6%; padding: 6%; align-content: stretch; }
+  .motion-on .proceso-pantalla button { min-height: 0; height: 100%; padding: 2px; font-size: clamp(11px, 3.2vw, 14px); }
+  .motion-on .process-description { top: calc(var(--pt, 0px) + var(--ph, 0px) * 2.15); padding: 0 6px; font-size: 15px; }
 }
 
 @media (max-width: 850px) {
