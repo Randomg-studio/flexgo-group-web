@@ -41,6 +41,23 @@
     return mejor;
   };
 
+  // Solo se vuelven link las direcciones de FlexGo y de WhatsApp.
+  const LINK = /https:\/\/(?:(?:[a-z0-9-]+\.)?flexgogroup\.com|wa\.me)(?:\/\S*)?/gi;
+  const conLinks = (p, t) => {
+    let i = 0;
+    for (const m of t.matchAll(LINK)) {
+      const url = m[0].replace(/[.,;:]+$/, '');
+      const a = document.createElement('a');
+      a.href = url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = url;
+      p.append(t.slice(i, m.index), a);
+      i = m.index + url.length;
+    }
+    p.append(t.slice(i));
+  };
+
   const pinta = (t, { yo = false, autor = '' } = {}) => {
     const p = document.createElement('p');
     if (yo) p.className = 'yo';
@@ -50,7 +67,8 @@
       b.textContent = autor;
       p.append(b);
     }
-    p.append(t);
+    if (yo) p.append(t);
+    else conLinks(p, t);
     mensajes.append(p);
     mensajes.scrollTop = mensajes.scrollHeight;
     return p;

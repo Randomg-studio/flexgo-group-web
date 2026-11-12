@@ -5,258 +5,324 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://*.supabase.co; base-uri 'self'; form-action 'none'; object-src 'none'">
 <title>FlexGo Group · Tecnología que te impulsa</title>
-<meta name="description" content="FlexGo Group reúne sistemas de gestión, tiendas en línea, contenido e inteligencia artificial para que tu negocio venda mejor y decida con claridad.">
-<meta name="theme-color" content="#07152E">
+<meta name="description" content="FlexGo Group reúne gestión, contenido e inteligencia artificial para que tu negocio avance: Logrin Negocio, CreaGo, Kivo y Mi Mercadito.">
+<meta name="theme-color" content="#071529">
 <meta property="og:title" content="FlexGo Group · Tecnología que te impulsa">
-<meta property="og:description" content="Sistemas de gestión, tiendas en línea, contenido e inteligencia artificial para tu negocio.">
+<meta property="og:description" content="Un ecosistema digital que te ayuda a gestionar, crear, automatizar y hacer crecer tu negocio.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_PE">
-<link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/SpaceGrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/Inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css">
+<meta property="og:url" content="https://flexgogroup.com/">
+<link rel="icon" href="assets/imagenes/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fuentes/SpaceGrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/imagenes/kivo-portada.jpg" as="image">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/escenas.css">
 <script src="js/inicio.js"></script>
 </head>
 <body>
-<a class="saltar" href="#contenido">Saltar al contenido</a>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<header class="nav" id="nav">
-  <a class="nav-logo" href="#inicio" aria-label="FlexGo Group, inicio">
-    <img src="assets/logos/flexgo-blanco-cian.svg" alt="" width="94" height="32">
-    <span>Group</span>
-  </a>
-  <button class="nav-menu" id="nav-menu" type="button" aria-expanded="false" aria-controls="nav-enlaces" aria-label="Abrir menú"><i></i><i></i></button>
-  <nav class="nav-enlaces" id="nav-enlaces" aria-label="Principal">
-    <a href="#servicios">Servicios</a>
-    <a href="#soluciones">Soluciones</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#rumbo">Rumbo</a>
-    <a href="#aliados">Aliados</a>
-    <a href="#preguntas">Preguntas</a>
-    <a class="nav-cta" href="#contacto">Hablemos</a>
-  </nav>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="#inicio" aria-label="FlexGo Group, inicio">
+      <span class="brand-logo" aria-hidden="true"></span><span class="brand-group">Group</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Principal">
+      <div class="nav-links">
+        <a href="#inicio" aria-current="location">Inicio</a>
+        <a href="#ecosistema">Productos</a>
+        <a href="#soluciones">Soluciones</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a class="button button--primary nav-contact" data-wa="Hola, quiero conversar con un asesor de FlexGo." href="#contacto">Hablemos</a>
+    </nav>
+  </div>
 </header>
 
 <main id="contenido">
-  <section class="hero" id="inicio">
-    <div class="hero-escena" id="hero-escena" aria-hidden="true">
-      <img class="hero-respaldo" src="assets/logos/flexgo-simbolo.svg" alt="" width="153" height="194">
-    </div>
-    <div class="hero-texto">
-      <p class="eyebrow entra">FlexGo Group <span>Tecnología que te impulsa</span></p>
-      <h1 class="entra">Tu negocio,<br><em>más inteligente.</em></h1>
-      <p class="hero-sub entra">Reunimos sistemas de gestión, tiendas en línea, contenido e inteligencia artificial para que vendas mejor, ordenes tu operación y decidas con claridad.</p>
-      <div class="hero-acciones entra">
-        <a class="btn btn-cian" href="#servicios">Explorar servicios</a>
-        <a class="btn btn-linea" data-wa="Hola, quiero conocer los servicios de FlexGo Group." href="#contacto">Hablar con un asesor</a>
-      </div>
-    </div>
-    <ul class="hero-tira entra" aria-label="Nuestros servicios">
-      <li><a href="#s-logrin">Logrin Negocio</a></li>
-      <li><a href="#s-content">CreaGo</a></li>
-      <li><a href="#s-agentes">Agentes de IA</a></li>
-      <li><a href="#s-mercadito">Mi Mercadito</a></li>
-    </ul>
-  </section>
-
-  <section class="manifiesto" aria-label="Nuestra idea">
-    <p id="manifiesto">La tecnología no debería complicarte. Debería darte tiempo, orden y nuevas oportunidades.</p>
-  </section>
-
-  <section class="seccion servicios" id="servicios">
-    <header class="titular revela">
-      <p class="eyebrow">Ecosistema</p>
-      <h2>Un solo grupo.<br>Cuatro formas de avanzar.</h2>
-      <p>Cada servicio resuelve una parte de tu negocio. Empieza por el que más necesitas y suma los demás cuando quieras.</p>
-    </header>
-
-    <div class="bento">
-      <article class="tarjeta t-grande revela" id="s-logrin">
-        <div class="tarjeta-info">
-          <span class="estado activo">Disponible</span>
-          <h3>Logrin Negocio</h3>
-          <p>Ventas, inventario, clientes, finanzas, marketing y metas en un solo sistema, en la nube y con tu marca.</p>
-          <a class="enlace" data-enlace="logrin" href="#contacto" target="_blank" rel="noopener">Conocer Logrin Negocio <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="muestra m-logrin" aria-hidden="true">
-          <span class="m-tag">Ejemplo ilustrativo</span>
-          <div class="m-panel">
-            <b>Centro de control</b>
-            <div class="m-barras"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <ul><li>Ventas <s></s></li><li>Stock <s></s></li><li>Metas <s></s></li></ul>
+  <!-- 01 · Portada -->
+  <section class="hero" id="inicio" aria-labelledby="hero-title">
+    <div class="shell hero-shell">
+      <div class="hero-stage">
+        <div class="hero-copy">
+          <p class="hero-label"><span aria-hidden="true">✦</span> Tecnología + Creatividad + Gestión</p>
+          <h1 id="hero-title"><span>Potencia tu negocio</span> <span>con tecnología,</span> <em>creatividad e IA</em></h1>
+          <p class="hero-lead">Un ecosistema digital que te ayuda a gestionar, crear, automatizar y hacer crecer tu negocio.</p>
+          <div class="button-row">
+            <a class="button button--primary" href="#ecosistema">Conoce el ecosistema <span aria-hidden="true">→</span></a>
+            <a class="button button--glass" data-wa="Hola, quiero hablar con un asesor de FlexGo." href="#contacto">Hablar con un asesor <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-      </article>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-aura"></div>
+          <div class="kivo-cinta"><i></i><i></i></div>
+          <div class="kivo-model" id="kivo-model">
+            <img src="assets/imagenes/kivo-portada.jpg" width="1200" height="1096" alt="" decoding="async" fetchpriority="high">
+            <div class="kivo-gaze"><span class="kivo-eye kivo-eye--left"></span><span class="kivo-eye kivo-eye--right"></span></div>
+          </div>
+        </div>
+      </div>
 
-      <article class="tarjeta t-clara revela" id="s-content">
-        <div class="tarjeta-info">
-          <span class="estado pronto">En preparación</span>
-          <h3>CreaGo</h3>
-          <p>Imágenes, textos y planificación de contenido con la voz de tu marca.</p>
-          <a class="enlace" data-enlace="content" data-wa="Hola, quiero saber cuándo estará disponible CreaGo." href="#contacto">Quiero saber más <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="muestra m-content" aria-hidden="true">
-          <i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i><i></i>
-        </div>
-      </article>
-
-      <article class="tarjeta t-clara revela" id="s-agentes">
-        <div class="tarjeta-info">
-          <span class="estado pronto">En preparación</span>
-          <h3>Agentes de IA</h3>
-          <p>Asistentes que conversan con tus clientes y apoyan a tu equipo, con paso a una persona cuando hace falta.</p>
-          <a class="enlace" data-enlace="agentes" data-wa="Hola, quiero saber más sobre los Agentes de IA de FlexGo." href="#contacto">Quiero saber más <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="muestra m-agentes" aria-hidden="true">
-          <p>¿Tienen delivery?</p>
-          <p class="yo">Sí. ¿A qué zona te lo enviamos?</p>
-        </div>
-      </article>
-
-      <article class="tarjeta t-ancha revela" id="s-mercadito">
-        <div class="tarjeta-info">
-          <span class="estado activo">Disponible</span>
-          <h3>Mi Mercadito</h3>
-          <p>Las tiendas de los negocios que usan Logrin Negocio, reunidas en un solo lugar para descubrir y comprar.</p>
-          <a class="enlace" data-enlace="mercadito" href="#contacto" target="_blank" rel="noopener">Visitar Mi Mercadito <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="muestra m-mercadito" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-      </article>
     </div>
   </section>
 
-  <section class="seccion soluciones" id="soluciones">
-    <header class="titular revela">
-      <p class="eyebrow">A tu medida</p>
-      <h2>¿Necesitas algo distinto? Lo conversamos.</h2>
-    </header>
-    <ul class="lista-lineas">
-      <li class="revela"><h3>Páginas web y landing pages</h3><p>Para presentar tu marca y convertir visitas en conversaciones.</p></li>
-      <li class="revela"><h3>Chatbots para web y WhatsApp</h3><p>Para responder preguntas frecuentes y derivar lo importante a tu equipo.</p></li>
-      <li class="revela"><h3>Automatizaciones</h3><p>Para que las tareas repetitivas dejen de quitarte tiempo.</p></li>
-      <li class="revela"><h3>Acompañamiento y mantenimiento</h3><p>Para que lo que construimos siga funcionando y mejorando.</p></li>
-    </ul>
-    <a class="btn btn-azul revela" data-wa="Hola, quiero conversar sobre una solución a medida para mi negocio." href="#contacto">Contar mi caso</a>
-  </section>
-
-  <section class="seccion nosotros" id="nosotros">
-    <header class="titular revela">
-      <p class="eyebrow">Quiénes somos</p>
-      <h2>Soluciones digitales con claridad, flexibilidad y foco en lo que necesitas.</h2>
-    </header>
-    <div class="dos">
-      <div class="revela"><h3>Misión</h3><p>Simplificar el uso de la tecnología mediante soluciones claras y adaptables que ayuden a las personas y organizaciones a avanzar.</p></div>
-      <div class="revela"><h3>Visión</h3><p>Ser una marca tecnológica reconocida por hacer más sencilla, útil y cercana la transformación digital.</p></div>
+  <!-- 02 · Ecosistema: cada producto ocupa la pantalla y se convierte en tarjeta al pasar al siguiente -->
+  <section class="eco" id="ecosistema" aria-labelledby="eco-title" data-escena="eco">
+    <div class="eco-pin">
+      <h2 class="eco-titulo" id="eco-title"><span>El ecosistema FlexGo</span> <small>Empieza con la solución que necesita tu negocio hoy.</small></h2>
+      <div class="eco-pista">
+        <article class="eco-slide eco-slide--logrin" data-i="0">
+          <div class="eco-fondo" aria-hidden="true"><div class="eco-visual eco-visual--logrin"><span>Ventas</span><span>Inventario</span><span>Clientes</span><span>Finanzas</span><span>Marketing</span><span>Metas</span></div></div>
+          <div class="eco-copia">
+            <span class="status"><i></i> Disponible</span>
+            <h3><small>Gestión</small>Logrin</h3>
+            <p>Organiza tus ventas, inventario, clientes, finanzas, marketing y metas desde el celular o la computadora.</p>
+            <div class="button-row">
+              <a class="button button--primary" href="https://logrin.flexgogroup.com/?prueba" target="_blank" rel="noopener">Probar 7 días gratis <span aria-hidden="true">↗</span></a>
+              <button class="button button--glass" type="button" data-detalle="logrin">Conocer más</button>
+            </div>
+          </div>
+        </article>
+        <article class="eco-slide eco-slide--creago" data-i="1">
+          <div class="eco-fondo" aria-hidden="true"><div class="eco-visual eco-visual--creago"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="eco-copia">
+            <span class="status"><i></i> Disponible</span>
+            <h3><small>Contenido</small>CreaGo</h3>
+            <p>Planifica contenido y crea imágenes y textos con la voz de tu marca.</p>
+            <div class="button-row">
+              <a class="button button--primary" href="https://creago.flexgogroup.com/" target="_blank" rel="noopener">Entrar a CreaGo <span aria-hidden="true">↗</span></a>
+              <button class="button button--glass" type="button" data-detalle="creago">Conocer más</button>
+            </div>
+          </div>
+        </article>
+        <article class="eco-slide eco-slide--kivo" data-i="2">
+          <div class="eco-fondo" aria-hidden="true"><img src="assets/imagenes/kivo-portada.jpg" width="1200" height="1096" alt="" loading="lazy" decoding="async"></div>
+          <div class="eco-copia">
+            <span class="status"><i></i> Activo en esta web</span>
+            <h3><small>Agente de IA</small>Kivo</h3>
+            <p>Asistentes de IA para conversar con tus clientes, apoyar tareas y pasar la atención a una persona cuando haga falta.</p>
+            <div class="button-row">
+              <button class="button button--primary" type="button" data-open-chat>Conversar con Kivo <span aria-hidden="true">→</span></button>
+              <button class="button button--glass" type="button" data-detalle="kivo">Conocer más</button>
+            </div>
+          </div>
+        </article>
+        <article class="eco-slide eco-slide--mercadito" data-i="3">
+          <div class="eco-fondo" aria-hidden="true"><div class="eco-visual eco-visual--mercadito"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="eco-copia">
+            <span class="status"><i></i> Disponible</span>
+            <h3><small>Tiendas</small>Mi Mercadito</h3>
+            <p>Descubre productos y haz pedidos a las tiendas de los negocios que usan Logrin.</p>
+            <div class="button-row">
+              <a class="button button--primary" href="https://logrin.flexgogroup.com/?mercadito" target="_blank" rel="noopener">Visitar Mi Mercadito <span aria-hidden="true">↗</span></a>
+              <button class="button button--glass" type="button" data-detalle="mercadito">Conocer más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="eco-salida" aria-hidden="true"><div class="mision-foto"><img src="assets/imagenes/mision-cohete.jpg" width="1672" height="941" alt="" loading="lazy" decoding="async"></div></div>
+      <p class="contador" aria-hidden="true"><span class="contador-actual">I</span><i></i><span>IV</span></p>
     </div>
-    <ul class="valores">
-      <li class="revela"><b>Claridad</b><span>Explicamos de forma sencilla.</span></li>
-      <li class="revela"><b>Innovación</b><span>Buscamos mejores soluciones.</span></li>
-      <li class="revela"><b>Confianza</b><span>Comunicamos con transparencia.</span></li>
-      <li class="revela"><b>Adaptabilidad</b><span>Respondemos a cada necesidad.</span></li>
-    </ul>
-
-    <h3 class="sub-seccion revela">Cómo trabajamos</h3>
-    <ol class="pasos">
-      <li class="revela"><b>Escuchamos</b><span>Nos cuentas qué haces y qué quieres mejorar.</span></li>
-      <li class="revela"><b>Proponemos</b><span>Te decimos qué te conviene, sin venderte de más.</span></li>
-      <li class="revela"><b>Activamos</b><span>Ponemos en marcha el servicio con tu marca.</span></li>
-      <li class="revela"><b>Acompañamos</b><span>Resolvemos dudas y mejoramos contigo.</span></li>
-    </ol>
   </section>
 
-  <section class="seccion rumbo" id="rumbo">
-    <header class="titular revela">
-      <p class="eyebrow">Hacia dónde vamos</p>
-      <h2>Estamos construyendo un ecosistema, paso a paso.</h2>
-    </header>
-    <ol class="linea">
-      <li class="revela"><span>Hoy</span><h3>Gestión y venta en línea</h3><p>Logrin Negocio y Mi Mercadito ya están funcionando.</p></li>
-      <li class="revela"><span>En camino</span><h3>Contenido e inteligencia artificial</h3><p>Estamos preparando CreaGo y Agentes de IA.</p></li>
-      <li class="revela"><span>Rumbo</span><h3>Todo conectado</h3><p>Queremos que cada negocio use lo que necesita, con una experiencia sencilla y cercana.</p></li>
-    </ol>
-  </section>
-
-  <section class="seccion aliados" id="aliados">
-    <header class="titular revela">
-      <p class="eyebrow">Aliados estratégicos</p>
-      <h2>Crecemos mejor con otros.</h2>
-      <p>¿Tienes una empresa, una comunidad o una red de negocios? Conversemos sobre cómo podemos trabajar juntos.</p>
-    </header>
-    <ul class="aliados-lista" id="aliados-lista" hidden></ul>
-    <a class="btn btn-azul revela" data-wa="Hola, me interesa ser aliado de FlexGo Group." href="#contacto">Quiero ser aliado</a>
-  </section>
-
-  <section class="seccion preguntas" id="preguntas">
-    <header class="titular revela">
-      <p class="eyebrow">Preguntas frecuentes</p>
-      <h2>Lo que más nos preguntan.</h2>
-    </header>
-    <div class="faq" id="faq"></div>
-  </section>
-
-  <section class="contacto" id="contacto">
-    <div class="contacto-barra" aria-hidden="true"></div>
-    <p class="eyebrow">Contacto</p>
-    <h2>Cuéntanos qué quieres mejorar.</h2>
-    <p class="contacto-sub">Te respondemos por el medio que prefieras, sin compromiso.</p>
-    <div class="hero-acciones">
-      <a class="btn btn-cian" data-wa="Hola, quiero conversar con FlexGo Group." href="#contacto">Escribir por WhatsApp</a>
-      <a class="btn btn-linea" id="contacto-correo" href="#contacto">Enviar un correo</a>
+  <!-- 03 · Misión -->
+  <section class="mision" id="nosotros" aria-labelledby="mision-title" data-escena="mision">
+    <div class="mision-pin">
+      <div class="mision-foto" aria-hidden="true">
+        <img src="assets/imagenes/mision-cohete.jpg" width="1672" height="941" alt="" loading="lazy" decoding="async">
+      </div>
+      <span class="mision-casco" aria-hidden="true"></span>
+      <div class="shell mision-texto">
+        <h2 id="mision-title"><span class="frase-1">La tecnología no debería complicarte.</span> <span class="frase-2">Debería darte tiempo, orden y nuevas oportunidades.</span></h2>
+      </div>
     </div>
-    <dl class="contacto-datos">
-      <div><dt>Horario</dt><dd id="dato-horario"></dd></div>
-      <div><dt>Ubicación</dt><dd id="dato-ubicacion"></dd></div>
-    </dl>
+  </section>
+
+  <!-- 04 y 05 · Astronauta: casco, laptop y, dentro de su pantalla, los cuatro servicios -->
+  <section class="astro" id="soluciones" aria-labelledby="astro-title" data-escena="astro">
+    <div class="astro-pin">
+      <div class="astro-figura" aria-hidden="true">
+        <img src="assets/imagenes/soluciones-astronauta.jpg" width="954" height="1050" alt="" loading="lazy" decoding="async">
+      </div>
+      <span class="astro-oscuro" aria-hidden="true"></span>
+      <div class="shell astro-texto">
+        <p class="section-label">Soluciones a medida</p>
+        <h2 id="astro-title">Tu reto es único. <em>La solución también puede serlo.</em></h2>
+      </div>
+      <div class="pantalla-marco">
+        <article class="servicio" data-i="0">
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-paginas-web.jpg" width="900" height="840" alt="" loading="lazy" decoding="async"></figure>
+          <div class="servicio-copia">
+            <p class="section-label">Páginas web y landing pages</p>
+            <h3>Webs que presentan <em>tu mejor versión.</em></h3>
+            <p>Diseños claros, modernos y enfocados en tus objetivos.</p>
+            <button class="button button--glass" type="button" data-detalle="web">Ver el servicio <span aria-hidden="true">→</span></button>
+          </div>
+        </article>
+        <article class="servicio" data-i="1">
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-chatbots.jpg" width="770" height="744" alt="" loading="lazy" decoding="async"></figure>
+          <div class="servicio-copia">
+            <p class="section-label">Chatbots</p>
+            <h3>Atención <em>que acompaña.</em></h3>
+            <p>Chatbots para web y WhatsApp que orientan, resuelven consultas y derivan a tu equipo.</p>
+            <button class="button button--glass" type="button" data-detalle="chatbots">Ver el servicio <span aria-hidden="true">→</span></button>
+          </div>
+        </article>
+        <article class="servicio" data-i="2">
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-automatizaciones.jpg" width="778" height="750" alt="" loading="lazy" decoding="async"></figure>
+          <div class="servicio-copia">
+            <p class="section-label">Automatizaciones</p>
+            <h3>Menos repetición. <em>Más tiempo.</em></h3>
+            <p>Automatizaciones diseñadas alrededor de las tareas y procesos de tu negocio.</p>
+            <button class="button button--glass" type="button" data-detalle="automatizaciones">Ver el servicio <span aria-hidden="true">→</span></button>
+          </div>
+        </article>
+        <article class="servicio" data-i="3">
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-mantenimiento.jpg" width="780" height="748" alt="" loading="lazy" decoding="async"></figure>
+          <div class="servicio-copia">
+            <p class="section-label">Acompañamiento</p>
+            <h3>Un equipo para <em>seguir avanzando.</em></h3>
+            <p>Acompañamiento y mantenimiento para que tus soluciones sigan funcionando y mejorando.</p>
+            <button class="button button--glass" type="button" data-detalle="acompanamiento">Ver el servicio <span aria-hidden="true">→</span></button>
+          </div>
+        </article>
+        <ol class="pantalla-puntos" aria-hidden="true"><li></li><li></li><li></li><li></li></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · Preguntas frecuentes: sube como una capa sobre la pantalla -->
+  <section class="faq" id="preguntas" aria-labelledby="faq-title">
+    <div class="faq-caja">
+      <span class="faq-raya" aria-hidden="true"></span>
+      <p class="section-label">Preguntas frecuentes</p>
+      <h2 id="faq-title">Lo que más nos <em>preguntan.</em></h2>
+      <div class="faq-lista" id="faq-lista"></div>
+      <a class="button button--primary faq-wa" data-wa="Hola, tengo una pregunta sobre FlexGo." href="#contacto">Escribir por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- 07 · Reloj de arena -->
+  <section class="reloj" id="contacto" aria-labelledby="reloj-title" data-escena="reloj">
+    <div class="reloj-pin">
+      <figure class="reloj-arte r-paso r-1" aria-hidden="true">
+        <img src="assets/imagenes/reloj-escena.jpg" width="900" height="1080" alt="" loading="lazy" decoding="async">
+      </figure>
+      <div class="shell reloj-grid">
+        <div class="reloj-copia">
+          <h2 id="reloj-title" class="r-paso r-2">Cuéntanos qué quieres mejorar.</h2>
+          <p class="r-paso r-3">Te ayudamos en lo que necesites.</p>
+          <div class="button-row r-paso r-4">
+            <a class="button button--primary" data-wa="Hola, quiero conversar con un asesor de FlexGo." href="#contacto">Escribir por WhatsApp <span aria-hidden="true">↗</span></a>
+            <a class="button button--outline" id="contacto-correo" href="mailto:contacto@flexgogroup.com">Escribir por correo <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="contact-hours r-paso r-4">Lun–vie, 9 a. m. a 7 p. m. · Sáb, 9 a. m. a 1 p. m.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 · Cómo trabajamos -->
+  <section class="proceso" id="proceso" aria-labelledby="proceso-title">
+    <div class="shell">
+      <div class="proceso-intro">
+        <h2 id="proceso-title" class="p-paso">Cómo trabajamos</h2>
+        <p class="p-paso">Te acompañamos de la idea a la acción con un proceso claro, ágil y enfocado <em>en resultados.</em></p>
+        <span class="proceso-linea p-paso" aria-hidden="true"></span>
+      </div>
+      <div class="proceso-visual p-paso">
+        <img src="assets/imagenes/proceso-escena.jpg" width="1672" height="941" alt="" loading="lazy" decoding="async">
+        <div class="proceso-pantalla" aria-label="Etapas de trabajo">
+          <button type="button" data-step="listen" aria-controls="proceso-detalle" aria-pressed="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M8.5 10l1.5 1.5 3-3M8.5 15.5l1.5 1.5 3-3"/></svg>Escuchamos</button>
+          <button type="button" data-step="plan" aria-controls="proceso-detalle" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>Proponemos</button>
+          <button type="button" data-step="activate" aria-controls="proceso-detalle" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4c3-1 6-1 6-1s0 3-1 6l-6 6-4-4zM9 11l-4 1-2 3 4 1M13 15l-1 4-3 2-1-4M6 18l-2 2"/></svg>Activamos</button>
+          <button type="button" data-step="help" aria-controls="proceso-detalle" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l4-4 3 2 3-2 4 4-6 6zM10 9l-2 2a1.5 1.5 0 0 0 2 2l2-2M3 11l-1 1M21 11l1 1"/></svg>Acompañamos</button>
+        </div>
+      </div>
+      <p class="process-description p-paso" id="proceso-detalle" aria-live="polite">Entendemos qué haces, qué te frena y qué quieres mejorar.</p>
+    </div>
   </section>
 </main>
 
-<footer class="pie">
-  <div class="pie-marca">
-    <img src="assets/logos/flexgo-blanco-cian.svg" alt="FlexGo" width="118" height="40" loading="lazy">
-    <p>Tecnología que te impulsa.</p>
-    <ul class="redes" id="redes" aria-label="Redes sociales"></ul>
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#inicio" aria-label="FlexGo Group, inicio"><span class="brand-logo" aria-hidden="true"></span><span class="brand-group">Group</span></a>
+        <p>Tecnología que te impulsa.</p>
+        <p class="footer-dato">Tarapoto, San Martín, Perú</p>
+        <a class="social-link" href="https://web.facebook.com/flexgo.pe/" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-column">
+        <h2>Productos</h2>
+        <a href="https://logrin.flexgogroup.com/" target="_blank" rel="noopener noreferrer">Logrin Negocio</a>
+        <a href="https://creago.flexgogroup.com/" target="_blank" rel="noopener noreferrer">CreaGo</a>
+        <button type="button" data-open-chat>Kivo</button>
+        <a href="https://logrin.flexgogroup.com/?mercadito" target="_blank" rel="noopener noreferrer">Mi Mercadito</a>
+      </div>
+      <div class="footer-column">
+        <h2>Empresa</h2>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#soluciones">Soluciones</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+      </div>
+      <div class="footer-column">
+        <h2>Contacto</h2>
+        <a data-wa="Hola, quiero conversar con un asesor de FlexGo." href="#contacto">WhatsApp +51 919 446 978</a>
+        <a href="mailto:contacto@flexgogroup.com">contacto@flexgogroup.com</a>
+        <a href="legal/privacidad.html">Política de privacidad</a>
+        <a href="legal/terminos.html">Términos y condiciones</a>
+      </div>
+    </div>
+    <p class="footer-bottom">© <span id="anio">2026</span> FlexGo. Todos los derechos reservados.</p>
   </div>
-  <nav aria-label="Servicios"><h2>Servicios</h2>
-    <a data-enlace="logrin" href="#s-logrin" target="_blank" rel="noopener">Logrin Negocio</a>
-    <a href="#s-content">CreaGo</a>
-    <a href="#s-agentes">Agentes de IA</a>
-    <a data-enlace="mercadito" href="#s-mercadito" target="_blank" rel="noopener">Mi Mercadito</a>
-  </nav>
-  <nav aria-label="Empresa"><h2>Empresa</h2>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#rumbo">Rumbo</a>
-    <a href="#aliados">Aliados</a>
-    <a href="#preguntas">Preguntas frecuentes</a>
-  </nav>
-  <nav aria-label="Legal"><h2>Legal</h2>
-    <a href="legal/privacidad.html">Política de privacidad</a>
-    <a href="legal/terminos.html">Términos y condiciones</a>
-  </nav>
-  <p class="pie-derechos">© <span id="anio">2026</span> FlexGo. Todos los derechos reservados.</p>
 </footer>
 
-<button class="chat-boton" id="chat-boton" type="button" aria-expanded="false" aria-controls="chat">
-  <img class="kivo" src="assets/logos/kivo.webp" alt="" width="34" height="34"><span>Pregúntale a Kivo</span>
+<dialog class="service-dialog" id="detalle" aria-labelledby="detalle-titulo">
+  <button class="icon-button dialog-close" type="button" aria-label="Cerrar" data-cerrar-detalle>×</button>
+  <div class="service-detail">
+    <img id="detalle-imagen" alt="" width="900" height="840">
+    <div class="service-detail-copy">
+      <p class="section-label" id="detalle-categoria"></p>
+      <h2 id="detalle-titulo"></h2>
+      <p id="detalle-resumen"></p>
+      <dl class="detalle-datos" id="detalle-datos"></dl>
+      <div class="button-row" id="detalle-acciones"></div>
+    </div>
+  </div>
+</dialog>
+
+<button class="chat-launcher" type="button" id="chat-boton" aria-label="Abrir chat de Kivo" aria-controls="chat" aria-expanded="false">
+  <span class="chat-avatar" aria-hidden="true"></span><span class="chat-pulso" aria-hidden="true"></span>
 </button>
-<section class="chat" id="chat" role="dialog" aria-label="Kivo, el asistente de IA de FlexGo" hidden>
-  <header>
-    <img class="kivo-av" src="assets/logos/kivo.webp" alt="" width="40" height="40">
-    <div><b>Kivo · IA de FlexGo</b><span>Atención de FlexGo Group</span></div>
-    <button id="chat-cerrar" type="button" aria-label="Cerrar chat">×</button>
+<section class="kivo-chat" id="chat" role="dialog" aria-labelledby="chat-title" hidden>
+  <header class="chat-header">
+    <span class="chat-avatar" aria-hidden="true"></span>
+    <div><h2 id="chat-title">Kivo · IA de FlexGo</h2><p>Atención de FlexGo Group</p></div>
+    <button class="icon-button chat-close" id="chat-cerrar" type="button" aria-label="Cerrar chat de Kivo">×</button>
   </header>
-  <div class="chat-mensajes" id="chat-mensajes" aria-live="polite"></div>
-  <div class="chat-rapidas" id="chat-rapidas"></div>
+  <div class="chat-content">
+    <div class="chat-log" id="chat-mensajes" role="log" aria-live="polite" aria-label="Conversación con Kivo"></div>
+  </div>
+  <div class="chat-rapidas" id="chat-rapidas" aria-label="Temas sugeridos"></div>
   <form class="chat-form" id="chat-form" autocomplete="off">
-    <label class="oculto" for="chat-texto">Tu pregunta</label>
-    <input id="chat-texto" type="text" maxlength="400" placeholder="Escribe tu pregunta" required>
-    <button type="submit" aria-label="Enviar">→</button>
+    <label class="oculto" for="chat-texto">Escribe tu mensaje</label>
+    <input id="chat-texto" type="text" maxlength="400" placeholder="Escribe tu mensaje…" aria-describedby="chat-aviso" required>
+    <button type="submit" class="icon-button chat-send" aria-label="Enviar mensaje">➤</button>
   </form>
-  <p class="chat-aviso">No compartas contraseñas ni datos de tarjetas. <a href="legal/privacidad.html">Privacidad</a></p>
+  <p class="chat-note" id="chat-aviso">No compartas contraseñas ni datos de tarjetas. <a href="legal/privacidad.html">Privacidad</a></p>
 </section>
 
 <script src="js/datos.js"></script>
-<script src="js/site.js"></script>
+<script src="js/escenas.js"></script>
 <script src="js/chat.js"></script>
-<script type="module" src="js/hero3d.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ window.FLEXGO = {
   enlaces: {
     logrin: 'https://logrin.flexgogroup.com/',
     mercadito: 'https://logrin.flexgogroup.com/?mercadito',
-    content: '',
+    content: 'https://creago.flexgogroup.com/',
     agentes: '',
   },
   // Agrega cada aliado así: { nombre: 'Nombre', logo: 'assets/aliados/logo.svg', web: 'https://...' }
@@ -32,7 +32,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué servicios ofrecen?',
-    r: 'Hoy puedes usar Logrin Negocio y Mi Mercadito. CreaGo y Agentes de IA están en preparación. También conversamos sobre webs, chatbots y automatizaciones a medida.',
+    r: 'Hoy puedes usar Logrin Negocio, CreaGo y Mi Mercadito. Los Agentes de IA están en preparación. También conversamos sobre webs, chatbots y automatizaciones a medida.',
     c: ['servicios', 'ofrecen', 'productos', 'que tienen', 'soluciones'],
   },
   {
@@ -42,7 +42,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Puedo probar Logrin Negocio gratis?',
-    r: 'Sí. Logrin Negocio tiene una prueba gratis de 7 días, sin tarjeta. Puedes pedirla desde su página.',
+    r: 'Sí. Logrin Negocio tiene una prueba gratis de 7 días, sin tarjeta. Empieza aquí: https://logrin.flexgogroup.com/?prueba',
     c: ['prueba', 'gratis', 'probar', 'demo', 'sin costo'],
   },
   {
@@ -52,7 +52,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué es CreaGo?',
-    r: 'Es nuestro servicio para crear imágenes, textos y planificación de contenido para tu marca. Está en preparación. Escríbenos si quieres ser de los primeros en usarlo.',
+    r: 'Es nuestro servicio para crear imágenes, textos y planificación de contenido para tu marca. Puedes crear tu cuenta en https://creago.flexgogroup.com',
     c: ['creago', 'crea go', 'content', 'contenido', 'publicaciones', 'imagenes', 'copy', 'redes sociales', 'planificacion', 'calendario'],
   },
   {
