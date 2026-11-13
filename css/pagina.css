@@ -39,3 +39,11 @@
   .cg-tarjetas { grid-template-columns: 1fr; }
   .cg-ejemplos { gap: 12px; }
 }
+.lg-panel { margin: 0; text-align: right; }
+.lg-panel img { display: block; width: 100%; height: auto; border-radius: 22px; }
+.lg-panel figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
+.lg-rubros { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 900px; padding: 0; margin: 0 auto; list-style: none; }
+.lg-rubros li { padding: 10px 18px; border: 1px solid var(--line); border-radius: 30px; background: #0a1f3a; color: #e6f7ff; font-size: 15px; }
+.lg-pasos { margin-bottom: 26px; }
+.lg-planes { margin-bottom: 24px; }
+.footer-redes { display: flex; flex-wrap: wrap; gap: 8px; }

@@ -7,7 +7,7 @@ window.FLEXGO = {
   ubicacion: 'Tarapoto, San Martín, Perú',
   redes: {
     facebook: 'https://web.facebook.com/flexgo.pe/',
-    instagram: '',
+    instagram: 'https://www.instagram.com/flexgo.group/',
     tiktok: '',
   },
   enlaces: {
