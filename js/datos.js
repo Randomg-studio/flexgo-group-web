@@ -1,7 +1,7 @@
 // Datos que cambian con el tiempo. Lo que quede vacío no aparece en la página.
 window.FLEXGO = {
-  whatsapp: '51919446978',
-  whatsappVisible: '+51 919 446 978',
+  whatsapp: '51917952528',
+  whatsappVisible: '+51 917 952 528',
   correo: 'contacto@flexgogroup.com',
   horario: 'Lunes a viernes, de 9 a. m. a 7 p. m. Sábados, de 9 a. m. a 1 p. m.',
   ubicacion: 'Tarapoto, San Martín, Perú',
@@ -82,7 +82,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Cómo los contacto y cuál es su horario?',
-    r: 'Puedes escribirnos por WhatsApp al +51 919 446 978 o a contacto@flexgogroup.com. Atendemos de lunes a viernes, de 9 a. m. a 7 p. m., y los sábados, de 9 a. m. a 1 p. m.',
+    r: 'Puedes escribirnos por WhatsApp al +51 917 952 528 o a contacto@flexgogroup.com. Atendemos de lunes a viernes, de 9 a. m. a 7 p. m., y los sábados, de 9 a. m. a 1 p. m.',
     c: ['contacto', 'contactar', 'telefono', 'numero', 'su whatsapp', 'por whatsapp', 'correo', 'horario', 'atienden', 'donde estan', 'ubicacion', 'asesor', 'persona', 'hablar'],
   },
 ];
