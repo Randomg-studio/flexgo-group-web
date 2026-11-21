@@ -30,13 +30,15 @@
       "url": "https://flexgogroup.com/",
       "logo": "https://flexgogroup.com/assets/imagenes/logo-flexgo.png",
       "email": "contacto@flexgogroup.com",
+      "description": "FlexGo Group es una empresa de tecnología de Tarapoto, Perú, que ofrece servicios con inteligencia artificial para negocios: Logrin, CreaGo, agentes de IA Kivo, páginas web, Mi Mercadito, creación multimedia, gestión de redes y asesoría.",
+      "telephone": "+51-917-952-528",
       "address": { "@type": "PostalAddress", "addressLocality": "Tarapoto", "addressRegion": "San Martín", "addressCountry": "PE" },
       "sameAs": ["https://web.facebook.com/flexgo.pe/", "https://www.instagram.com/flexgo.group/"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Servicios de FlexGo Group",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Logrin Negocio", "description": "Sistema de ventas con IA: inventario, clientes, finanzas y metas.", "url": "https://flexgogroup.com/logrin.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Logrin Negocio", "description": "Sistema de ventas con IA: inventario, clientes, finanzas y metas.", "url": "https://logrin.flexgogroup.com/" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CreaGo", "description": "Planificación, creación y publicación de contenido para redes con IA y automatización.", "url": "https://flexgogroup.com/creago.html" } },
           { "@type": "Offer", "name": "Kivo Recurrente", "price": "70", "priceCurrency": "PEN", "itemOffered": { "@type": "Service", "name": "Agente de IA Kivo", "description": "Asistente de IA que atiende a los clientes en la web del negocio." } },
           { "@type": "Offer", "name": "Kivo Pro", "price": "145", "priceCurrency": "PEN", "itemOffered": { "@type": "Service", "name": "Agente de IA Kivo Pro", "description": "Kivo con el nombre de la empresa, citas, seguimiento y calificación de clientes." } },
@@ -88,8 +90,10 @@
 }
 </script>
 <link rel="icon" href="assets/imagenes/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/imagenes/icono-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="assets/imagenes/icono-180.png">
 <link rel="preload" href="assets/fuentes/SpaceGrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/imagenes/kivo-portada.jpg" as="image">
+<link rel="preload" as="image" href="assets/imagenes/kivo-portada.webp" imagesrcset="assets/imagenes/kivo-portada-700.webp 700w, assets/imagenes/kivo-portada.webp 1200w" imagesizes="(max-width: 850px) 100vw, 50vw" fetchpriority="high">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/escenas.css">
 <script src="js/inicio.js"></script>
@@ -107,7 +111,7 @@
       <div class="nav-links">
         <a href="#inicio" aria-current="location">Inicio</a>
         <a href="#servicios">Servicios</a>
-        <a href="logrin.html">Logrin</a>
+        <a href="https://logrin.flexgogroup.com/">Logrin</a>
         <a href="creago.html">CreaGo</a>
         <a href="#soluciones">Soluciones</a>
         <a href="#nosotros">Nosotros</a>
@@ -137,7 +141,7 @@
           <div class="hero-aura"></div>
           <div class="kivo-cinta"><i></i><i></i></div>
           <div class="kivo-model" id="kivo-model">
-            <img src="assets/imagenes/kivo-portada.jpg" width="1200" height="1096" alt="" decoding="async" fetchpriority="high">
+            <img src="assets/imagenes/kivo-portada.webp" srcset="assets/imagenes/kivo-portada-700.webp 700w, assets/imagenes/kivo-portada.webp 1200w" sizes="(max-width: 850px) 100vw, 50vw" width="1200" height="1096" alt="" decoding="async" fetchpriority="high">
             <div class="kivo-gaze"><span class="kivo-eye kivo-eye--left"></span><span class="kivo-eye kivo-eye--right"></span></div>
           </div>
         </div>
@@ -157,11 +161,11 @@
       <ul class="sv-grid sv-grid--ia">
         <li class="sv-card">
           <p class="sv-tag">Ventas y gestión</p>
-          <h3>Logrin</h3>
+          <h3 class="sv-marca"><img src="assets/imagenes/logrin-icono.png" width="40" height="40" alt="">Logrin</h3>
           <p>Sistema de ventas con IA: inventario, clientes, finanzas y metas en un solo lugar, desde el celular o la computadora.</p>
           <p class="sv-dato">Prueba gratis de 7 días</p>
           <div class="sv-acciones">
-            <a class="button button--primary" href="logrin.html">Conocer Logrin <span aria-hidden="true">→</span></a>
+            <a class="button button--primary" href="https://logrin.flexgogroup.com/">Conocer Logrin <span aria-hidden="true">↗</span></a>
           </div>
         </li>
         <li class="sv-card">
@@ -276,7 +280,7 @@
             <p>Organiza tus ventas, inventario, clientes, finanzas, marketing y metas desde el celular o la computadora.</p>
             <div class="button-row">
               <a class="button button--primary" href="https://logrin.flexgogroup.com/?prueba" target="_blank" rel="noopener">Probar 7 días gratis <span aria-hidden="true">↗</span></a>
-              <a class="button button--glass" href="logrin.html">Conocer más</a>
+              <a class="button button--glass" href="https://logrin.flexgogroup.com/">Conocer más</a>
             </div>
           </div>
         </article>
@@ -293,7 +297,7 @@
           </div>
         </article>
         <article class="eco-slide eco-slide--kivo" data-i="2">
-          <div class="eco-fondo" aria-hidden="true"><img src="assets/imagenes/kivo-portada.jpg" width="1200" height="1096" alt="" loading="lazy" decoding="async"></div>
+          <div class="eco-fondo" aria-hidden="true"><img src="assets/imagenes/kivo-portada.webp" width="1200" height="1096" alt="" loading="lazy" decoding="async"></div>
           <div class="eco-copia">
             <span class="status"><i></i> Activo en esta web</span>
             <h3><small>Agente de IA</small>Kivo</h3>
@@ -326,7 +330,7 @@
   <section class="mision" id="nosotros" aria-labelledby="mision-title" data-escena="mision">
     <div class="mision-pin">
       <div class="mision-foto" aria-hidden="true">
-        <img src="assets/imagenes/mision-cohete.jpg" width="1672" height="941" alt="" loading="lazy" decoding="async">
+        <img src="assets/imagenes/mision-cohete.webp" width="1672" height="941" alt="" loading="lazy" decoding="async">
       </div>
       <canvas class="peli" aria-hidden="true"></canvas>
       <div class="shell mision-texto">
@@ -340,7 +344,7 @@
     <div class="astro-pin">
       <canvas class="peli" aria-hidden="true"></canvas>
       <div class="astro-figura" aria-hidden="true">
-        <img src="assets/imagenes/soluciones-astronauta.jpg" width="954" height="1050" alt="" loading="lazy" decoding="async">
+        <img src="assets/imagenes/soluciones-astronauta.webp" width="954" height="1050" alt="" loading="lazy" decoding="async">
       </div>
       <div class="shell astro-texto">
         <p class="section-label">Soluciones a medida</p>
@@ -348,7 +352,7 @@
       </div>
       <div class="pantalla-marco">
         <article class="servicio" data-i="0">
-          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-paginas-web.jpg" width="900" height="840" alt="Página web en una pantalla, servicio de diseño web de FlexGo" loading="lazy" decoding="async"></figure>
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-paginas-web.webp" width="900" height="840" alt="Página web en una pantalla, servicio de diseño web de FlexGo" loading="lazy" decoding="async"></figure>
           <div class="servicio-copia">
             <p class="section-label">Páginas web y landing pages</p>
             <h3>Webs que presentan <em>tu mejor versión.</em></h3>
@@ -357,7 +361,7 @@
           </div>
         </article>
         <article class="servicio" data-i="1">
-          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-chatbots.jpg" width="770" height="744" alt="Chatbot respondiendo mensajes en web y WhatsApp" loading="lazy" decoding="async"></figure>
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-chatbots.webp" width="770" height="744" alt="Chatbot respondiendo mensajes en web y WhatsApp" loading="lazy" decoding="async"></figure>
           <div class="servicio-copia">
             <p class="section-label">Chatbots</p>
             <h3>Atención <em>que acompaña.</em></h3>
@@ -366,7 +370,7 @@
           </div>
         </article>
         <article class="servicio" data-i="2">
-          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-automatizaciones.jpg" width="778" height="750" alt="Tareas automatizadas conectadas entre sí" loading="lazy" decoding="async"></figure>
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-automatizaciones.webp" width="778" height="750" alt="Tareas automatizadas conectadas entre sí" loading="lazy" decoding="async"></figure>
           <div class="servicio-copia">
             <p class="section-label">Automatizaciones</p>
             <h3>Menos repetición. <em>Más tiempo.</em></h3>
@@ -375,7 +379,7 @@
           </div>
         </article>
         <article class="servicio" data-i="3">
-          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-mantenimiento.jpg" width="780" height="748" alt="Acompañamiento y mantenimiento de soluciones digitales" loading="lazy" decoding="async"></figure>
+          <figure class="servicio-arte" aria-hidden="true"><img src="assets/imagenes/servicio-mantenimiento.webp" width="780" height="748" alt="Acompañamiento y mantenimiento de soluciones digitales" loading="lazy" decoding="async"></figure>
           <div class="servicio-copia">
             <p class="section-label">Acompañamiento</p>
             <h3>Un equipo para <em>seguir avanzando.</em></h3>
@@ -404,7 +408,7 @@
     <div class="reloj-pin">
       <canvas class="peli" aria-hidden="true"></canvas>
       <figure class="reloj-arte r-paso r-1" aria-hidden="true">
-        <img src="assets/imagenes/reloj-escena.jpg" width="900" height="1080" alt="" loading="lazy" decoding="async">
+        <img src="assets/imagenes/reloj-escena.webp" width="900" height="1080" alt="" loading="lazy" decoding="async">
       </figure>
       <div class="shell reloj-grid">
         <div class="reloj-copia">
@@ -433,7 +437,7 @@
         <span class="proceso-linea p-paso" aria-hidden="true"></span>
       </div>
       <div class="proceso-visual p-paso">
-        <img src="assets/imagenes/proceso-escena.jpg" width="1672" height="941" alt="" loading="lazy" decoding="async">
+        <img src="assets/imagenes/proceso-escena.webp" width="1672" height="941" alt="" loading="lazy" decoding="async">
         <div class="proceso-pantalla" aria-label="Etapas de trabajo">
           <button type="button" data-step="listen" aria-controls="proceso-detalle" aria-pressed="true">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M8.5 10l1.5 1.5 3-3M8.5 15.5l1.5 1.5 3-3"/></svg>Escuchamos</button>
@@ -464,15 +468,15 @@
       </div>
       <div class="footer-column">
         <h2>Productos</h2>
-        <a href="logrin.html">Logrin Negocio</a>
+        <a href="https://logrin.flexgogroup.com/">Logrin Negocio</a>
         <a href="creago.html">CreaGo</a>
-        <button type="button" data-open-chat>Kivo</button>
+        <a href="#servicios">Kivo Agentes</a>
         <a href="https://logrin.flexgogroup.com/?mercadito" target="_blank" rel="noopener noreferrer">Mi Mercadito</a>
       </div>
       <div class="footer-column">
         <h2>Empresa</h2>
         <a href="#nosotros">Nosotros</a>
-        <a href="#soluciones">Soluciones</a>
+        <a href="#servicios">Servicios</a>
         <a href="#proceso">Cómo trabajamos</a>
         <a href="#preguntas">Preguntas frecuentes</a>
       </div>

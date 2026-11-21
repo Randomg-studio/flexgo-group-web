@@ -10,7 +10,7 @@
   --bright: #23dffa;
   --line: rgba(150, 206, 249, .21);
   --header-height: 78px;
-  --asset-background: url("../assets/imagenes/fondo-flexgo.jpg");
+  --asset-background: url("../assets/imagenes/fondo-flexgo.webp");
   --asset-avatar: url("../assets/imagenes/kivo.webp");
   --asset-flexgo-logo: url("../assets/imagenes/logo-flexgo.png");
   --font: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -184,8 +184,8 @@ em { color: var(--bright); font-style: normal; }
 }
 .kivo-model > img {
   width: 100%;
-  -webkit-mask: url("../assets/imagenes/kivo-mascara.png") center / 100% 100% no-repeat;
-  mask: url("../assets/imagenes/kivo-mascara.png") center / 100% 100% no-repeat;
+  -webkit-mask: url("../assets/imagenes/kivo-mascara.webp") center / 100% 100% no-repeat;
+  mask: url("../assets/imagenes/kivo-mascara.webp") center / 100% 100% no-repeat;
 }
 .kivo-gaze { position: absolute; inset: 0; transform: translate3d(var(--gaze-x, 0px), var(--gaze-y, 0px), 0); }
 .kivo-eye {

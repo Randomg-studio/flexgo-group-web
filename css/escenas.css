@@ -68,7 +68,7 @@ main > section { position: relative; }
 .eco-slide--creago .eco-fondo { background: radial-gradient(ellipse at 80% 70%, #2bb8e64d, transparent 58%), linear-gradient(140deg, #10305a, #071a33 70%); }
 .eco-slide--kivo .eco-fondo { background: radial-gradient(ellipse at 78% 45%, #0f7fd066, transparent 55%), linear-gradient(140deg, #0e2c4f, #061427 72%); }
 .eco-slide--mercadito .eco-fondo { background: radial-gradient(ellipse at 82% 35%, #1a8fc24d, transparent 58%), linear-gradient(140deg, #133a5a, #071a33 70%); }
-.eco-slide--kivo .eco-fondo img { position: absolute; right: 2%; bottom: -6%; width: min(52%, 640px); height: auto; -webkit-mask: url("../assets/imagenes/kivo-mascara.png") center / 100% 100% no-repeat; mask: url("../assets/imagenes/kivo-mascara.png") center / 100% 100% no-repeat; }
+.eco-slide--kivo .eco-fondo img { position: absolute; right: 2%; bottom: -6%; width: min(52%, 640px); height: auto; -webkit-mask: url("../assets/imagenes/kivo-mascara.webp") center / 100% 100% no-repeat; mask: url("../assets/imagenes/kivo-mascara.webp") center / 100% 100% no-repeat; }
 .eco-visual { position: absolute; right: 6%; top: 50%; width: min(40%, 520px); transform: translateY(-50%); }
 .eco-visual--logrin { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
 .eco-visual--logrin span { padding: 14px 22px; border: 1px solid rgba(146, 213, 248, .35); border-radius: 16px; color: #d6f4ff; background: rgba(106, 216, 251, .09); font-size: clamp(14px, 1.5vw, 21px); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
@@ -366,3 +366,5 @@ main > section { position: relative; }
   .avisame-fila { flex-direction: column; }
   .sv-subtitulo .sv-chip { display: table; margin: 0 auto 10px; }
 }
+.sv-marca { display: flex; align-items: center; gap: 10px; }
+.sv-marca img { width: 40px; height: 40px; border-radius: 10px; }
