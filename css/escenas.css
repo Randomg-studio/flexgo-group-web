@@ -369,3 +369,4 @@ main > section { position: relative; }
 .sv-marca { display: flex; align-items: center; gap: 10px; }
 .sv-marca img { width: 40px; height: 40px; border-radius: 10px; }
 .sv-nota { margin-top: 10px; color: var(--muted); font-size: 13px !important; line-height: 1.5; }
+.sv-nota a { color: var(--cyan); }
