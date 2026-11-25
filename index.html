@@ -19,6 +19,7 @@
 <meta property="og:image:alt" content="Astronauta junto a un cohete, imagen de FlexGo Group">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://flexgogroup.com/">
+<!-- Marca FlexGo Group: cuando existan, agrega a "sameAs" el perfil de LinkedIn de la empresa y el enlace del Perfil de Empresa de Google (https://g.page/... o https://maps.google.com/?cid=...). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -27,41 +28,40 @@
       "@type": "Organization",
       "@id": "https://flexgogroup.com/#organizacion",
       "name": "FlexGo Group",
-      "alternateName": "FlexGo",
+      "alternateName": [
+        "FlexGo",
+        "Flexgo",
+        "Flexgo Group",
+        "Flex Go Group",
+        "FlexGo Perú"
+      ],
       "url": "https://flexgogroup.com/",
-      "logo": "https://flexgogroup.com/assets/imagenes/logo-flexgo.png",
-      "email": "contacto@flexgogroup.com",
-      "description": "FlexGo Group es una empresa peruana de tecnología especializada en inteligencia artificial para negocios. Crea agentes de IA que atienden a los clientes (Kivo), sistemas de gestión con ventas, clientes y cobros integrados (Logrin), contenido para redes creado con IA (CreaGo) y páginas web.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flexgogroup.com/assets/imagenes/logo-flexgo-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://flexgogroup.com/assets/imagenes/compartir.jpg",
+      "description": "FlexGo Group es una empresa peruana de tecnología e inteligencia artificial para negocios: agentes de IA que atienden a los clientes (Kivo), sistemas de gestión con integraciones (Logrin), contenido para redes con IA (CreaGo) y páginas web.",
       "disambiguatingDescription": "No relacionada con Flexo Group Digital ni con la industria flexográfica; FlexGo Group es una empresa de tecnología e inteligencia artificial.",
       "slogan": "Tecnología que te impulsa.",
-      "areaServed": { "@type": "Country", "name": "Perú" },
-      "knowsAbout": ["Inteligencia artificial", "Chatbots con IA", "Agentes de IA para WhatsApp", "Sistemas de gestión", "Integraciones", "Automatización", "Contenido con IA", "Páginas web"],
-      "brand": [
-        { "@type": "Brand", "name": "Kivo Agentes", "url": "https://flexgogroup.com/kivo.html" },
-        { "@type": "Brand", "name": "Logrin Negocio", "url": "https://logrin.flexgogroup.com/" },
-        { "@type": "Brand", "name": "CreaGo", "url": "https://flexgogroup.com/creago.html" }
-      ],
-      "telephone": "+51-917-952-528",
-      "address": { "@type": "PostalAddress", "addressLocality": "Tarapoto", "addressRegion": "San Martín", "addressCountry": "PE" },
-      "sameAs": ["https://web.facebook.com/flexgo.pe/", "https://www.instagram.com/flexgo.group/"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios de FlexGo Group",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Logrin Negocio", "description": "Sistema de ventas con IA: inventario, clientes, finanzas y metas.", "url": "https://logrin.flexgogroup.com/" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CreaGo", "description": "Planificación, creación y publicación de contenido para redes con IA y automatización.", "url": "https://flexgogroup.com/creago.html" } },
-          { "@type": "Offer", "name": "Kivo Recurrente", "price": "149", "priceCurrency": "PEN", "itemOffered": { "@type": "Service", "name": "Agente de IA Kivo", "description": "Asistente de IA que atiende a los clientes en la web del negocio." } },
-          { "@type": "Offer", "name": "Kivo Pro", "price": "299", "priceCurrency": "PEN", "itemOffered": { "@type": "Service", "name": "Agente de IA Kivo Pro", "description": "Kivo con el nombre de la empresa, citas, seguimiento y calificación de clientes." } },
-          { "@type": "Offer", "name": "Kivo Ultra", "price": "449", "priceCurrency": "PEN", "itemOffered": { "@type": "Service", "name": "Agente de IA Kivo Ultra", "description": "Kivo Pro con análisis y cierre de ventas." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Páginas web y landing pages", "description": "Landing pages y webs en dos niveles: Básica, con una dirección de FlexGo, y Pro, con dominio propio." } },
-          { "@type": "Offer", "name": "Web Básica", "price": "250", "priceCurrency": "PEN", "itemOffered": { "@type": "Service", "name": "Página web Básica", "description": "Landing o web sencilla con una dirección de FlexGo. Pago único." } },
-          { "@type": "Offer", "name": "Web Pro", "price": "799", "priceCurrency": "PEN", "itemOffered": { "@type": "Service", "name": "Página web Pro", "description": "Web con dominio propio, más secciones y mantenimiento mensual de S/ 39. Dominio aparte." } },
-          { "@type": "Offer", "name": "Mi Mercadito", "price": "15", "priceCurrency": "PEN", "itemOffered": { "@type": "Service", "name": "Mi Mercadito", "description": "Tienda digital con enlace para compartir.", "url": "https://logrin.flexgogroup.com/?mercadito" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Creación multimedia", "description": "Flyers, manual de marca y video por paquetes." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestión de redes sociales" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asesoría de comunicación y marca", "description": "Comunicación institucional, pública y privada; posicionamiento de marca; estrategia y campañas publicitarias integrales." } }
-        ]
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Tarapoto, San Martín, Perú"
       },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tarapoto",
+        "addressRegion": "San Martín",
+        "addressCountry": "PE"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Perú"
+      },
+      "telephone": "+51-917-952-528",
+      "email": "contacto@flexgogroup.com",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
@@ -70,15 +70,179 @@
         "email": "contacto@flexgogroup.com",
         "areaServed": "PE",
         "availableLanguage": "es"
+      },
+      "knowsAbout": [
+        "Inteligencia artificial",
+        "Chatbots con IA",
+        "Agentes de IA para WhatsApp",
+        "Sistemas de gestión",
+        "Integraciones",
+        "Automatización",
+        "Contenido con IA",
+        "Páginas web"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/flexgo.group/",
+        "https://web.facebook.com/flexgo.pe/"
+      ],
+      "brand": [
+        {
+          "@type": "Brand",
+          "name": "Kivo Agentes",
+          "url": "https://flexgogroup.com/kivo.html"
+        },
+        {
+          "@type": "Brand",
+          "name": "Logrin Negocio",
+          "url": "https://logrin.flexgogroup.com/"
+        },
+        {
+          "@type": "Brand",
+          "name": "CreaGo",
+          "url": "https://flexgogroup.com/creago.html"
+        },
+        {
+          "@type": "Brand",
+          "name": "Mi Mercadito",
+          "url": "https://logrin.flexgogroup.com/?mercadito"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de FlexGo Group",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Logrin Negocio",
+              "description": "Sistema de ventas con IA: inventario, clientes, finanzas y metas.",
+              "url": "https://logrin.flexgogroup.com/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CreaGo",
+              "description": "Planificación, creación y publicación de contenido para redes con IA y automatización.",
+              "url": "https://flexgogroup.com/creago.html"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Kivo Recurrente",
+            "price": "149",
+            "priceCurrency": "PEN",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agente de IA Kivo",
+              "description": "Asistente de IA que atiende a los clientes en la web del negocio."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Kivo Pro",
+            "price": "299",
+            "priceCurrency": "PEN",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agente de IA Kivo Pro",
+              "description": "Kivo con el nombre de la empresa, citas, seguimiento y calificación de clientes."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Kivo Ultra",
+            "price": "449",
+            "priceCurrency": "PEN",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agente de IA Kivo Ultra",
+              "description": "Kivo Pro con análisis y cierre de ventas."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Páginas web y landing pages",
+              "description": "Landing pages y webs en dos niveles: Básica, con una dirección de FlexGo, y Pro, con dominio propio."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Web Básica",
+            "price": "250",
+            "priceCurrency": "PEN",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Página web Básica",
+              "description": "Landing o web sencilla con una dirección de FlexGo. Pago único."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Web Pro",
+            "price": "799",
+            "priceCurrency": "PEN",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Página web Pro",
+              "description": "Web con dominio propio, más secciones y mantenimiento mensual de S/ 39. Dominio aparte."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Mi Mercadito",
+            "price": "15",
+            "priceCurrency": "PEN",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mi Mercadito",
+              "description": "Tienda digital con enlace para compartir.",
+              "url": "https://logrin.flexgogroup.com/?mercadito"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Creación multimedia",
+              "description": "Flyers, manual de marca y video por paquetes."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gestión de redes sociales"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Asesoría de comunicación y marca",
+              "description": "Comunicación institucional, pública y privada; posicionamiento de marca; estrategia y campañas publicitarias integrales."
+            }
+          }
+        ]
       }
     },
     {
       "@type": "WebSite",
       "@id": "https://flexgogroup.com/#web",
       "name": "FlexGo Group",
+      "alternateName": [
+        "FlexGo",
+        "Flexgo Group"
+      ],
       "url": "https://flexgogroup.com/",
       "inLanguage": "es",
-      "publisher": { "@id": "https://flexgogroup.com/#organizacion" }
+      "publisher": {
+        "@id": "https://flexgogroup.com/#organizacion"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -87,7 +251,9 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "description": "Planifica contenido y crea imágenes y textos con la voz de tu marca.",
-      "publisher": { "@id": "https://flexgogroup.com/#organizacion" }
+      "publisher": {
+        "@id": "https://flexgogroup.com/#organizacion"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -96,13 +262,16 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "description": "Organiza tus ventas, inventario, clientes, finanzas, marketing y metas desde el celular o la computadora.",
-      "publisher": { "@id": "https://flexgogroup.com/#organizacion" }
+      "publisher": {
+        "@id": "https://flexgogroup.com/#organizacion"
+      }
     }
   ]
 }
 </script>
 <link rel="icon" href="assets/imagenes/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/imagenes/icono-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="assets/imagenes/icono-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="assets/imagenes/icono-180.png">
 <link rel="preload" href="assets/fuentes/SpaceGrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/imagenes/kivo-portada.webp" imagesrcset="assets/imagenes/kivo-portada-700.webp 700w, assets/imagenes/kivo-portada.webp 1200w" imagesizes="(max-width: 850px) 100vw, 50vw" fetchpriority="high">
@@ -124,9 +293,9 @@
     <div class="shell hero-shell">
       <div class="hero-stage">
         <div class="hero-copy">
-          <p class="hero-label"><span aria-hidden="true">✦</span> Tecnología e inteligencia artificial para negocios</p>
+          <p class="hero-label"><span aria-hidden="true">✦</span> FlexGo Group · Tecnología e IA para negocios</p>
           <h1 id="hero-title"><span>Potencia tu negocio</span> <span>con tecnología,</span> <em>creatividad e IA</em></h1>
-          <p class="hero-lead">Somos una empresa peruana de tecnología e IA: te ayudamos a vender más y trabajar menos.</p>
+          <p class="hero-lead">FlexGo Group es una empresa peruana de tecnología e IA: te ayudamos a vender más y trabajar menos.</p>
           <div class="button-row">
             <a class="button button--primary" href="#servicios">Ver servicios <span aria-hidden="true">→</span></a>
             <a class="button button--glass" data-wa="Hola, quiero hablar con un asesor de FlexGo." href="#contacto">Hablar con un asesor <span aria-hidden="true">↗</span></a>

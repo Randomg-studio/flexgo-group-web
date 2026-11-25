@@ -21,12 +21,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/imagenes/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/imagenes/icono-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="assets/imagenes/icono-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="assets/imagenes/icono-180.png">
 <link rel="preload" href="assets/fuentes/Poppins-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/nosotros.css?v=9">
 <link rel="stylesheet" href="css/menu-servicios.css">
 <link rel="stylesheet" href="css/barra.css?v=1">
 <link rel="stylesheet" href="css/pie.css?v=1">
+<!-- Marca FlexGo Group: cuando existan, agrega a "sameAs" el perfil de LinkedIn de la empresa y el enlace del Perfil de Empresa de Google (https://g.page/... o https://maps.google.com/?cid=...). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,22 +38,99 @@
       "name": "Nosotros · FlexGo Group",
       "url": "https://flexgogroup.com/nosotros.html",
       "inLanguage": "es",
-      "about": { "@id": "https://flexgogroup.com/#organizacion" },
-      "mainEntity": { "@id": "https://flexgogroup.com/#organizacion" },
-      "isPartOf": { "@id": "https://flexgogroup.com/#web" }
+      "about": {
+        "@id": "https://flexgogroup.com/#organizacion"
+      },
+      "mainEntity": {
+        "@id": "https://flexgogroup.com/#organizacion"
+      },
+      "isPartOf": {
+        "@id": "https://flexgogroup.com/#web"
+      }
     },
     {
       "@type": "Organization",
       "@id": "https://flexgogroup.com/#organizacion",
       "name": "FlexGo Group",
-      "alternateName": "FlexGo",
+      "alternateName": [
+        "FlexGo",
+        "Flexgo",
+        "Flexgo Group",
+        "Flex Go Group",
+        "FlexGo Perú"
+      ],
       "url": "https://flexgogroup.com/",
-      "logo": "https://flexgogroup.com/assets/imagenes/logo-flexgo.png",
-      "description": "Empresa peruana de tecnología e inteligencia artificial para negocios: agentes de IA (Kivo), sistemas de gestión (Logrin), contenido con IA (CreaGo) y páginas web.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flexgogroup.com/assets/imagenes/logo-flexgo-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://flexgogroup.com/assets/imagenes/compartir.jpg",
+      "description": "FlexGo Group es una empresa peruana de tecnología e inteligencia artificial para negocios: agentes de IA que atienden a los clientes (Kivo), sistemas de gestión con integraciones (Logrin), contenido para redes con IA (CreaGo) y páginas web.",
       "disambiguatingDescription": "No relacionada con Flexo Group Digital ni con la industria flexográfica; FlexGo Group es una empresa de tecnología e inteligencia artificial.",
+      "slogan": "Tecnología que te impulsa.",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Tarapoto, San Martín, Perú"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tarapoto",
+        "addressRegion": "San Martín",
+        "addressCountry": "PE"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Perú"
+      },
       "telephone": "+51-917-952-528",
       "email": "contacto@flexgogroup.com",
-      "sameAs": ["https://web.facebook.com/flexgo.pe/", "https://www.instagram.com/flexgo.group/"]
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+51-917-952-528",
+        "url": "https://wa.me/51917952528",
+        "email": "contacto@flexgogroup.com",
+        "areaServed": "PE",
+        "availableLanguage": "es"
+      },
+      "knowsAbout": [
+        "Inteligencia artificial",
+        "Chatbots con IA",
+        "Agentes de IA para WhatsApp",
+        "Sistemas de gestión",
+        "Integraciones",
+        "Automatización",
+        "Contenido con IA",
+        "Páginas web"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/flexgo.group/",
+        "https://web.facebook.com/flexgo.pe/"
+      ],
+      "brand": [
+        {
+          "@type": "Brand",
+          "name": "Kivo Agentes",
+          "url": "https://flexgogroup.com/kivo.html"
+        },
+        {
+          "@type": "Brand",
+          "name": "Logrin Negocio",
+          "url": "https://logrin.flexgogroup.com/"
+        },
+        {
+          "@type": "Brand",
+          "name": "CreaGo",
+          "url": "https://flexgogroup.com/creago.html"
+        },
+        {
+          "@type": "Brand",
+          "name": "Mi Mercadito",
+          "url": "https://logrin.flexgogroup.com/?mercadito"
+        }
+      ]
     }
   ]
 }
