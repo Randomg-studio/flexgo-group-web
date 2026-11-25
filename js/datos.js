@@ -32,7 +32,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué servicios ofrecen?',
-    r: 'Hoy puedes usar Kivo Agentes (agentes de IA que atienden a tus clientes), Logrin Negocio, CreaGo y Mi Mercadito. También hacemos páginas web, chatbots y automatizaciones a medida.',
+    r: 'Hoy puedes usar Kivo Agentes (agentes de IA que atienden a tus clientes), Logrin Negocio, CreaGo y Mi Mercadito. Y estamos preparando Eleva, nuestra marca educativa. También hacemos páginas web, chatbots y automatizaciones a medida.',
     c: ['servicios', 'ofrecen', 'productos', 'que tienen', 'soluciones'],
   },
   {
@@ -49,6 +49,11 @@ window.FLEXGO_FAQ = [
     p: '¿Qué es Mi Mercadito?',
     r: 'Es tu tienda en línea, con un enlace para compartir en tus redes y por WhatsApp, dentro de un mercado que reúne a los negocios que usan Logrin. Precio de lanzamiento: S/ 14.99 al mes (antes S/ 47), solo para las primeras 20 tiendas y durante 6 meses; después pasa a S/ 47 al mes (plan Solo tienda). Empieza aquí: https://logrin.flexgogroup.com/?prueba=tienda&lanzamiento=mm',
     c: ['mercadito', 'marketplace', 'tiendas', 'vender en linea', 'tienda online'],
+  },
+  {
+    p: '¿Qué es Eleva?',
+    r: 'Eleva by FlexGo Group es nuestra marca educativa: cursos y acompañamiento para aprender tecnología e IA a tu ritmo. Está en preparación; todavía no tiene precios ni fecha de inicio. Puedes unirte a la lista de espera en https://flexgogroup.com/eleva.html',
+    c: ['eleva', 'educacion', 'educativo', 'cursos', 'curso', 'aprender', 'capacitacion', 'formacion', 'clases', 'academia'],
   },
   {
     p: '¿Qué es CreaGo?',
