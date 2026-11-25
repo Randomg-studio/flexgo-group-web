@@ -32,7 +32,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué servicios ofrecen?',
-    r: 'Hoy puedes usar Logrin Negocio, CreaGo y Mi Mercadito. Los Agentes de IA están en preparación. También conversamos sobre webs, chatbots y automatizaciones a medida.',
+    r: 'Hoy puedes usar Kivo Agentes (agentes de IA que atienden a tus clientes), Logrin Negocio, CreaGo y Mi Mercadito. También hacemos páginas web, chatbots y automatizaciones a medida.',
     c: ['servicios', 'ofrecen', 'productos', 'que tienen', 'soluciones'],
   },
   {
@@ -47,7 +47,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué es Mi Mercadito?',
-    r: 'Es un lugar en línea que reúne las tiendas de los negocios que usan Logrin Negocio, para que las personas descubran sus productos y les hagan pedidos.',
+    r: 'Es tu tienda en línea, con un enlace para compartir en tus redes y por WhatsApp, dentro de un mercado que reúne a los negocios que usan Logrin. Precio de lanzamiento: S/ 14.99 al mes (antes S/ 47), solo para las primeras 20 tiendas y durante 6 meses; después pasa a S/ 47 al mes (plan Solo tienda). Empieza aquí: https://logrin.flexgogroup.com/?prueba=tienda&lanzamiento=mm',
     c: ['mercadito', 'marketplace', 'tiendas', 'vender en linea', 'tienda online'],
   },
   {

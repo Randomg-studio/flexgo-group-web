@@ -184,7 +184,15 @@
     pinta(t, { yo: true });
 
     if (pidiendoNombre) {
-      const nombre = t.trim().slice(0, 80);
+      // «Hola, soy Ana», «me llamo Ana Pérez», «Mi nombre es: Ana» → «Ana» / «Ana Pérez».
+      const nombre = t.trim()
+        .replace(/^(hola|holi|buenas( tardes| noches| d[ií]as)?|buen d[ií]a|qu[eé] tal)[\s,!.¡:;-]*/i, '')
+        .replace(/^(yo\s+soy|soy|me\s+llamo|mi\s+nombre\s+es|ac[aá]\s+(te\s+)?(habla|escribe))[\s,:;-]*/i, '')
+        .split(/[,.;!?\n]/)[0]
+        .replace(/[^\p{L}\s'-]/gu, '')
+        .trim()
+        .split(/\s+/).slice(0, 3).join(' ')
+        .slice(0, 60);
       if (nombre.length < 2) {
         pinta('¿Me dices tu nombre? Con eso empiezo.');
         return;
