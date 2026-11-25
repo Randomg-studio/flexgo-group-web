@@ -221,3 +221,86 @@ dialog button{float:right;background:transparent;color:white;border:0;font-size:
 
 @media(max-width:720px){.kivo-chat{right:0;bottom:0;width:100vw;max-height:100dvh;height:100dvh;border-radius:0}}
 [hidden]{display:none!important}
+
+/* ===== Pulido visual (25-nov): imagen fundida con el fondo, más aire y letras más suaves ===== */
+/* Héroe: el robot se funde con el espacio, sin bordes rectos */
+.hero-art{-webkit-mask-image:radial-gradient(ellipse 68% 72% at 60% 46%,#000 52%,transparent 100%);mask-image:radial-gradient(ellipse 68% 72% at 60% 46%,#000 52%,transparent 100%)}
+.hero::after{content:"";position:absolute;z-index:-2;right:6%;top:4%;width:44cqw;height:34cqw;border-radius:50%;background:radial-gradient(closest-side,#2f7dff40,#7b3cff1f 55%,transparent);filter:blur(10px);pointer-events:none}
+.hero h1{font-size:3.85cqw;line-height:1.08;letter-spacing:-.02em;font-weight:700;margin-bottom:1.8cqw}
+.hero p{font-size:1.38cqw;line-height:1.6;color:#d6dbee;max-width:37cqw;margin-bottom:2.4cqw}
+.eyebrow{letter-spacing:.06em;font-weight:600;font-size:1.1cqw;margin-bottom:1.5cqw}
+.trialnote{line-height:1.55;color:#cfd5ea;margin-top:2cqw}
+.btn{font-weight:650}
+
+/* Secciones con respiro */
+.section-title{font-size:2.7cqw;letter-spacing:-.02em;font-weight:700;margin-bottom:2.8cqw}
+.features{padding:4.5cqw 0 5.5cqw}
+.feature-grid{gap:2cqw}
+.feature{padding:2.1cqw 2.3cqw 2.3cqw}
+.feature-icon{margin-bottom:1.2cqw}
+.feature h3{font-size:1.45cqw;font-weight:650;letter-spacing:-.01em;margin-bottom:.9cqw}
+.feature p{line-height:1.6;color:#c6cce2}
+.channels{padding:0 0 5.5cqw}
+.channels .section-title{margin-bottom:2.4cqw}
+.channelbar{padding:1.3cqw 1cqw}
+.channelbar>div{font-weight:500}
+.channels p{margin-top:2cqw;color:#c6cce2;line-height:1.6}
+.pricing{padding:0 0 7cqw}
+.pricing .section-title{margin-bottom:2.4cqw}
+.offer{padding:1.5cqw 2.6cqw;margin-bottom:3cqw;line-height:1.55;color:#d6dbee}
+.offer strong{color:#fff}
+.plans{gap:2.2cqw 2.2cqw}
+.plan{padding:2cqw 2.8cqw 1.9cqw}
+.plan h3{font-weight:650;letter-spacing:-.01em;margin-bottom:.6cqw}
+.price{margin-bottom:.8cqw}
+.price strong{font-weight:750;letter-spacing:-.02em}
+.price span{color:#c6cce2}
+.plan p{line-height:1.55;color:#c9cfe4}
+.price-note{margin:3cqw 0 2.4cqw;color:#d6dbee}
+
+/* Planeta: curva iluminada tipo amanecer, sin recuadro */
+.planet{position:absolute;z-index:-1;right:-20cqw;bottom:-34cqw;width:54cqw;height:54cqw;border-radius:50%;pointer-events:none;opacity:1;
+  background:radial-gradient(circle at 26% 20%,#6f8cf0 0%,#3446a8 14%,transparent 40%),radial-gradient(circle at 46% 38%,#1d2870 0%,#10164a 45%,#090c28 75%);
+  box-shadow:inset .5cqw .7cqw .9cqw -.2cqw #c4f8ff,inset 1.8cqw 2.4cqw 3.6cqw -1cqw #33d6ff80,0 0 2.4cqw #00d9ff70,0 0 8cqw #3d6bff47;
+  -webkit-mask-image:linear-gradient(to bottom,#000 8%,transparent 38%);mask-image:linear-gradient(to bottom,#000 8%,transparent 38%)}
+.planet::after{content:"";position:absolute;inset:-4%;border-radius:50%;background:radial-gradient(circle at 50% 50%,transparent 66%,#7ee8ff30 69%,transparent 74%)}
+
+/* Pie con más aire y enlaces sin negrita */
+.footer{padding:3.6vw 0 2.6vw}
+.footergrid{gap:4.5vw}
+.footcol{gap:.95em}
+.footcol a{font-weight:400;color:#cfd6ea}
+.footer h2.foot-h{font-size:.78em;letter-spacing:.09em;color:#9fb0d3;font-weight:700;margin-bottom:1.1em}
+.foot-brand p{color:#cfd6ea}
+.copyright{margin-top:2.6vw;padding-top:1.6vw;color:#a9b4cf}
+
+@media(max-width:760px){
+  .hero h1{font-size:clamp(32px,8.2vw,52px);line-height:1.1;margin-bottom:18px}
+  .hero p{font-size:16px;max-width:none;margin-bottom:24px}
+  .eyebrow{font-size:11px;margin-bottom:14px}
+  .trialnote{font-size:13.5px;margin-top:18px}
+  .hero-art{margin-top:10px;-webkit-mask-image:radial-gradient(ellipse 62% 62% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 62% 62% at 50% 50%,#000 55%,transparent 100%)}
+  .hero::after{width:90%;height:60%;top:auto;bottom:0;right:5%}
+  .section-title{font-size:clamp(24px,6vw,32px);margin-bottom:24px}
+  .features{padding:40px 0 48px}
+  .feature-grid{gap:14px}
+  .feature{padding:18px 16px}
+  .feature-icon{margin-bottom:12px}
+  .feature h3{font-size:16px;margin-bottom:8px}
+  .feature p{font-size:13.5px}
+  .channels{padding-bottom:48px}
+  .channels .section-title{margin-bottom:22px}
+  .channels p{font-size:14px;margin-top:18px}
+  .pricing{padding-bottom:56px}
+  .pricing .section-title{margin-bottom:22px}
+  .offer{padding:16px;font-size:14px;margin-bottom:26px}
+  .plans{gap:16px}
+  .plan,.plan:nth-child(4),.plan:nth-child(5){padding:20px}
+  .plan p{font-size:14.5px}
+  .price-note{margin:26px 12px 20px}
+  .planet{width:110vw;height:110vw;right:-48vw;bottom:-74vw}
+  .footer{padding:34px 0 96px}
+  .footergrid{gap:30px 24px}
+  .footcol{gap:12px}
+  .copyright{margin-top:28px;padding-top:18px}
+}
