@@ -278,3 +278,35 @@ dialog img{width:100%;max-height:70vh;object-fit:contain;border-radius:12px}
 [hidden]{display:none!important}
 
 .ico-wa{width:1.15em;height:1.15em;flex:none;vertical-align:-.15em}
+
+/* ===== Escena de la portada en vector y HTML (nítida a cualquier tamaño) ===== */
+.escena{position:absolute;z-index:-1;top:5.5vw;right:0;width:54.55vw;aspect-ratio:912/610;container-type:inline-size;pointer-events:none}
+.escena>span{position:absolute;border-radius:50%}
+.esfera{left:15cqw;top:-12cqw;width:96cqw;height:96cqw;
+  background:radial-gradient(circle at 58% 58%,#15123a 0 52%,#21195a 62%,#3a2a8f 69%,#7d5cff 70.4%,transparent 71%);
+  filter:drop-shadow(0 0 2.2cqw #8a5cff66);
+  -webkit-mask-image:linear-gradient(170deg,#000 30%,transparent 78%);mask-image:linear-gradient(170deg,#000 30%,transparent 78%)}
+.ola-der{left:74cqw;top:23cqw;width:92cqw;height:92cqw;
+  background:radial-gradient(circle at 50% 50%,#1a1438 0 62%,#3b1a66 67%,#ff4fb3 69.6%,transparent 70.6%);
+  filter:drop-shadow(0 0 1.8cqw #ff3aa880);
+  -webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent 62%);mask-image:linear-gradient(to bottom,#000 30%,transparent 62%)}
+.reflejo{left:2cqw;top:52cqw;width:80cqw;height:12cqw;border-radius:50%;
+  background:radial-gradient(ellipse at 30% 50%,#a06cff59,transparent 60%),radial-gradient(ellipse at 70% 50%,#ff4fb33d,transparent 60%);filter:blur(1.6cqw)}
+.laptop{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 2cqw 3cqw #05021499)}
+.pantalla{position:absolute;left:0;top:0;width:1000px;height:760px;transform-origin:0 0;overflow:hidden;border-radius:10px;
+  background:radial-gradient(ellipse at 20% 0,#2a1c55,transparent 60%),linear-gradient(160deg,#1b1438,#120d29 60%,#0e0a20);color:#fff;font-family:"Poppins",sans-serif}
+.ui-top{position:absolute;left:52px;right:46px;top:34px;display:flex;align-items:center;justify-content:space-between}
+.ui-logo{font-size:40px;font-weight:600;letter-spacing:-.02em}
+.ui-logo b{font-weight:600;color:#fc0883}
+.ui-crear{display:flex;align-items:center;gap:12px;padding:16px 30px;border:2px solid #ff7fd0aa;border-radius:999px;background:linear-gradient(135deg,#c04dff4d,#ff3aa833);box-shadow:0 0 26px #ff3aa866,inset 0 0 18px #ffd1f033;font-size:28px;font-weight:500}
+.ui-crear i{font-style:normal;color:#fff}
+.ui-lado{position:absolute;left:30px;top:150px;bottom:44px;width:104px;display:flex;flex-direction:column;align-items:center;justify-content:space-around;padding:24px 0;border-radius:22px;background:#ffffff0f;border:1px solid #ffffff14}
+.ui-lado svg{width:50px;height:50px;color:#efeaff;stroke-width:2}
+.ui-pieza{position:absolute;left:156px;top:150px;width:540px;bottom:44px;overflow:hidden;border-radius:20px;box-shadow:0 10px 30px #0008}
+.ui-pieza img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.ui-minis{position:absolute;left:728px;right:40px;top:150px;bottom:44px;display:grid;grid-template-rows:repeat(4,minmax(0,1fr));gap:18px}
+.ui-minis img{width:100%;height:100%;min-height:0;object-fit:cover;border-radius:14px;box-shadow:0 6px 16px #0007}
+@media(max-width:720px){
+  .escena{position:relative;top:auto;right:auto;order:2;width:116%;margin:18px 0 0 -10%;z-index:0}
+}
+.hero-onda{height:9vw}
