@@ -32,7 +32,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué servicios ofrecen?',
-    r: 'Hoy puedes usar Kivo Agentes (agentes de IA que atienden a tus clientes), Logrin Negocio, CreaGo y Mi Mercadito. Y estamos preparando Eleva, nuestra marca educativa, y Elio, un asistente de IA para conversar. También hacemos páginas web, chatbots y automatizaciones a medida.',
+    r: 'Hoy puedes usar Kivo Agentes (agentes de IA que atienden a tus clientes), Logrin Negocio, CreaGo, Mi Mercadito y Elio, nuestro asistente de IA para conversar (pruébalo gratis en https://elio.flexgogroup.com/). Y estamos preparando Eleva, nuestra marca educativa. También hacemos páginas web, chatbots y automatizaciones a medida.',
     c: ['servicios', 'ofrecen', 'productos', 'que tienen', 'soluciones'],
   },
   {
@@ -57,7 +57,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué es Elio?',
-    r: 'Elio by FlexGo Group es nuestro asistente de inteligencia artificial para conversar: explorar ideas, aprender y avanzar en tus tareas. Está en preparación; todavía no tiene precios ni fecha. Puedes unirte a la lista de espera en https://flexgogroup.com/elio.html',
+    r: 'Elio by FlexGo Group es nuestro asistente de inteligencia artificial para conversar: explorar ideas, aprender y avanzar en tus tareas. Ya está disponible: pruébalo gratis en https://elio.flexgogroup.com/ (4 preguntas sin cuenta y luego te registras gratis). Planes: Libre S/ 0 (20 mensajes al día), Impulso S/ 29.90 al mes (100 mensajes rápidos al día, 300 en modo Razonamiento al mes, PDF e imágenes) y Ultra S/ 79.90 al mes (150 rápidos al día, 800 en Razonamiento y 200 en modo Experto al mes). Se paga por Yape dentro de la app.',
     c: ['elio', 'chatgpt', 'chat gpt', 'asistente de ia', 'asistente personal', 'chat de ia', 'conversar con ia', 'preguntarle a la ia'],
   },
   {
