@@ -32,7 +32,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué servicios ofrecen?',
-    r: 'Hoy puedes usar Kivo Agentes (agentes de IA que atienden a tus clientes), Logrin Negocio, CreaGo y Mi Mercadito. Y estamos preparando Eleva, nuestra marca educativa. También hacemos páginas web, chatbots y automatizaciones a medida.',
+    r: 'Hoy puedes usar Kivo Agentes (agentes de IA que atienden a tus clientes), Logrin Negocio, CreaGo y Mi Mercadito. Y estamos preparando Eleva, nuestra marca educativa, y Elio, un asistente de IA para conversar. También hacemos páginas web, chatbots y automatizaciones a medida.',
     c: ['servicios', 'ofrecen', 'productos', 'que tienen', 'soluciones'],
   },
   {
@@ -54,6 +54,11 @@ window.FLEXGO_FAQ = [
     p: '¿Qué es Eleva?',
     r: 'Eleva by FlexGo Group es nuestra marca educativa: cursos y acompañamiento para aprender tecnología e IA a tu ritmo. Está en preparación; todavía no tiene precios ni fecha de inicio. Puedes unirte a la lista de espera en https://flexgogroup.com/eleva.html',
     c: ['eleva', 'educacion', 'educativo', 'cursos', 'curso', 'aprender', 'capacitacion', 'formacion', 'clases', 'academia'],
+  },
+  {
+    p: '¿Qué es Elio?',
+    r: 'Elio by FlexGo Group es nuestro asistente de inteligencia artificial para conversar: explorar ideas, aprender y avanzar en tus tareas. Está en preparación; todavía no tiene precios ni fecha. Puedes unirte a la lista de espera en https://flexgogroup.com/elio.html',
+    c: ['elio', 'chatgpt', 'chat gpt', 'asistente de ia', 'asistente personal', 'chat de ia', 'conversar con ia', 'preguntarle a la ia'],
   },
   {
     p: '¿Qué es CreaGo?',
