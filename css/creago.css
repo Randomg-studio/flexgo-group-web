@@ -242,3 +242,4 @@ dialog img{width:100%;max-height:70vh;object-fit:contain;border-radius:10px}
 @media(max-width:720px){.kivo-chat{right:0;bottom:0;width:100vw;max-height:100dvh;height:100dvh;border-radius:0}}
 .footer .footer-h{margin:0 0 calc(8 * var(--unit));letter-spacing:0;font-weight:700}
 [hidden]{display:none!important}
+@media(min-width:721px){#menu.nav-links{justify-content:center;gap:calc(34 * var(--unit))}}

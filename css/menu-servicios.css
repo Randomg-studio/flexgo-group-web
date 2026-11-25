@@ -1,0 +1,100 @@
+/* Menú desplegable «Servicios», igual en todas las páginas. */
+.ms {
+  --ms-acento: #3fc8f4;
+  --ms-fondo: #0b2037f7;
+  --ms-borde: #96cef94d;
+  --ms-hover: #3fc8f41f;
+  --ms-ico: #3fc8f426;
+  --ms-suave: #b6c9dd;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.ms[data-tema="creago"] { --ms-acento: #ff3aa8; --ms-fondo: #1d0e3af7; --ms-borde: #ff079055; --ms-hover: #ff07901f; --ms-ico: #ff079026; --ms-suave: #d8c8e8; }
+.ms[data-tema="kivo"] { --ms-acento: #00eaff; --ms-fondo: #0c1230f7; --ms-borde: #7384c48c; --ms-hover: #00eaff1a; --ms-ico: #00eaff22; --ms-suave: #c9cde3; }
+
+.ms-boton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color .2s ease;
+}
+.ms-boton svg { width: 12px; height: 12px; transition: transform .2s ease; }
+.primary-nav .ms-boton { color: #dbe8f8; font-size: 14px; }
+.ms-boton:hover, .ms.abierto .ms-boton, .ms.ms-actual .ms-boton { color: var(--ms-acento); }
+.ms.abierto .ms-boton svg { transform: rotate(180deg); }
+.ms.ms-actual:not(.ms-movil) .ms-boton::after { position: absolute; bottom: 3px; left: 0; right: 17px; height: 3px; border-radius: 4px; background: var(--ms-acento); content: ""; }
+
+.ms .ms-panel {
+  display: none;
+  position: absolute;
+  z-index: 60;
+  top: 100%;
+  left: -14px;
+  width: min(660px, 92vw);
+  margin-top: 8px;
+  padding: 12px;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  border: 1px solid var(--ms-borde);
+  border-radius: 18px;
+  background: var(--ms-fondo);
+  box-shadow: 0 24px 55px #00000080;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.3;
+}
+/* Puente invisible para que el cursor no cierre el panel al bajar. */
+.ms .ms-panel::before { position: absolute; top: -12px; left: 0; right: 0; height: 12px; content: ""; }
+.ms.abierto .ms-panel { display: grid; animation: ms-entra .18s ease both; }
+@keyframes ms-entra { from { opacity: 0; transform: translateY(6px); } }
+
+.ms .ms-panel .ms-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #fff;
+  white-space: normal;
+  text-decoration: none;
+}
+.ms .ms-panel .ms-item::after { display: none; }
+.ms .ms-panel .ms-item:hover, .ms .ms-panel .ms-item:focus-visible { background: var(--ms-hover); color: #fff; }
+.ms .ms-panel .ms-item[aria-current] strong { color: var(--ms-acento); }
+.ms-ico { display: grid; flex: none; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--ms-ico); color: var(--ms-acento); }
+.ms-ico svg { width: 19px; height: 19px; }
+.ms-item strong { display: block; font-size: 14px; font-weight: 700; letter-spacing: 0; }
+.ms-item small { display: block; margin-top: 2px; color: var(--ms-suave); font-size: 12.5px; font-weight: 400; line-height: 1.35; }
+.ms .ms-panel .ms-todos {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  padding: 11px 12px 4px;
+  border-top: 1px solid var(--ms-borde);
+  color: var(--ms-acento);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: normal;
+}
+.ms .ms-panel .ms-todos:hover { text-decoration: underline; color: var(--ms-acento); }
+
+/* Celular: dentro del menú, como acordeón. */
+.ms.ms-movil { flex-direction: column; align-items: stretch; width: 100%; }
+.ms.ms-movil .ms-boton { justify-content: space-between; width: 100%; padding: 8px; font-size: 15px; }
+.ms.ms-movil .ms-panel { position: static; width: auto; margin: 0 0 6px; padding: 4px; grid-template-columns: 1fr; border-radius: 14px; box-shadow: none; }
+.ms.ms-movil .ms-panel::before { display: none; }
+.ms.ms-movil.abierto .ms-panel { animation: none; }
+.ms.ms-movil .ms-item { padding: 9px 10px; }
+
+@media (prefers-reduced-motion: reduce) { .ms.abierto .ms-panel { animation: none; } .ms-boton svg { transition: none; } }
