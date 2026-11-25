@@ -10,10 +10,8 @@
   -webkit-mask-image:linear-gradient(to right,#000 30%,transparent 75%);mask-image:linear-gradient(to right,#000 30%,transparent 75%)}
 .onda-inicio{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:clamp(60px,9vw,130px);filter:drop-shadow(0 -4px 12px #3fc8f455)}
 
-/* Kivo sin las cintas: solo órbita fina y tarjetas */
+/* Kivo con sus 4 tarjetas flotando (sin órbitas, pedido del usuario 25-nov) */
 .kivo-cinta{display:none}
-.orbita{position:absolute;inset:16% -6% 6% -8%;width:114%;height:78%;overflow:visible;pointer-events:none}
-.orbita ellipse{fill:none;stroke:#7fd8ff;stroke-opacity:.28;stroke-width:1.2}
 .flota{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;width:clamp(104px,8.2vw,138px);aspect-ratio:1.12;padding:14px 16px;
   border:1px solid #9fd8ff4d;border-radius:20px;background:linear-gradient(140deg,#5aa6e033,#10325e99 55%,#0b2648b3);
   box-shadow:inset 0 1px 0 #ffffff26,inset 0 0 18px #6fd2ff1f,0 14px 30px #00081c66;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
@@ -34,7 +32,6 @@
   .flota-mk{right:0;top:8%}
   .flota-web{left:0;top:62%}
   .flota-sop{right:0;top:64%}
-  .orbita{inset:20% -4% 4% -4%;width:108%}
   .montes{height:24%;bottom:4%}
 }
 @media(max-width:420px){.flota{width:84px;font-size:10.5px}.flota-web,.flota-sop{top:68%}}
@@ -50,7 +47,6 @@
   .flota-web{left:-4%;top:58%}
   .flota-mk{right:-2%;top:26%}
   .flota-sop{right:1%;top:60%}
-  .orbita{inset:20% -4% 8% -8%}
 }
 
 /* ===== Todas nuestras soluciones: Kivo al centro y tarjetas unidas por líneas de luz ===== */
