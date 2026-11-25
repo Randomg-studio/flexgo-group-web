@@ -8,7 +8,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 
 const ARCHIVO = new URL('../datos/noticias.json', import.meta.url);
-const MODELO = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+const MODELO = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 const POR_CATEGORIA = Number(process.env.NOTICIAS_POR_CATEGORIA || 2);
 const MAXIMO = 90; // noticias que se conservan en la página
 const HORAS = 48; // solo noticias recientes
@@ -73,7 +73,7 @@ Con la información de abajo, escribe en español neutro y claro, para dueños d
 - "titulo": un título propio de máximo 12 palabras. No copies el título original.
 - "resumen": 2 o 3 frases propias (máximo 55 palabras) que expliquen qué pasó y por qué le importa a un negocio. No copies frases del original, no inventes datos ni cifras que no estén abajo, no opines de política.
 - "servicio": el servicio de FlexGo que más se relaciona, solo si encaja de verdad: "kivo" (agentes de IA que atienden clientes por WhatsApp y web), "logrin" (sistema de ventas, inventario y cobros), "creago" (contenido para redes con IA), "webs" (páginas web) o "ninguno".
-- "apta": false si la noticia es violenta, de crimen, de política partidaria, de farándula o no sirve para un público de negocios; si no, true.
+- "apta": false si la noticia es violenta, de crimen, de política partidaria, de farándula, una lista de ofertas o descuentos de tiendas (Black Friday, chollos) o no sirve para un público de negocios; si no, true.
 
 Fuente: ${n.fuente}
 Título original: ${n.titulo}
