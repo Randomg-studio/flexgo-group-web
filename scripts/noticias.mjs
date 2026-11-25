@@ -67,6 +67,7 @@ const ESQUEMA = {
   required: ['apta', 'titulo', 'resumen', 'servicio'],
 };
 
+let sinCuota = false;
 const esperar = (ms) => new Promise((ok) => setTimeout(ok, ms));
 // Gemini gratis acepta pocas llamadas por minuto: pausa entre llamadas y reintenta si está saturado (429/503).
 async function llamarGemini(opciones) {
@@ -76,6 +77,7 @@ async function llamarGemini(opciones) {
     if (pausa) await esperar(pausa);
     r = await fetch(url, { ...opciones, signal: AbortSignal.timeout(60000) });
     if (r.status !== 429 && r.status !== 503) break;
+    if (/quota/i.test(await r.clone().text())) { sinCuota = true; throw new Error('Gemini sin cuota: el proyecto de la clave no tiene saldo o facturación activa.'); }
   }
   await esperar(Number(process.env.GEMINI_PAUSA_MS || 7000));
   return r;
@@ -135,7 +137,7 @@ async function main() {
   for (const cat of Object.keys(NOMBRE_CAT)) {
     const usadas = new Set();
     for (const n of todas.filter((x) => x.cat === cat)) {
-      if (nuevas.filter((x) => x.categoria === cat).length >= POR_CATEGORIA) break;
+      if (sinCuota || nuevas.filter((x) => x.categoria === cat).length >= POR_CATEGORIA) break;
       if (usadas.has(n.fuente) && todas.some((x) => x.cat === cat && !usadas.has(x.fuente))) continue; // variar fuentes
       try {
         const g = await resumir(n);
@@ -161,6 +163,7 @@ async function main() {
   }
 
   console.log(`Noticias nuevas: ${nuevas.length}`);
+  if (sinCuota) process.exitCode = 1; // que GitHub marque el error y avise
   if (!nuevas.length) return;
   datos = { actualizado: new Date().toISOString(), noticias: [...nuevas, ...datos.noticias].slice(0, MAXIMO) };
   await mkdir(new URL('../datos/', import.meta.url), { recursive: true });
