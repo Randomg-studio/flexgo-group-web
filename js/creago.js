@@ -59,7 +59,7 @@
   const mv = (m, v) => [m[0]*v[0]+m[1]*v[1]+m[2]*v[2], m[3]*v[0]+m[4]*v[1]+m[5]*v[2], m[6]*v[0]+m[7]*v[1]+m[8]*v[2]];
   const base = (q) => { const m = [q[0][0], q[1][0], q[2][0], q[0][1], q[1][1], q[2][1], 1, 1, 1]; const v = mv(adj(m), [q[3][0], q[3][1], 1]); return mm(m, [v[0],0,0, 0,v[1],0, 0,0,v[2]]); };
   const ajustar = () => {
-    const k = p.parentElement.clientWidth / 912;
+    const k = p.parentElement.clientWidth / (Number(p.dataset.base) || 912);
     const w = p.offsetWidth, h = p.offsetHeight;
     const src = [[0,0],[w,0],[0,h],[w,h]];
     const dst = [esq[0], esq[1], esq[3], esq[2]].map(([x, y]) => [x*k, y*k]);
