@@ -1,0 +1,103 @@
+/* Portada · referencia del usuario (25-nov): montañas en niebla, arcos cian, tarjetas de vidrio flotando junto a Kivo. */
+.hero{background:radial-gradient(ellipse 50% 60% at 72% 40%,#0a4c8a4d,transparent 70%),linear-gradient(180deg,#06152c 0%,#0a2244 62%,#0b2448 100%)}
+.hero::before{display:none}
+.inicio-fondo{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.montes{position:absolute;left:0;right:0;bottom:6%;width:100%;height:34%;filter:blur(1.5px);opacity:.9}
+.arco-luz{position:absolute;border-radius:50%}
+.arco-a{right:-22vw;top:6vw;width:60vw;height:60vw;border-top:2px solid #49cfff;box-shadow:0 -24px 60px -24px #2fb8ff99;transform:rotate(-24deg);opacity:.55;
+  -webkit-mask-image:linear-gradient(to left,#000 35%,transparent 80%);mask-image:linear-gradient(to left,#000 35%,transparent 80%)}
+.arco-b{left:-30vw;top:24vw;width:70vw;height:40vw;border-top:1.5px solid #2fa6e6;box-shadow:0 -20px 60px -24px #2fa6e680;opacity:.35;
+  -webkit-mask-image:linear-gradient(to right,#000 30%,transparent 75%);mask-image:linear-gradient(to right,#000 30%,transparent 75%)}
+.onda-inicio{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:clamp(60px,9vw,130px);filter:drop-shadow(0 -4px 12px #3fc8f455)}
+
+/* Kivo sin las cintas: solo órbita fina y tarjetas */
+.kivo-cinta{display:none}
+.orbita{position:absolute;inset:16% -6% 6% -8%;width:114%;height:78%;overflow:visible;pointer-events:none}
+.orbita ellipse{fill:none;stroke:#7fd8ff;stroke-opacity:.28;stroke-width:1.2}
+.flota{position:absolute;z-index:3;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;width:clamp(104px,8.2vw,138px);aspect-ratio:1.12;padding:14px 16px;
+  border:1px solid #9fd8ff4d;border-radius:20px;background:linear-gradient(140deg,#5aa6e033,#10325e99 55%,#0b2648b3);
+  box-shadow:inset 0 1px 0 #ffffff26,inset 0 0 18px #6fd2ff1f,0 14px 30px #00081c66;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  color:#eef8ff;font-size:clamp(12px,.95vw,15px);font-weight:600;line-height:1.2;animation:flotar 5s ease-in-out infinite}
+.flota svg{width:30px;height:30px;color:#4fdcff;filter:drop-shadow(0 0 6px #2fd0ff99)}
+.flota-ia{left:4%;top:22%;--rot:-8deg;animation-delay:0s}
+.flota-mk{right:-1%;top:24%;--rot:3deg;animation-delay:-1.3s}
+.flota-web{left:-2%;top:56%;--rot:-10deg;animation-delay:-2.6s}
+.flota-sop{right:4%;top:58%;--rot:2deg;animation-delay:-3.9s}
+@keyframes flotar{0%,100%{transform:rotate(var(--rot,0)) translateY(0)}50%{transform:rotate(var(--rot,0)) translateY(-8px)}}
+
+/* Celular: tarjetas en las esquinas, sin tapar a Kivo */
+@media(max-width:850px){
+  .hero-art{overflow:visible}
+  .flota{width:96px;padding:10px 12px;border-radius:16px;font-size:11.5px;gap:6px}
+  .flota svg{width:22px;height:22px}
+  .flota-ia{left:0;top:6%}
+  .flota-mk{right:0;top:8%}
+  .flota-web{left:0;top:62%}
+  .flota-sop{right:0;top:64%}
+  .orbita{inset:20% -4% 4% -4%;width:108%}
+  .montes{height:24%;bottom:4%}
+}
+@media(max-width:420px){.flota{width:84px;font-size:10.5px}.flota-web,.flota-sop{top:68%}}
+@media(prefers-reduced-motion:reduce){.flota{animation:none;transform:rotate(var(--rot,0))}}
+
+/* Proporciones según la referencia: título más moderado y Kivo un poco más chico y a la derecha */
+@media(min-width:851px){
+  .hero h1{font-size:clamp(40px,4vw,68px);letter-spacing:-.035em;line-height:1.04}
+  .hero-lead{font-size:clamp(16px,1.3vw,21px);max-width:34ch}
+  .hero-art{inset:4% -2% -40px 49%}
+  .kivo-model{width:min(84%,620px);right:9%}
+  .flota-ia{left:-1%;top:24%}
+  .flota-web{left:-4%;top:58%}
+  .flota-mk{right:-2%;top:26%}
+  .flota-sop{right:1%;top:60%}
+  .orbita{inset:20% -4% 8% -8%}
+}
+
+/* ===== Todas nuestras soluciones: Kivo al centro y tarjetas unidas por líneas de luz ===== */
+.eco-todo{position:relative;padding:clamp(72px,8vw,120px) 0 clamp(64px,7vw,110px);text-align:center;
+  background:radial-gradient(ellipse 40% 50% at 50% 55%,#0d4c8a40,transparent 70%)}
+.eco-todo h2{font-size:clamp(30px,3vw,48px);font-weight:700;line-height:1.12;letter-spacing:-.02em}
+.eco-todo h2 em{display:block;font-style:normal;color:#2fd8f4}
+.eco-sub{max-width:560px;margin:16px auto 0;color:#c9d8ea;font-size:clamp(15px,1.2vw,18px);line-height:1.55}
+.eco-mapa{display:grid;grid-template-columns:minmax(0,1fr) clamp(240px,22vw,340px) minmax(0,1fr);align-items:center;gap:clamp(40px,5vw,84px);margin-top:clamp(36px,4vw,56px);text-align:left}
+.eco-lista{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.eco-item{position:relative;display:flex;align-items:center;gap:14px;min-height:74px;padding:12px 14px 12px 14px;border:1px solid #9fd8ff3d;border-radius:20px;
+  background:linear-gradient(135deg,#1c4a7a52,#0d2547b3 55%,#0b1f3ccc);box-shadow:inset 0 1px 0 #ffffff1a,0 10px 26px #00081c4d;transition:transform .25s,border-color .25s,box-shadow .25s}
+.eco-item:hover{transform:translateY(-3px);border-color:#6fdcff99;box-shadow:inset 0 1px 0 #ffffff26,0 14px 32px #00081c66,0 0 22px #2fd0ff2e}
+.eco-ico{display:grid;flex:none;place-items:center;width:48px;height:48px;border:1px solid #9fd8ff33;border-radius:14px;background:linear-gradient(140deg,#3a8fd033,#0e2c52);color:#4fdcff}
+.eco-ico svg{width:24px;height:24px;filter:drop-shadow(0 0 6px #2fd0ff80)}
+.eco-txt{flex:1;min-width:0}
+.eco-txt strong{display:block;color:#fff;font-size:16px;font-weight:600;line-height:1.25}
+.eco-txt small{display:block;margin-top:2px;color:#b9c9de;font-size:13.5px;line-height:1.35}
+.eco-pronto{display:inline-block;margin-top:6px;padding:2px 10px;border:1px solid #ffd27a80;border-radius:999px;background:#ffd27a1a;color:#ffe2a8;font-size:11.5px;font-style:normal;font-weight:600;letter-spacing:.02em}
+.es-pronto .eco-ico{color:#9fb6d6;filter:saturate(.6)}
+.eco-mas{display:grid;flex:none;place-items:center;width:34px;height:34px;border:1px solid #9fd8ff4d;border-radius:10px;background:#ffffff0d;color:#e8f6ff;font-size:20px;line-height:1;transition:background-color .2s,border-color .2s}
+.eco-mas:hover{background:#2fd0ff26;border-color:#6fdcff}
+.eco-mas::after{content:"";position:absolute;inset:0;border-radius:inherit}
+/* Línea de circuito hacia el centro, con pulso de luz */
+.eco-item::before{content:"";position:absolute;top:50%;width:clamp(40px,5vw,84px);height:2px;margin-top:-1px;
+  background:linear-gradient(90deg,#2fd0ff26 0 35%,#9ff0ff 45%,#2fd0ff26 55% 100%);background-size:300% 100%;animation:pulso-linea 3.2s linear infinite;pointer-events:none}
+.eco-izq .eco-item::before{left:100%}
+.eco-der .eco-item::before{right:100%;animation-direction:reverse}
+.eco-item:nth-child(2)::before{animation-delay:-.5s}.eco-item:nth-child(3)::before{animation-delay:-1s}.eco-item:nth-child(4)::before{animation-delay:-1.6s}.eco-item:nth-child(5)::before{animation-delay:-2.1s}.eco-item:nth-child(6)::before{animation-delay:-2.7s}
+@keyframes pulso-linea{from{background-position:100% 0}to{background-position:0 0}}
+/* Kivo en su círculo de luz */
+.eco-centro{position:relative;display:grid;place-items:center}
+.eco-circulo{position:relative;width:100%;aspect-ratio:1;overflow:hidden;border:1.5px solid #6fdcff80;border-radius:50%;
+  background:radial-gradient(circle at 50% 45%,#1d6bb0 0,#0e3561 45%,#081f3d 75%);box-shadow:0 0 0 10px #2fd0ff0d,0 0 0 22px #2fd0ff08,0 0 60px #2fd0ff40,inset 0 0 40px #2fd0ff33}
+.eco-circulo .eco-kivo{position:absolute;right:auto;bottom:auto;left:-38%;top:6%;width:176%;max-width:none;transform:none;-webkit-mask-image:none;mask-image:none;animation:respira 7s ease-in-out infinite;filter:drop-shadow(0 10px 20px #00081c80)}
+.eco-kivo .kivo-eye{animation:parpadeo 4.6s infinite}
+.eco-kivo .kivo-eye--right{animation-delay:.02s}
+@keyframes parpadeo{0%,91%,100%{transform:rotate(var(--eye-angle)) scaleY(1)}94%{transform:rotate(var(--eye-angle)) scaleY(.08)}97%{transform:rotate(var(--eye-angle)) scaleY(1)}}
+
+@media(max-width:1100px){
+  .eco-mapa{grid-template-columns:1fr 1fr;gap:16px 24px}
+  .eco-centro{grid-column:1/-1;grid-row:1;width:min(260px,60vw);margin:0 auto 12px}
+  .eco-item::before{display:none}
+}
+@media(max-width:720px){
+  .eco-mapa{grid-template-columns:1fr}
+  .eco-centro{width:min(230px,64vw)}
+  .eco-item{min-height:68px}
+}
+@media(prefers-reduced-motion:reduce){.eco-item::before,.eco-kivo .kivo-eye,.eco-circulo .eco-kivo{animation:none}}

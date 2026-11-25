@@ -370,3 +370,4 @@ main > section { position: relative; }
 .sv-marca img { width: 40px; height: 40px; border-radius: 10px; }
 .sv-nota { margin-top: 10px; color: var(--muted); font-size: 13px !important; line-height: 1.5; }
 .sv-nota a { color: var(--cyan); }
+.sv-dato s { margin-left: 6px; color: #8fa3bf; font-weight: 400; font-size: .9em; }
