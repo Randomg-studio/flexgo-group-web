@@ -67,6 +67,20 @@ const ESQUEMA = {
   required: ['apta', 'titulo', 'resumen', 'servicio'],
 };
 
+const esperar = (ms) => new Promise((ok) => setTimeout(ok, ms));
+// Gemini gratis acepta pocas llamadas por minuto: pausa entre llamadas y reintenta si está saturado (429/503).
+async function llamarGemini(opciones) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODELO}:generateContent`;
+  let r;
+  for (const pausa of [0, 20000, 45000, 90000]) {
+    if (pausa) await esperar(pausa);
+    r = await fetch(url, { ...opciones, signal: AbortSignal.timeout(60000) });
+    if (r.status !== 429 && r.status !== 503) break;
+  }
+  await esperar(Number(process.env.GEMINI_PAUSA_MS || 7000));
+  return r;
+}
+
 async function resumir(n) {
   const pedido = `Eres editor de la sección de noticias de FlexGo Group, empresa peruana de tecnología e IA para negocios.
 Con la información de abajo, escribe en español neutro y claro, para dueños de pequeños y medianos negocios del Perú:
@@ -78,14 +92,13 @@ Con la información de abajo, escribe en español neutro y claro, para dueños d
 Fuente: ${n.fuente}
 Título original: ${n.titulo}
 Extracto: ${n.extracto}`;
-  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODELO}:generateContent`, {
+  const r = await llamarGemini({
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY },
     body: JSON.stringify({
       contents: [{ role: 'user', parts: [{ text: pedido }] }],
       generationConfig: { temperature: 0.4, responseMimeType: 'application/json', responseSchema: ESQUEMA },
     }),
-    signal: AbortSignal.timeout(60000),
   });
   if (!r.ok) throw new Error(`Gemini HTTP ${r.status}: ${(await r.text()).slice(0, 300)}`);
   const d = await r.json();
