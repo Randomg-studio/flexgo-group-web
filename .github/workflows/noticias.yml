@@ -1,0 +1,44 @@
+# Noticias del día para flexgogroup.com/noticias.html (gratis con GitHub Actions).
+# Corre cada mañana a las 6:00 de Lima y también a mano desde la pestaña Actions › «Noticias del día» › Run workflow.
+# Secretos (Settings › Secrets and variables › Actions): GEMINI_API_KEY (obligatorio) y BREVO_API_KEY (opcional, para el correo diario).
+name: Noticias del día
+
+on:
+  schedule:
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: noticias
+  cancel-in-progress: false
+
+jobs:
+  noticias:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Leer fuentes y escribir resúmenes
+        run: node scripts/noticias.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          NOTICIAS_CORREO: contacto@flexgogroup.com
+      - name: Guardar y publicar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add datos/noticias.json
+          if git diff --cached --quiet; then echo "Sin noticias nuevas."; exit 0; fi
+          git config user.name "FlexGo Noticias"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Noticias del $(TZ=America/Lima date +%F)"
+          git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null || echo "GitHub Pages publicará solo."

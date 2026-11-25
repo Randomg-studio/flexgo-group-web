@@ -62,7 +62,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Hacen páginas web o soluciones a medida?',
-    r: 'Sí, podemos conversar sobre páginas web, chatbots, automatizaciones y mantenimiento. Cuéntanos tu caso por WhatsApp y vemos si podemos ayudarte.',
+    r: 'Sí. Hacemos webs en tres planes: landing para negocio pequeño a S/ 250 (precio de lanzamiento, antes S/ 300), web Pro a S/ 850 y web Ultra para empresas desde S/ 1.500. El dominio y el hosting van aparte, y el mantenimiento opcional cuesta S/ 39 al mes. Mira los detalles en https://flexgogroup.com/paginas-web.html. También hacemos chatbots y automatizaciones a medida.',
     c: ['pagina web', 'web', 'landing', 'a medida', 'desarrollo', 'personalizado', 'automatizacion', 'mantenimiento'],
   },
   {
