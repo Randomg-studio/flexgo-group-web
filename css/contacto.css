@@ -1,0 +1,98 @@
+/* Contacto · referencia del usuario (24-nov-2026). Usa la base de nosotros.css (letra, menú, vidrio, chat). */
+.contacto-main{position:relative;overflow:hidden;isolation:isolate;min-height:100vh;padding:clamp(120px,10vw,170px) 0 clamp(64px,5vw,90px);
+  background:radial-gradient(ellipse 50% 40% at 50% 20%,#123a6a55,transparent 70%),linear-gradient(180deg,#05162d 0%,#06203d 55%,#041a33 100%)}
+/* Arcos de luz cian, en CSS */
+.arco{position:absolute;z-index:-1;border-radius:50%;pointer-events:none}
+.arco-1{left:-30vw;top:16vw;width:80vw;height:60vw;border-top:2px solid #4fd8ff;box-shadow:0 -24px 60px -24px #2fd0ff99;transform:rotate(-8deg);
+  -webkit-mask-image:linear-gradient(to right,#000 30%,transparent 75%);mask-image:linear-gradient(to right,#000 30%,transparent 75%)}
+.arco-2{right:-26vw;top:5vw;width:62vw;height:62vw;border-left:2px solid #4fd8ff;box-shadow:-24px 0 60px -24px #2fd0ff99;
+  -webkit-mask-image:linear-gradient(to bottom,#000 20%,transparent 70%);mask-image:linear-gradient(to bottom,#000 20%,transparent 70%)}
+.arco-3{left:-10vw;bottom:-36vw;width:120vw;height:50vw;border-top:2px solid #2fb8e6;box-shadow:0 -20px 60px -20px #2fd0ff66;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 30%,#000 70%,transparent);mask-image:linear-gradient(to right,transparent,#000 30%,#000 70%,transparent)}
+
+.contacto-cabeza{text-align:center}
+.chip{display:inline-block;padding:10px 26px;border:1px solid #9fc4ff40;border-radius:999px;background:linear-gradient(120deg,#9fc4ff1c,#ffffff08);color:#e3ecf8;font-size:clamp(11px,.86vw,15px);font-weight:500;letter-spacing:.24em}
+.contacto-cabeza h1{margin-top:clamp(16px,1.4vw,26px);font-size:clamp(36px,4.1vw,74px);font-weight:600;line-height:1.08;letter-spacing:-.015em}
+.contacto-cabeza h1 span{background:linear-gradient(90deg,#2fd0ff,#5de8d4);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.contacto-cabeza p{max-width:none;margin:12px auto 0;color:#d4deec;font-size:clamp(15px,1.3vw,23px);line-height:1.45}
+
+.contacto-grid{display:grid;grid-template-columns:minmax(0,.66fr) minmax(0,1.14fr);gap:clamp(16px,1.3vw,24px);width:min(1380px,100% - 48px);margin:clamp(40px,4.2vw,72px) auto 0}
+.vidrio{border:1px solid #b4d0e559;border-radius:clamp(22px,2vw,34px);background:linear-gradient(135deg,#8db0d02e,#2b435b4d 35%,#1b3045a8 70%,#7e9fbd2b);
+  box-shadow:inset 1px 2px 10px #deefff1f,0 20px 50px #02091640;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.tarjeta{padding:clamp(26px,2.4vw,44px) clamp(24px,2.6vw,46px)}
+.tarjeta h2{display:flex;align-items:center;gap:16px;margin-bottom:clamp(22px,2vw,34px);font-size:clamp(22px,1.75vw,30px);font-weight:600;letter-spacing:-.01em}
+.tarjeta h2 svg{width:clamp(28px,2.2vw,38px);height:auto;color:#5fd4ff}
+
+.datos-contacto{display:grid;gap:clamp(18px,1.4vw,24px);margin:0;padding:0;list-style:none}
+.datos-contacto li{display:flex;align-items:center;gap:clamp(16px,1.9vw,32px)}
+.dc-ico{display:grid;flex:none;place-items:center;width:clamp(52px,4vw,68px);height:clamp(52px,4vw,68px);border:1px solid #b7d9f340;border-radius:16px;background:linear-gradient(135deg,#a4c8ed40,#35577733);color:#e8f6ff}
+.dc-ico svg{width:46%;height:46%}
+.datos-contacto small{display:block;color:#c9d6e6;font-size:clamp(13px,.98vw,17px)}
+.datos-contacto a,.datos-contacto strong{display:block;margin-top:2px;color:#fff;font-size:clamp(16px,1.3vw,22px);font-weight:500;word-break:break-word}
+.datos-contacto a:hover{color:#62dfff}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:12px;width:max-content;max-width:100%;min-height:clamp(50px,3.6vw,60px);margin:clamp(26px,2.4vw,40px) auto 0;padding:0 clamp(22px,2vw,34px);
+  border:1.5px solid #62dfffaa;border-radius:999px;background:linear-gradient(135deg,#2fd0ff33,#1d6fa833);box-shadow:inset 0 0 16px #62dfff33,0 0 22px #2fd0ff33;color:#fff;font-size:clamp(15px,1.15vw,20px);font-weight:600;transition:transform .2s,background-color .2s}
+.btn-wa:hover{transform:translateY(-2px);background-color:#2fd0ff1f}
+.btn-wa svg{width:1.3em;height:1.3em}
+
+/* Formulario */
+.form-contacto{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1vw,18px)}
+.campo{display:flex;flex-direction:column;gap:6px}
+.campo.ancho{grid-column:1/-1}
+.campo label{color:#cfdbea;font-size:13.5px;font-weight:500}
+.campo input,.campo select,.campo textarea{width:100%;min-height:clamp(48px,3.4vw,56px);padding:0 18px;border:1px solid #b4d0e54d;border-radius:14px;background:#ffffff0d;color:#fff;font:inherit;font-size:16px;transition:border-color .2s,background-color .2s}
+.campo textarea{min-height:110px;padding:14px 18px;resize:vertical}
+.campo select{appearance:none;-webkit-appearance:none;padding-right:44px;background:#ffffff0d url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e3ecf8' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right 16px center/18px no-repeat}
+.campo select option{background:#0c2340;color:#fff}
+.campo input::placeholder,.campo textarea::placeholder{color:#a9bad0}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:#62dfff;background-color:#62dfff12}
+.campo [aria-invalid="true"]{border-color:#ff8a9a}
+.trampa{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.acepto{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px;color:#cfdbea;font-size:14px;line-height:1.5}
+.acepto input{flex:none;width:18px;height:18px;margin-top:2px;accent-color:#2fd0ff}
+.acepto a{color:#7fe3ff;text-decoration:underline}
+.enviar{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:10px;justify-self:center;min-width:min(300px,100%);min-height:clamp(50px,3.6vw,60px);margin-top:6px;padding:0 34px;border:0;border-radius:999px;
+  background:linear-gradient(90deg,#7ef0d8,#45d6f5);color:#05213a;font-size:clamp(15px,1.15vw,20px);font-weight:600;box-shadow:0 10px 30px #2fd0ff40;transition:transform .2s,box-shadow .2s}
+.enviar:hover{transform:translateY(-2px);box-shadow:0 14px 36px #2fd0ff66}
+.enviar:disabled{opacity:.6;cursor:default;transform:none}
+.enviar svg{width:1.1em;height:1.1em}
+.estado{grid-column:1/-1;min-height:1.4em;text-align:center;font-size:15px;line-height:1.5}
+.estado.ok{color:#7ef0c8}
+.estado.error{color:#ffb3bf}
+.estado a{color:#7fe3ff;font-weight:600;text-decoration:underline}
+
+/* Pie compacto */
+.pie-compacto{border-top:1px solid #aec8df1f;background:#04152b;padding:26px 0}
+.pie-compacto .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 28px;width:min(1380px,100% - 48px)}
+.pie-marca{display:flex;align-items:center;gap:22px;color:#d0dbea;font-size:15px}
+.pie-marca .logo{width:150px}
+.pie-marca span{padding-left:22px;border-left:1px solid #aec8df40}
+.pie-enlaces{display:flex;flex-wrap:wrap;align-items:center;gap:0;font-size:15px}
+.pie-enlaces a{padding:4px 22px;color:#d6e1f0;transition:color .2s}
+.pie-enlaces a+a{border-left:1px solid #aec8df40}
+.pie-enlaces a:hover{color:#62dfff}
+.pie-copy{width:100%;color:#8fa3bf;font-size:13px}
+
+@media(max-width:900px){
+  .contacto-grid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .contacto-main{padding:104px 0 56px}
+  .chip{letter-spacing:.16em;padding:8px 18px}
+  .contacto-cabeza{padding:0 20px}
+  .contacto-cabeza h1{font-size:clamp(32px,9vw,44px)}
+  .contacto-cabeza p{font-size:16px}
+  .contacto-grid{width:calc(100% - 32px)}
+  .form-contacto{grid-template-columns:1fr}
+  .btn-wa{width:100%}
+  .enviar{width:100%}
+  .pie-marca span{display:none}
+  .pie-enlaces a{padding:4px 12px}
+  .pie-enlaces a:first-child{padding-left:0}
+  .pie-compacto{padding-bottom:96px}
+}
+.datos-contacto li:last-child strong{font-size:clamp(14px,1.02vw,18px)}
+.campo select:invalid,.campo select option[value=""]{color:#a9bad0}
+.arco-1,.arco-2,.arco-3{border-width:3px}
+.arco-1{box-shadow:0 -30px 80px -26px #2fd0ffaa}
+.arco-2{box-shadow:-30px 0 80px -26px #2fd0ffaa}
