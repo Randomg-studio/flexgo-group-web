@@ -71,3 +71,32 @@
   window.addEventListener('resize', ajustar);
   if ('ResizeObserver' in window) new ResizeObserver(ajustar).observe(p.parentElement);
 })();
+
+// Ejemplos: avanzan solos cada 3,5 s; se pausan con el cursor, el dedo o el teclado, y respetan «reducir movimiento».
+(() => {
+  const g = document.querySelector('.examples');
+  if (!g) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let pausa = false;
+  let hasta = 0;
+  const paso = () => {
+    const t = g.querySelector('.example');
+    return t ? t.getBoundingClientRect().width + parseFloat(getComputedStyle(g).columnGap || 16) : g.clientWidth / 3;
+  };
+  const avanzar = () => {
+    if (pausa || Date.now() < hasta || document.hidden) return;
+    const r = g.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    const fin = g.scrollLeft + g.clientWidth >= g.scrollWidth - 4;
+    g.scrollTo({ left: fin ? 0 : g.scrollLeft + paso(), behavior: 'smooth' });
+  };
+  setInterval(avanzar, 3500);
+  const parar = () => { pausa = true; };
+  const seguir = () => { pausa = false; };
+  g.addEventListener('mouseenter', parar);
+  g.addEventListener('mouseleave', seguir);
+  g.addEventListener('focusin', parar);
+  g.addEventListener('focusout', seguir);
+  g.addEventListener('touchstart', () => { hasta = Date.now() + 6000; }, { passive: true });
+  document.querySelectorAll('.arrow').forEach((b) => b.addEventListener('click', () => { hasta = Date.now() + 6000; }));
+})();

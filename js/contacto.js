@@ -82,9 +82,28 @@
     decir('Enviando…');
     try {
       if (!D.kivo || !D.kivo.clave) throw new Error('sin conexión');
-      const conv = await rpc('chat_visitante_abrir', { p_nombre: d.nombre.slice(0, 80), p_contacto: (d.whatsapp || d.correo).slice(0, 120), p_origen: 'flexgo' });
-      const texto = `Formulario de contacto · flexgogroup.com\n${resumen(d).split('\n').slice(1).join('\n')}\nAceptó la política de privacidad (Ley 29733).`;
-      await rpc('chat_enviar', { p_conv: conv.id, p_texto: texto.slice(0, 1900), p_token: conv.token });
+      // 1) Bandeja de interesados de la consola (R-132): guarda el mensaje y avisa por correo.
+      let guardado = false;
+      try {
+        const r = await fetch(`${D.kivo.url}/rest/v1/rpc/contacto_web_enviar`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', apikey: D.kivo.clave, Authorization: `Bearer ${D.kivo.clave}` },
+          body: JSON.stringify({ p: { nombre: d.nombre, correo: d.correo, whatsapp: d.whatsapp, empresa: d.empresa, servicio: d.servicio, mensaje: d.mensaje, sitio: f.web.value } }),
+        });
+        if (r.ok) guardado = true;
+        else if (r.status === 400) {
+          const j = await r.json().catch(() => ({}));
+          decir(j.message || 'Revisa los datos del formulario.', 'error');
+          return;
+        }
+        // 404 (todavía no instalada) u otro error: se usa el canal de respaldo.
+      } catch { /* sin red: se prueba el respaldo */ }
+      // 2) Respaldo: bandeja de atención de Logrin (la de los chats de Kivo).
+      if (!guardado) {
+        const conv = await rpc('chat_visitante_abrir', { p_nombre: d.nombre.slice(0, 80), p_contacto: (d.whatsapp || d.correo).slice(0, 120), p_origen: 'flexgo' });
+        const texto = `Formulario de contacto · flexgogroup.com\n${resumen(d).split('\n').slice(1).join('\n')}\nAceptó la política de privacidad (Ley 29733).`;
+        await rpc('chat_enviar', { p_conv: conv.id, p_texto: texto.slice(0, 1900), p_token: conv.token });
+      }
       try { localStorage.setItem(CLAVE, String(Date.now())); } catch {}
       form.reset();
       decir('¡Listo! Recibimos tu mensaje y te responderemos pronto. Si es urgente,', 'ok', linkWa(resumen(d), 'escríbenos por WhatsApp'));
