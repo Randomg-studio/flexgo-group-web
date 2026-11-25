@@ -1,0 +1,35 @@
+/* Pie común a todo flexgogroup.com (modelo: el pie de Kivo). Misma distribución y tamaños; cada página solo cambia su acento. */
+.pie{--p-fondo:#071229;--p-linea:#8b9bd02e;--p-texto:#c9d2e6;--p-tenue:#8f9bbb;--p-acento:#00e5f4;
+  border-top:1px solid var(--p-linea);background:linear-gradient(180deg,#0a0e2a,var(--p-fondo));padding:64px 0 32px;color:var(--p-texto);
+  font-family:"Barra",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14.5px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.pie[data-tema="kivo"]{--p-fondo:#080b23}
+.pie[data-tema="creago"]{--p-fondo:#0b0719;--p-linea:#c9b2ff26;--p-texto:#ddd5ee;--p-tenue:#9a8fb6;--p-acento:#fc0883}
+.pie[data-tema="nosotros"]{--p-fondo:#04152b;--p-linea:#9fc4ff24;--p-acento:#2fe0f2}
+.pie a{color:inherit;text-decoration:none}
+.pie-in{width:min(1200px,100% - 48px);margin-inline:auto}
+.pie-grid{display:grid;grid-template-columns:1.3fr .8fr .9fr 1.2fr;gap:48px}
+.pie-marca{padding-right:24px;border-right:1px solid var(--p-linea)}
+.pie-marca img{display:block;width:140px;height:auto;margin-bottom:16px}
+.pie-marca p{display:flex;align-items:center;gap:8px;margin:0 0 10px}
+.pie-marca svg{width:17px;height:17px;flex:none}
+.pie-redes{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.pie-redes a{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border:1px solid color-mix(in srgb,var(--p-texto) 35%,transparent);border-radius:999px;font-size:13px;white-space:nowrap;transition:border-color .2s,color .2s}
+.pie-redes a:hover{border-color:var(--p-acento);color:#fff}
+.pie-redes svg{width:15px;height:15px}
+.pie-col{display:flex;flex-direction:column;gap:12px}
+.pie-col h2{margin:0 0 6px;color:var(--p-tenue);font-family:inherit;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.pie-col a{display:flex;align-items:center;gap:10px;transition:color .2s}
+.pie-col a:hover{color:var(--p-acento)}
+.pie-col svg{width:17px;height:17px;flex:none;color:var(--p-tenue)}
+.pie-copy{margin:48px 0 0;padding-top:24px;border-top:1px solid var(--p-linea);color:var(--p-tenue);font-size:13px}
+@media(max-width:1080px){
+  .pie-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px}
+  .pie-marca{grid-column:1/-1;padding:0 0 28px;border-right:0;border-bottom:1px solid var(--p-linea)}
+}
+@media(max-width:760px){
+  .pie{padding:48px 0 104px}
+  .pie-in{width:calc(100% - 40px)}
+  .pie-grid{gap:32px 20px}
+  .pie-col:last-child{grid-column:1/-1}
+  .pie-copy{margin-top:36px}
+}

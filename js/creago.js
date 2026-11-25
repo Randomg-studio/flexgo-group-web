@@ -39,6 +39,7 @@
 
   const boton = $('.menu-toggle');
   const menu = $('#menu');
+  if (!boton || !menu) return; // la barra común usa js/barra.js
   const abrirMenu = (si) => {
     menu.classList.toggle('open', si);
     boton.setAttribute('aria-expanded', String(si));

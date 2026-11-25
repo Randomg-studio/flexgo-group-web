@@ -1,0 +1,45 @@
+/* Barra de navegación común a todo flexgogroup.com (modelo: la barra de Kivo).
+   Misma altura, letra, tamaños y espacios en todas las páginas; cada página solo cambia sus colores con data-tema. */
+@font-face{font-family:"Barra";font-weight:300 700;font-style:normal;font-display:swap;src:url("../assets/fuentes/SpaceGrotesk-var.woff2") format("woff2")}
+:root{--header-height:72px}
+.barra{--b-fondo:#071529e6;--b-linea:#8b9bd022;--b-texto:#d5dcef;--b-acento:#00e5f4;--b-cta-texto:#04101e;--b-panel:#0c1230f7;
+  position:sticky;top:0;z-index:40;background:var(--b-fondo);border-bottom:1px solid var(--b-linea);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);font-family:"Barra",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.barra[data-tema="kivo"]{--b-fondo:#080b23e6}
+.barra[data-tema="creago"]{--b-fondo:#120a26e6;--b-linea:#c9b2ff26;--b-texto:#e9e3f7;--b-acento:#fc0883;--b-cta-texto:#fff;--b-panel:#1a0e36f7}
+.barra[data-tema="nosotros"]{--b-fondo:#04162fe6;--b-linea:#9fc4ff24;--b-texto:#e3eaf5;--b-acento:#2fe0f2;--b-panel:#0c2340f7}
+.barra-in{display:flex;align-items:center;justify-content:space-between;gap:24px;width:min(1200px,100% - 48px);height:var(--header-height);margin-inline:auto}
+.barra-logo{display:block;flex:none}
+.barra-logo img{display:block;width:150px;height:auto}
+.barra-nav{display:flex;align-items:center;gap:32px;font-size:15px;font-weight:400;color:var(--b-texto);white-space:nowrap}
+.barra-nav>a{position:relative;display:inline-flex;align-items:center;min-height:44px;color:var(--b-texto);text-decoration:none;transition:color .2s}
+.barra-nav>a:hover{color:var(--b-acento)}
+.barra-nav>a[aria-current]{color:var(--b-acento)}
+.barra-nav>a[aria-current]::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;border-radius:2px;background:var(--b-acento);box-shadow:0 0 10px var(--b-acento)}
+.barra .ms{--ms-acento:var(--b-acento)}
+.barra .ms-boton{color:var(--b-texto);font-size:15px;font-weight:400;font-family:inherit}
+.barra .ms-boton:hover,.barra .ms.abierto .ms-boton,.barra .ms.ms-actual .ms-boton{color:var(--b-acento)}
+.barra .ms.ms-actual:not(.ms-movil) .ms-boton::after{bottom:6px;height:2px}
+.barra-cta{display:inline-flex;flex:none;align-items:center;gap:8px;min-height:40px;padding:0 18px;border-radius:999px;background:var(--b-acento);color:var(--b-cta-texto);
+  font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;box-shadow:0 6px 22px color-mix(in srgb,var(--b-acento) 30%,transparent);transition:transform .2s,box-shadow .2s}
+.barra-cta:hover{transform:translateY(-1px);box-shadow:0 8px 28px color-mix(in srgb,var(--b-acento) 45%,transparent)}
+.barra-cta svg{width:17px;height:17px}
+.barra-menu{display:none}
+
+@media(max-width:900px){
+  :root{--header-height:64px}
+  .barra-in{width:calc(100% - 32px);gap:12px}
+  .barra-logo img{width:124px}
+  .barra-cta{margin-left:auto;min-height:38px;padding:0 14px;font-size:13px}
+  .barra-menu{display:grid;place-items:center;align-content:center;gap:5px;flex:none;width:42px;height:40px;padding:0;border:1px solid #ffffff2e;border-radius:10px;background:#ffffff0a;cursor:pointer}
+  .barra-menu span{display:block;width:18px;height:2px;border-radius:2px;background:#e8eef8;transition:transform .2s,opacity .2s}
+  .barra.abierta .barra-menu span:first-child{transform:translateY(3.5px) rotate(45deg)}
+  .barra.abierta .barra-menu span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+  .barra-nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;max-height:calc(100dvh - var(--header-height));overflow:auto;
+    padding:12px 20px 20px;background:var(--b-panel);border-bottom:1px solid var(--b-linea);box-shadow:0 16px 35px #05122480;font-size:16px;white-space:normal}
+  .barra.abierta .barra-nav{display:flex}
+  .barra-nav>a{padding:4px 8px}
+  .barra-nav>a[aria-current]::after{left:8px;right:auto;width:30px;bottom:4px}
+  .barra .ms-boton{font-size:16px}
+}
+@media(max-width:360px){.barra-cta span{display:none}.barra-cta{padding:0 12px}}

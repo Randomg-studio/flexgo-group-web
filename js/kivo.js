@@ -6,6 +6,7 @@
 
   const boton = document.querySelector('.menu-toggle');
   const menu = document.getElementById('navlinks');
+  if (!boton || !menu) return; // la barra común usa js/barra.js
   const abrir = (si) => {
     menu.classList.toggle('open', si);
     boton.setAttribute('aria-expanded', String(si));

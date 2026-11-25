@@ -11,15 +11,6 @@
   });
   const anio = $('#anio');
   if (anio) anio.textContent = new Date().getFullYear();
-  const nav = $('#primary-nav');
-  const menu = $('.menu-toggle');
-  if (!nav || !menu) return;
-  const abrir = (si) => {
-    nav.classList.toggle('is-open', si);
-    menu.setAttribute('aria-expanded', String(si));
-    menu.setAttribute('aria-label', si ? 'Cerrar menú' : 'Abrir menú');
-  };
-  menu.addEventListener('click', () => abrir(!nav.classList.contains('is-open')));
-  document.addEventListener('pointerdown', (e) => { if (!e.target.closest('.site-header')) abrir(false); });
+  // El menú lo maneja js/barra.js (barra común de todo el sitio).
   $$('[data-open-chat]').forEach((b) => b.addEventListener('click', () => $('#chat-boton')?.click()));
 })();
