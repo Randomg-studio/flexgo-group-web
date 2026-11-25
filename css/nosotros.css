@@ -1,11 +1,15 @@
 /* Nosotros · estilo «liquid glass» del diseño del usuario (24-nov-2026).
    Mismo criterio que Kivo: secciones a 112 px (72 px en celular), pesos 400, 500 y 600. */
-@font-face{font-family:"Space Grotesk";font-weight:300 700;font-style:normal;font-display:swap;src:url("../assets/fuentes/SpaceGrotesk-var.woff2") format("woff2")}
+@font-face{font-family:"Poppins";font-weight:400;font-style:normal;font-display:swap;src:url("../assets/fuentes/Poppins-400.woff2") format("woff2")}
+@font-face{font-family:"Poppins";font-weight:500;font-style:normal;font-display:swap;src:url("../assets/fuentes/Poppins-500.woff2") format("woff2")}
+@font-face{font-family:"Poppins";font-weight:600;font-style:normal;font-display:swap;src:url("../assets/fuentes/Poppins-600.woff2") format("woff2")}
+@font-face{font-family:"Poppins";font-weight:700;font-style:normal;font-display:swap;src:url("../assets/fuentes/Poppins-700.woff2") format("woff2")}
+
 :root{color-scheme:dark;--tinta:#f2f6fc;--suave:#c9d4e4;--tenue:#94a6c0;--cian:#8dd9f5;--brillo:#62dfff;--seccion:112px;--ancho:1200px;
   --vidrio:linear-gradient(125deg,#8db0d040,#2b435b80 30%,#1b3045b8 64%,#7e9fbd3d);--borde-vidrio:#b4d0e566}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:#0b192b;color:var(--tinta);font:400 16px/1.6 "Space Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#0b192b;color:var(--tinta);font:400 16px/1.6 "Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer}
 a:focus-visible,button:focus-visible{outline:2px solid #9ae7ff;outline-offset:3px;border-radius:8px}
@@ -233,3 +237,55 @@ main{position:relative;overflow:hidden;isolation:isolate;
 
 .panel .linea{margin-inline:auto}
 .chips li{text-align:left}
+
+/* ===== Ajuste según la referencia del usuario (24-nov): héroe centrado con montañas y planeta ===== */
+.header{position:fixed;top:clamp(8px,.72vw,14px);left:0;right:0;z-index:30;padding:0 20px;background:none;border:0;-webkit-backdrop-filter:none;backdrop-filter:none;pointer-events:none}
+.nav{pointer-events:auto;width:min(86vw,1440px);height:clamp(58px,3.95vw,72px);padding:0 clamp(8px,.6vw,12px) 0 clamp(20px,2vw,36px);border:1px solid #9fc4ff38;border-radius:999px;
+  background:linear-gradient(120deg,#9fc4ff1c,#ffffff08 50%,#62dfff12);box-shadow:inset 0 1px 0 #ffffff1f,0 14px 40px #00081c66;-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%)}
+.nav .glass-btn{border-color:#62dfffaa;background:linear-gradient(135deg,#62dfff26,#2f6dff1f);box-shadow:inset 0 0 14px #62dfff33,0 0 20px #62dfff40}
+.hero{overflow:hidden;padding:0;background:radial-gradient(ellipse 46% 26% at 50% 66%,#4f6f9a73,transparent 70%),linear-gradient(180deg,#021631 0%,#03203f 60%,#041f3f 100%)}
+.hero::before{display:none}
+.hero::after{height:30%;background:linear-gradient(transparent,#041f3f)}
+.fondo-izq,.fondo-der{position:absolute;z-index:-1;top:4.9vw;height:auto;pointer-events:none}
+.fondo-izq{left:0;width:31.1vw;-webkit-mask-image:linear-gradient(to right,#000 55%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 12%,#000 80%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,#000 55%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 12%,#000 80%,transparent);mask-composite:intersect}
+.fondo-der{right:0;width:30.3vw;-webkit-mask-image:linear-gradient(to left,#000 60%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 10%,#000 80%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to left,#000 60%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 10%,#000 80%,transparent);mask-composite:intersect}
+.hero h1 span{background:none;-webkit-text-fill-color:#2fe0f2;color:#2fe0f2}
+.datos{background:linear-gradient(115deg,#7fb6ff2e,#1d4a7a38 30%,#16406640 70%,#8cc8ff33)}
+.dato-ico{background:none;color:#62dfff}
+.dato strong{font-weight:600}
+main{background:radial-gradient(ellipse at 4% 55%,#2a4f8a33 0%,transparent 30%),radial-gradient(ellipse at 92% 70%,#1c4b6e40 0%,transparent 40%),linear-gradient(180deg,#041f3f 0,#03203f 900px,#05192f 100%)}
+@media(min-width:761px){
+  .hero{padding:6.9vw 24px 7.4vw}
+  .eyebrow{margin-bottom:1.1vw;font-size:clamp(11px,.86vw,15px);font-weight:500;letter-spacing:.32em}
+  .hero h1{max-width:none;font-size:clamp(36px,3.15vw,58px);font-weight:600;line-height:1.05;letter-spacing:-.01em;color:#fff}
+  .hero .lead{max-width:41vw;margin:1.3vw 0 1.3vw;font-size:clamp(15px,1.08vw,19px);line-height:1.35;color:#d8e2f0}
+  .hero .glass-btn{min-height:clamp(42px,2.9vw,54px);padding:0 1.8vw;font-size:clamp(14px,.98vw,17px)}
+  .datos{width:71.7vw;max-width:1340px;margin-top:-4.6vw;padding:.95vw .6vw;border-radius:1.6vw}
+  .dato{justify-content:center;gap:1.3vw;padding:.2vw 1vw}
+  .dato-ico{width:auto;height:auto}
+  .dato-ico svg{width:2.2vw;height:2.2vw;min-width:26px;min-height:26px}
+  .dato strong{font-size:clamp(18px,1.55vw,28px);line-height:1.1}
+  .dato small{font-size:clamp(11px,.78vw,14px);color:#d6e1f0;white-space:nowrap}
+  .soluciones{padding-top:1.7vw}
+  .linea{width:3.7vw;margin-bottom:1.2vw}
+  .titulo{font-size:clamp(28px,2.5vw,46px);font-weight:600;letter-spacing:-.01em}
+  .intro{max-width:none;margin-top:.6vw;font-size:clamp(14px,.98vw,17px);color:#d2dcea}
+  .soluciones .wrap{width:83vw;max-width:1560px}
+  .grid{gap:1.3vw;margin-top:2.3vw}
+  .card{min-height:14.9vw;padding:1vw 2.6vw 1.4vw;border-radius:2vw}
+  .card-ico{width:3vw;height:3vw;min-width:40px;min-height:40px;border-radius:.8vw}
+  .card h3{margin:.6vw 0 .5vw;font-size:clamp(17px,1.45vw,26px);font-weight:600}
+  .card p{margin-bottom:1.2vw;font-size:clamp(13px,.92vw,16px);line-height:1.3;color:#dbe4f0}
+  .card .glass-btn{min-height:clamp(34px,2.2vw,42px);font-size:clamp(13px,.9vw,16px)}
+}
+@media(max-width:760px){
+  .header{padding:0 12px}
+  .nav{width:100%;height:60px}
+  .hero{padding:104px 20px 96px}
+  .fondo-izq{width:70vw;top:56px;opacity:.8}
+  .fondo-der{width:70vw;top:56px}
+  .hero h1 br{display:none}
+  .hero h1 span{display:inline}
+  .hero h1{font-weight:600;letter-spacing:-.01em}
+  .acciones{max-width:340px}
+}
