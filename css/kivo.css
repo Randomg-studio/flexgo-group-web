@@ -243,3 +243,4 @@ main{position:relative;isolation:isolate;background:var(--fondo) url("../assets/
 @media(max-width:720px){.kivo-chat{right:0;bottom:0;width:100vw;max-height:100dvh;height:100dvh;border-radius:0}}
 [hidden]{display:none!important}
 
+.ico-wa{width:1.15em;height:1.15em;flex:none;vertical-align:-.15em}
