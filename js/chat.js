@@ -9,9 +9,19 @@
   const texto = $('#chat-texto');
   const GUARDADO = 'kivo-chat';
   let saludado = false;
-  let pendiente = null;
-  let pidiendoNombre = false;
   let consulta = null;
+
+  // R-139: el nombre sale del mismo mensaje si la persona lo dice, aunque tenga faltas
+  // («mi nombre ed Ana», «me yamo Ana», «hola soy Ana Ruiz»). Si no lo dice, Kivo responde igual y lo pide solo si hace falta.
+  const NO_NOMBRE = /^(de|del|la|el|los|las|un|una|y|e|o|q|que|quiero|quisiera|tengo|busco|necesito|para|con|por|me|te|mi|tu|su|nuevo|nueva|dueñ[oa]|cliente|estudiante|emprendedor[a]?|interesad[oa]|alguien|yo|aqui|aquí|acá|aca|hola)$/i;
+  const nombreDe = (t) => {
+    const m = String(t).match(/(?:^|[\s,.!¡¿?])(?:me\s+llamo|me\s+yamo|mi\s+nombre\s+(?:es|ed|e|s)|mi\s+nombre|soy|habla|te\s+escribe)\s*[:,-]?\s+([\p{L}'-]+(?:\s+[\p{L}'-]+)?)/iu);
+    if (!m) return '';
+    const p = m[1].split(/\s+/);
+    const ok = [];
+    for (const w of p) { if (NO_NOMBRE.test(w) || w.length < 2) break; ok.push(w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()); }
+    return ok.join(' ').slice(0, 60);
+  };
   let desde = 0;
   let escribiendo = null;
 
@@ -183,28 +193,6 @@
   const responder = async (t) => {
     pinta(t, { yo: true });
 
-    if (pidiendoNombre) {
-      // «Hola, soy Ana», «me llamo Ana Pérez», «Mi nombre es: Ana» → «Ana» / «Ana Pérez».
-      const nombre = t.trim()
-        .replace(/^(hola|holi|buenas( tardes| noches| d[ií]as)?|buen d[ií]a|qu[eé] tal)[\s,!.¡:;-]*/i, '')
-        .replace(/^(yo\s+soy|soy|me\s+llamo|mi\s+nombre\s+es|ac[aá]\s+(te\s+)?(habla|escribe))[\s,:;-]*/i, '')
-        .split(/[,.;!?\n]/)[0]
-        .replace(/[^\p{L}\s'-]/gu, '')
-        .trim()
-        .split(/\s+/).slice(0, 3).join(' ')
-        .slice(0, 60);
-      if (nombre.length < 2) {
-        pinta('¿Me dices tu nombre? Con eso empiezo.');
-        return;
-      }
-      pidiendoNombre = false;
-      consulta = { nombre };
-      pinta(`Gracias, ${nombre.split(' ')[0]}. Déjame ver…`);
-      enviarAKivo(pendiente);
-      pendiente = null;
-      return;
-    }
-
     if (conv) {
       enviarAKivo(t);
       return;
@@ -214,9 +202,9 @@
       responderSinKivo(t);
       return;
     }
-    pendiente = t;
-    pidiendoNombre = true;
-    pinta('Para ayudarte mejor, ¿cómo te llamas? 🙂');
+    // R-139: no se frena la pregunta para pedir el nombre: Kivo responde primero.
+    consulta = { nombre: nombreDe(t) || 'Visitante' };
+    enviarAKivo(t);
   };
 
   ['¿Qué servicios ofrecen?', '¿Puedo probar Logrin Negocio gratis?', '¿Cuánto cuestan sus servicios?', '¿Cómo los contacto y cuál es su horario?'].forEach((t) => {

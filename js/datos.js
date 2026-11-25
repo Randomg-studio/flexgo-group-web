@@ -67,7 +67,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué son los Agentes de IA?',
-    r: 'Son asistentes con inteligencia artificial que pueden conversar con tus clientes y apoyar tareas de tu negocio, siempre con la opción de pasar con una persona. Este servicio está en preparación.',
+    r: 'Es Kivo Agentes: un agente de IA que atiende a tus clientes por WhatsApp, tu web, Messenger e Instagram, toma pedidos y citas y califica a cada interesado, siempre con la opción de pasar con una persona. Planes desde S/ 149 al mes y puedes probarlo gratis con los datos de tu negocio. Mira los detalles en https://flexgogroup.com/kivo.html',
     c: ['agente', 'agentes', 'chatbot', 'chatbots', 'bot', 'inteligencia artificial', ' ia ', 'whatsapp automatico', 'automatizar'],
   },
   {
@@ -77,7 +77,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Cuánto cuestan sus servicios?',
-    r: 'Los planes de Logrin Negocio se publican en su página. Las soluciones a medida se cotizan según lo que necesites. Escríbenos y te orientamos sin compromiso.',
+    r: 'Kivo Agentes: desde S/ 149 al mes. Mi Mercadito: S/ 14.99 al mes de lanzamiento (antes S/ 47). Páginas web: desde S/ 250, pago único. Logrin Negocio y CreaGo tienen sus planes en su página, y Logrin se prueba 7 días gratis. Las soluciones a medida se cotizan según lo que necesites. Escríbenos y te orientamos sin compromiso.',
     c: ['precio', 'precios', 'costo', 'cuesta', 'cuanto', 'planes', 'cotizar', 'cotizacion', 'tarifa'],
   },
   {
