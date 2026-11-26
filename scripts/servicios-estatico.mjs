@@ -1,0 +1,91 @@
+// Escribe en el HTML el menú «Servicios», la columna Productos del pie y el círculo de la portada
+// a partir de la lista única window.FLEXGO_SERVICIOS de js/datos.js.
+// Uso: node scripts/servicios-estatico.mjs   (después corre: node scripts/revisar-servicios.mjs)
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import vm from 'node:vm';
+
+const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
+export const cargarServicios = () => {
+  const ctx = { window: {} };
+  vm.runInNewContext(readFileSync(join(RAIZ, 'js/datos.js'), 'utf8'), ctx);
+  return ctx.window.FLEXGO_SERVICIOS;
+};
+export const paginas = () => [
+  ...readdirSync(RAIZ).filter((f) => f.endsWith('.html')),
+  ...readdirSync(join(RAIZ, 'legal')).filter((f) => f.endsWith('.html')).map((f) => `legal/${f}`),
+];
+
+const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const externo = (h) => /^https?:/.test(h);
+// Prefijo de rutas según la página: raíz «», legal «../», 404 «/».
+const prefijo = (f) => (f === '404.html' ? '/' : f.startsWith('legal/') ? '../' : '');
+const ruta = (h, f) => {
+  if (externo(h)) return h;
+  if (f === 'index.html' && h.startsWith('index.html#')) return h.slice('index.html'.length);
+  return prefijo(f) + h;
+};
+const SVG_MENU = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">';
+const SVG_ECO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+const img = (s, f, tam, clase = '') => `<img${clase ? ` class="${clase}"` : ''} src="${prefijo(f)}assets/imagenes/logos/${s.logo}" width="${tam}" height="${tam}" alt="" loading="lazy" decoding="async">`;
+
+export const htmlMenu = (S, f) => S.filter((s) => s.menu).map((s) => {
+  const ico = s.logo
+    ? `<span class="ms-ico ms-ico--logo" aria-hidden="true">${img(s, f, 32)}</span>`
+    : `<span class="ms-ico" aria-hidden="true">${SVG_MENU}${s.icono}</svg></span>`;
+  const actual = s.href === f ? ' aria-current="page"' : '';
+  return `<a class="ms-item" href="${esc(ruta(s.href, f))}"${actual}>${ico}<span><strong>${esc(s.nombre)}</strong><small>${esc(s.menu.desc)}</small></span></a>`;
+}).join('');
+
+const BOLSA = '<svg class="pie-logo pie-logo--ico" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">';
+export const htmlPie = (S, f) => S.filter((s) => s.pie).map((s) => {
+  const extra = s.pieNueva ? ' target="_blank" rel="noopener noreferrer"' : '';
+  const ico = s.logo ? img(s, f, 20, 'pie-logo') : `${BOLSA}${s.icono}</svg>`;
+  return `<a href="${esc(ruta(s.href, f))}"${extra}>${ico}${esc(s.nombre)}</a>`;
+}).join('');
+
+const itemEco = (s) => {
+  const e = s.eco;
+  const nombre = e.nombre || s.nombre;
+  const href = e.href || s.href;
+  const ico = s.logo
+    ? `<span class="eco-ico eco-ico--logo"><img src="assets/imagenes/logos/${s.logo}" width="34" height="34" alt="" loading="lazy" decoding="async"></span>`
+    : `<span class="eco-ico">${SVG_ECO}${s.ecoIcono || s.icono}</svg></span>`;
+  const nueva = e.nueva || externo(href) ? ' target="_blank" rel="noopener"' : '';
+  const pronto = s.pronto ? '<em class="eco-pronto">Próximamente</em>' : '';
+  return `<li class="eco-item${s.pronto ? ' es-pronto' : ''}">${ico}<span class="eco-txt"><strong>${esc(nombre)}</strong><small>${esc(e.desc)}</small>${pronto}</span><a class="eco-mas" href="${esc(ruta(href, 'index.html'))}"${nueva} aria-label="${esc(e.aria || `Ver ${nombre}`)}"><span aria-hidden="true">+</span></a></li>`;
+};
+export const htmlEco = (S) => {
+  const lista = S.filter((s) => s.eco);
+  const mitad = Math.ceil(lista.length / 2) - 1; // izquierda: los primeros (productos propios)
+  return [lista.slice(0, mitad).map(itemEco).join(''), lista.slice(mitad).map(itemEco).join('')];
+};
+
+const reemplazar = (s, ini, fin, nuevo, f, que) => {
+  const i = s.indexOf(ini);
+  if (i < 0) return s;
+  const j = s.indexOf(fin, i + ini.length);
+  if (j < 0) throw new Error(`${f}: no encontré el final de ${que}`);
+  return s.slice(0, i + ini.length) + nuevo + s.slice(j);
+};
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const S = cargarServicios();
+  let cambios = 0;
+  for (const f of paginas()) {
+    const p = join(RAIZ, f);
+    const antes = readFileSync(p, 'utf8');
+    let s = antes;
+    s = reemplazar(s, '<div class="ms-panel" id="ms-panel">', '<a class="ms-todos"', htmlMenu(S, f), f, 'el menú');
+    s = s.replace(/<a class="ms-todos" href="[^"]*">/, `<a class="ms-todos" href="${ruta('index.html#servicios', f)}">`);
+    s = reemplazar(s, '<h2>Productos</h2>', '</div>', htmlPie(S, f), f, 'el pie');
+    if (f === 'index.html') {
+      const [izq, der] = htmlEco(S);
+      s = reemplazar(s, '<ul class="eco-lista eco-izq">', '</ul>', izq, f, 'el círculo (izquierda)');
+      s = reemplazar(s, '<ul class="eco-lista eco-der">', '</ul>', der, f, 'el círculo (derecha)');
+    }
+    if (s !== antes) { writeFileSync(p, s); cambios += 1; console.log(`actualizado: ${f}`); }
+  }
+  console.log(`Listo: ${cambios} página(s) actualizada(s) desde FLEXGO_SERVICIOS.`);
+}

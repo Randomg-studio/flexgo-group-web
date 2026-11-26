@@ -137,3 +137,11 @@ body{background:#fff}
 .el-planes-nota{margin-top:22px;color:var(--el-suave)!important;font-size:14.5px}
 .el-faq a{color:var(--el-transicion);font-weight:700}
 @media(max-width:1000px){.el-planes{grid-template-columns:1fr;max-width:460px;margin-inline:auto}}
+/* 26-nov: motores, novedades y gancho de migración */
+.el-ico--emoji{font-size:26px;line-height:1}
+.el-migra{display:flex;align-items:center;gap:14px;margin-top:28px;padding:18px 22px;border:1px solid var(--el-linea);border-radius:16px;background:linear-gradient(120deg,#0756d812,#00bceb14);color:var(--el-marino,#102449);font-size:16px;line-height:1.45;text-decoration:none;transition:border-color .2s,transform .2s}
+.el-migra:hover{border-color:var(--el-cian);transform:translateY(-2px)}
+.el-migra span:first-child{font-size:24px}
+.el-migra span:last-child{margin-left:auto;font-weight:700;color:var(--el-transicion)}
+.el-migra b{display:block}
+@media(max-width:560px){.el-migra{font-size:15px;padding:16px}}
