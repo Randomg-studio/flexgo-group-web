@@ -1,0 +1,2520 @@
+{
+ "version": "2026-11-26",
+ "nota": "Árbol aprobado por el usuario el 26-nov. Fuente única para la web (js/encuesta.js) y para Logrin (encuesta_opciones).",
+ "paginas": {
+  "elio": {
+   "inicio": {
+    "clave": "rama",
+    "titulo": "¿Para qué usarías Elio?",
+    "opciones": [
+     [
+      "estudiar",
+      "Estudiar"
+     ],
+     [
+      "trabajo",
+      "Trabajo"
+     ],
+     [
+      "mi_negocio",
+      "Mi negocio"
+     ],
+     [
+      "organizar_mi_dia",
+      "Organizar mi día"
+     ],
+     [
+      "curiosidad",
+      "Curiosidad"
+     ]
+    ]
+   },
+   "ramas": {
+    "estudiar": [
+     {
+      "clave": "nivel",
+      "titulo": "¿Qué estudias?",
+      "opciones": [
+       [
+        "colegio",
+        "Colegio"
+       ],
+       [
+        "instituto",
+        "Instituto"
+       ],
+       [
+        "universidad",
+        "Universidad"
+       ],
+       [
+        "posgrado",
+        "Posgrado"
+       ]
+      ]
+     },
+     {
+      "clave": "dificultad",
+      "titulo": "¿Qué te cuesta más?",
+      "opciones": [
+       [
+        "investigar",
+        "Investigar"
+       ],
+       [
+        "redactar",
+        "Redactar"
+       ],
+       [
+        "citar_en_apa",
+        "Citar en APA"
+       ],
+       [
+        "entender_temas",
+        "Entender temas"
+       ],
+       [
+        "examenes",
+        "Exámenes"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "no_se_usarlo_bien",
+        "No sé usarlo bien"
+       ],
+       [
+        "las_reglas_de_mi_universidad",
+        "Las reglas de mi universidad"
+       ],
+       [
+        "ya_uso_otra_ia",
+        "Ya uso otra IA"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "trabajo": [
+     {
+      "clave": "area",
+      "titulo": "¿En qué área trabajas?",
+      "opciones": [
+       [
+        "administracion",
+        "Administración"
+       ],
+       [
+        "ventas",
+        "Ventas"
+       ],
+       [
+        "educacion",
+        "Educación"
+       ],
+       [
+        "salud",
+        "Salud"
+       ],
+       [
+        "tecnologia",
+        "Tecnología"
+       ],
+       [
+        "otra",
+        "Otra"
+       ]
+      ]
+     },
+     {
+      "clave": "tarea",
+      "titulo": "¿Qué te quita más tiempo?",
+      "opciones": [
+       [
+        "correos",
+        "Correos"
+       ],
+       [
+        "informes",
+        "Informes"
+       ],
+       [
+        "analisis_de_datos",
+        "Análisis de datos"
+       ],
+       [
+        "presentaciones",
+        "Presentaciones"
+       ],
+       [
+        "reuniones",
+        "Reuniones"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "privacidad_de_mis_datos",
+        "Privacidad de mis datos"
+       ],
+       [
+        "no_se_usarlo_bien",
+        "No sé usarlo bien"
+       ],
+       [
+        "ya_uso_otra_ia",
+        "Ya uso otra IA"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "mi_negocio": [
+     {
+      "clave": "rubro",
+      "titulo": "¿A qué se dedica tu negocio?",
+      "opciones": [
+       [
+        "bodega_o_tienda",
+        "Bodega o tienda"
+       ],
+       [
+        "restaurante_o_comida",
+        "Restaurante o comida"
+       ],
+       [
+        "salud_o_belleza",
+        "Salud o belleza"
+       ],
+       [
+        "educacion",
+        "Educación"
+       ],
+       [
+        "servicios_profesionales",
+        "Servicios profesionales"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "necesita",
+      "titulo": "¿Qué necesitas?",
+      "opciones": [
+       [
+        "ideas",
+        "Ideas"
+       ],
+       [
+        "textos_de_venta",
+        "Textos de venta"
+       ],
+       [
+        "precios_y_costos",
+        "Precios y costos"
+       ],
+       [
+        "atender_clientes",
+        "Atender clientes"
+       ],
+       [
+        "organizarme",
+        "Organizarme"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "no_se_si_me_sirve",
+        "No sé si me sirve"
+       ],
+       [
+        "no_tengo_tiempo",
+        "No tengo tiempo"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "organizar_mi_dia": [
+     {
+      "clave": "que",
+      "titulo": "¿Qué quieres organizar?",
+      "opciones": [
+       [
+        "tareas",
+        "Tareas"
+       ],
+       [
+        "pagos",
+        "Pagos"
+       ],
+       [
+        "citas",
+        "Citas"
+       ],
+       [
+        "estudios",
+        "Estudios"
+       ],
+       [
+        "casa",
+        "Casa"
+       ]
+      ]
+     },
+     {
+      "clave": "como_hoy",
+      "titulo": "¿Cómo lo haces hoy?",
+      "opciones": [
+       [
+        "cuaderno",
+        "Cuaderno"
+       ],
+       [
+        "notas_del_celular",
+        "Notas del celular"
+       ],
+       [
+        "calendario",
+        "Calendario"
+       ],
+       [
+        "no_lo_organizo",
+        "No lo organizo"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "prefiero_mi_cuaderno",
+        "Prefiero mi cuaderno"
+       ],
+       [
+        "no_se_usarlo_bien",
+        "No sé usarlo bien"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "curiosidad": [
+     {
+      "clave": "probar",
+      "titulo": "¿Qué te gustaría probar?",
+      "opciones": [
+       [
+        "aprender_de_ia",
+        "Aprender de IA"
+       ],
+       [
+        "probar_gratis",
+        "Probar gratis"
+       ],
+       [
+        "compararlo_con_chatgpt",
+        "Compararlo con ChatGPT"
+       ],
+       [
+        "crear_contenido",
+        "Crear contenido"
+       ]
+      ]
+     },
+     {
+      "clave": "ia_hoy",
+      "titulo": "¿Qué IA usas hoy?",
+      "opciones": [
+       [
+        "chatgpt",
+        "ChatGPT"
+       ],
+       [
+        "gemini",
+        "Gemini"
+       ],
+       [
+        "claude",
+        "Claude"
+       ],
+       [
+        "copilot",
+        "Copilot"
+       ],
+       [
+        "ninguna",
+        "Ninguna"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "ya_uso_otra_ia",
+        "Ya uso otra IA"
+       ],
+       [
+        "no_se_para_que_me_sirve",
+        "No sé para qué me sirve"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "eleva": {
+   "inicio": {
+    "clave": "rama",
+    "titulo": "¿Qué te gustaría lograr?",
+    "opciones": [
+     [
+      "conseguir_trabajo",
+      "Conseguir trabajo"
+     ],
+     [
+      "mejorar_en_mi_trabajo",
+      "Mejorar en mi trabajo"
+     ],
+     [
+      "emprender",
+      "Emprender"
+     ],
+     [
+      "formar_a_mi_equipo",
+      "Formar a mi equipo"
+     ],
+     [
+      "aprender_por_gusto",
+      "Aprender por gusto"
+     ]
+    ]
+   },
+   "ramas": {
+    "conseguir_trabajo": [
+     {
+      "clave": "area",
+      "titulo": "¿En qué área?",
+      "opciones": [
+       [
+        "tecnologia",
+        "Tecnología"
+       ],
+       [
+        "marketing",
+        "Marketing"
+       ],
+       [
+        "administracion",
+        "Administración"
+       ],
+       [
+        "diseno",
+        "Diseño"
+       ],
+       [
+        "otra",
+        "Otra"
+       ]
+      ]
+     },
+     {
+      "clave": "modo",
+      "titulo": "¿Cómo prefieres aprender?",
+      "opciones": [
+       [
+        "videos_a_mi_ritmo",
+        "Videos a mi ritmo"
+       ],
+       [
+        "clases_en_vivo",
+        "Clases en vivo"
+       ],
+       [
+        "presencial_en_tarapoto",
+        "Presencial en Tarapoto"
+       ],
+       [
+        "mixto",
+        "Mixto"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "el_tiempo",
+        "El tiempo"
+       ],
+       [
+        "que_no_tenga_certificado",
+        "Que no tenga certificado"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "mejorar_en_mi_trabajo": [
+     {
+      "clave": "tema",
+      "titulo": "¿Qué te gustaría aprender?",
+      "opciones": [
+       [
+        "ia_para_mi_trabajo",
+        "IA para mi trabajo"
+       ],
+       [
+        "excel_y_datos",
+        "Excel y datos"
+       ],
+       [
+        "herramientas_digitales",
+        "Herramientas digitales"
+       ],
+       [
+        "comunicacion",
+        "Comunicación"
+       ]
+      ]
+     },
+     {
+      "clave": "tiempo",
+      "titulo": "¿Cuánto tiempo tienes a la semana?",
+      "opciones": [
+       [
+        "menos_de_2_h",
+        "Menos de 2 h"
+       ],
+       [
+        "2_a_5_h",
+        "2 a 5 h"
+       ],
+       [
+        "mas_de_5_h",
+        "Más de 5 h"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "el_tiempo",
+        "El tiempo"
+       ],
+       [
+        "que_no_tenga_certificado",
+        "Que no tenga certificado"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "emprender": [
+     {
+      "clave": "tema",
+      "titulo": "¿Qué necesitas aprender?",
+      "opciones": [
+       [
+        "vender_por_redes",
+        "Vender por redes"
+       ],
+       [
+        "marca_y_diseno",
+        "Marca y diseño"
+       ],
+       [
+        "finanzas",
+        "Finanzas"
+       ],
+       [
+        "ia_para_mi_negocio",
+        "IA para mi negocio"
+       ]
+      ]
+     },
+     {
+      "clave": "etapa",
+      "titulo": "¿Ya tienes negocio?",
+      "opciones": [
+       [
+        "si",
+        "Sí"
+       ],
+       [
+        "estoy_empezando",
+        "Estoy empezando"
+       ],
+       [
+        "todavia_no",
+        "Todavía no"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "el_tiempo",
+        "El tiempo"
+       ],
+       [
+        "no_se_por_donde_empezar",
+        "No sé por dónde empezar"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "formar_a_mi_equipo": [
+     {
+      "clave": "personas",
+      "titulo": "¿Cuántas personas?",
+      "opciones": [
+       [
+        "2_a_5",
+        "2 a 5"
+       ],
+       [
+        "6_a_20",
+        "6 a 20"
+       ],
+       [
+        "mas_de_20",
+        "Más de 20"
+       ]
+      ]
+     },
+     {
+      "clave": "tema",
+      "titulo": "¿En qué tema?",
+      "opciones": [
+       [
+        "ia",
+        "IA"
+       ],
+       [
+        "ventas",
+        "Ventas"
+       ],
+       [
+        "atencion_al_cliente",
+        "Atención al cliente"
+       ],
+       [
+        "herramientas_digitales",
+        "Herramientas digitales"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_presupuesto",
+        "El presupuesto"
+       ],
+       [
+        "la_disponibilidad_del_equipo",
+        "La disponibilidad del equipo"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "aprender_por_gusto": [
+     {
+      "clave": "tema",
+      "titulo": "¿Qué tema te interesa?",
+      "opciones": [
+       [
+        "ia",
+        "IA"
+       ],
+       [
+        "programacion",
+        "Programación"
+       ],
+       [
+        "diseno",
+        "Diseño"
+       ],
+       [
+        "finanzas_personales",
+        "Finanzas personales"
+       ]
+      ]
+     },
+     {
+      "clave": "modo",
+      "titulo": "¿Cómo prefieres aprender?",
+      "opciones": [
+       [
+        "videos_a_mi_ritmo",
+        "Videos a mi ritmo"
+       ],
+       [
+        "clases_en_vivo",
+        "Clases en vivo"
+       ],
+       [
+        "presencial",
+        "Presencial"
+       ],
+       [
+        "mixto",
+        "Mixto"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "el_tiempo",
+        "El tiempo"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "kivo": {
+   "inicio": {
+    "clave": "rama",
+    "titulo": "¿Qué te gustaría que haga Kivo por ti?",
+    "opciones": [
+     [
+      "responder_preguntas",
+      "Responder preguntas"
+     ],
+     [
+      "vender_mas",
+      "Vender más"
+     ],
+     [
+      "agendar_citas",
+      "Agendar citas"
+     ],
+     [
+      "tomar_pedidos",
+      "Tomar pedidos"
+     ],
+     [
+      "hacer_seguimiento",
+      "Hacer seguimiento"
+     ]
+    ]
+   },
+   "ramas": {
+    "responder_preguntas": [
+     {
+      "clave": "rubro",
+      "titulo": "¿A qué se dedica tu negocio?",
+      "opciones": [
+       [
+        "bodega_o_tienda",
+        "Bodega o tienda"
+       ],
+       [
+        "restaurante_o_comida",
+        "Restaurante o comida"
+       ],
+       [
+        "salud_o_belleza",
+        "Salud o belleza"
+       ],
+       [
+        "educacion",
+        "Educación"
+       ],
+       [
+        "servicios_profesionales",
+        "Servicios profesionales"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "mensajes",
+      "titulo": "¿Cuántos mensajes recibes al día?",
+      "opciones": [
+       [
+        "menos_de_20",
+        "Menos de 20"
+       ],
+       [
+        "20_a_100",
+        "20 a 100"
+       ],
+       [
+        "mas_de_100",
+        "Más de 100"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "que_responda_mal",
+        "Que responda mal"
+       ],
+       [
+        "prefiero_atender_yo",
+        "Prefiero atender yo"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "vender_mas": [
+     {
+      "clave": "rubro",
+      "titulo": "¿A qué se dedica tu negocio?",
+      "opciones": [
+       [
+        "bodega_o_tienda",
+        "Bodega o tienda"
+       ],
+       [
+        "restaurante_o_comida",
+        "Restaurante o comida"
+       ],
+       [
+        "salud_o_belleza",
+        "Salud o belleza"
+       ],
+       [
+        "educacion",
+        "Educación"
+       ],
+       [
+        "servicios_profesionales",
+        "Servicios profesionales"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "fuga",
+      "titulo": "¿Dónde se te escapan las ventas?",
+      "opciones": [
+       [
+        "no_respondo_a_tiempo",
+        "No respondo a tiempo"
+       ],
+       [
+        "no_hago_seguimiento",
+        "No hago seguimiento"
+       ],
+       [
+        "no_se_quien_compra",
+        "No sé quién compra"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "que_responda_mal",
+        "Que responda mal"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "agendar_citas": [
+     {
+      "clave": "tipo",
+      "titulo": "¿Qué tipo de citas?",
+      "opciones": [
+       [
+        "salud",
+        "Salud"
+       ],
+       [
+        "belleza",
+        "Belleza"
+       ],
+       [
+        "clases",
+        "Clases"
+       ],
+       [
+        "asesorias",
+        "Asesorías"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "como_hoy",
+      "titulo": "¿Cómo agendas hoy?",
+      "opciones": [
+       [
+        "whatsapp_a_mano",
+        "WhatsApp a mano"
+       ],
+       [
+        "cuaderno",
+        "Cuaderno"
+       ],
+       [
+        "calendario",
+        "Calendario"
+       ],
+       [
+        "otro_sistema",
+        "Otro sistema"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "que_se_cruce_la_agenda",
+        "Que se cruce la agenda"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "tomar_pedidos": [
+     {
+      "clave": "vende",
+      "titulo": "¿Qué vendes?",
+      "opciones": [
+       [
+        "comida",
+        "Comida"
+       ],
+       [
+        "productos",
+        "Productos"
+       ],
+       [
+        "servicios",
+        "Servicios"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "canal",
+      "titulo": "¿Por dónde llegan los pedidos?",
+      "opciones": [
+       [
+        "whatsapp",
+        "WhatsApp"
+       ],
+       [
+        "facebook_o_instagram",
+        "Facebook o Instagram"
+       ],
+       [
+        "llamadas",
+        "Llamadas"
+       ],
+       [
+        "local",
+        "Local"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "que_se_equivoque_en_el_pedido",
+        "Que se equivoque en el pedido"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "hacer_seguimiento": [
+     {
+      "clave": "rubro",
+      "titulo": "¿A qué se dedica tu negocio?",
+      "opciones": [
+       [
+        "bodega_o_tienda",
+        "Bodega o tienda"
+       ],
+       [
+        "restaurante_o_comida",
+        "Restaurante o comida"
+       ],
+       [
+        "salud_o_belleza",
+        "Salud o belleza"
+       ],
+       [
+        "educacion",
+        "Educación"
+       ],
+       [
+        "servicios_profesionales",
+        "Servicios profesionales"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "clientes",
+      "titulo": "¿Cuántos clientes atiendes al mes?",
+      "opciones": [
+       [
+        "menos_de_50",
+        "Menos de 50"
+       ],
+       [
+        "50_a_200",
+        "50 a 200"
+       ],
+       [
+        "mas_de_200",
+        "Más de 200"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "prefiero_hacerlo_yo",
+        "Prefiero hacerlo yo"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "logrin": {
+   "inicio": {
+    "clave": "rama",
+    "titulo": "¿Qué quieres ordenar primero?",
+    "opciones": [
+     [
+      "ventas_y_caja",
+      "Ventas y caja"
+     ],
+     [
+      "inventario",
+      "Inventario"
+     ],
+     [
+      "clientes_y_cobros",
+      "Clientes y cobros"
+     ],
+     [
+      "saber_cuanto_gano",
+      "Saber cuánto gano"
+     ],
+     [
+      "ordenar_a_mi_equipo",
+      "Ordenar a mi equipo"
+     ]
+    ]
+   },
+   "ramas": {
+    "ventas_y_caja": [
+     {
+      "clave": "rubro",
+      "titulo": "¿A qué se dedica tu negocio?",
+      "opciones": [
+       [
+        "bodega_o_tienda",
+        "Bodega o tienda"
+       ],
+       [
+        "restaurante_o_comida",
+        "Restaurante o comida"
+       ],
+       [
+        "salud_o_belleza",
+        "Salud o belleza"
+       ],
+       [
+        "educacion",
+        "Educación"
+       ],
+       [
+        "servicios_profesionales",
+        "Servicios profesionales"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "como_hoy",
+      "titulo": "¿Cómo registras hoy?",
+      "opciones": [
+       [
+        "cuaderno",
+        "Cuaderno"
+       ],
+       [
+        "excel",
+        "Excel"
+       ],
+       [
+        "otro_sistema",
+        "Otro sistema"
+       ],
+       [
+        "no_registro",
+        "No registro"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "aprender_un_sistema_nuevo",
+        "Aprender un sistema nuevo"
+       ],
+       [
+        "no_tengo_tiempo",
+        "No tengo tiempo"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "inventario": [
+     {
+      "clave": "productos",
+      "titulo": "¿Cuántos productos manejas?",
+      "opciones": [
+       [
+        "menos_de_50",
+        "Menos de 50"
+       ],
+       [
+        "50_a_500",
+        "50 a 500"
+       ],
+       [
+        "mas_de_500",
+        "Más de 500"
+       ]
+      ]
+     },
+     {
+      "clave": "como_hoy",
+      "titulo": "¿Cómo controlas hoy?",
+      "opciones": [
+       [
+        "cuaderno",
+        "Cuaderno"
+       ],
+       [
+        "excel",
+        "Excel"
+       ],
+       [
+        "otro_sistema",
+        "Otro sistema"
+       ],
+       [
+        "no_controlo",
+        "No controlo"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "cargar_todos_mis_productos",
+        "Cargar todos mis productos"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "clientes_y_cobros": [
+     {
+      "clave": "credito",
+      "titulo": "¿Vendes al crédito?",
+      "opciones": [
+       [
+        "si_seguido",
+        "Sí, seguido"
+       ],
+       [
+        "a_veces",
+        "A veces"
+       ],
+       [
+        "no",
+        "No"
+       ]
+      ]
+     },
+     {
+      "clave": "cobro",
+      "titulo": "¿Cómo cobras?",
+      "opciones": [
+       [
+        "efectivo",
+        "Efectivo"
+       ],
+       [
+        "yape_o_plin",
+        "Yape o Plin"
+       ],
+       [
+        "transferencia",
+        "Transferencia"
+       ],
+       [
+        "mixto",
+        "Mixto"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "aprender_un_sistema_nuevo",
+        "Aprender un sistema nuevo"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "saber_cuanto_gano": [
+     {
+      "clave": "separa",
+      "titulo": "¿Separas tus gastos de los del negocio?",
+      "opciones": [
+       [
+        "si",
+        "Sí"
+       ],
+       [
+        "no",
+        "No"
+       ],
+       [
+        "a_veces",
+        "A veces"
+       ]
+      ]
+     },
+     {
+      "clave": "revisa",
+      "titulo": "¿Cada cuánto revisas tus números?",
+      "opciones": [
+       [
+        "diario",
+        "Diario"
+       ],
+       [
+        "semanal",
+        "Semanal"
+       ],
+       [
+        "mensual",
+        "Mensual"
+       ],
+       [
+        "casi_nunca",
+        "Casi nunca"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "no_entiendo_de_finanzas",
+        "No entiendo de finanzas"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "ordenar_a_mi_equipo": [
+     {
+      "clave": "personas",
+      "titulo": "¿Cuántas personas trabajan contigo?",
+      "opciones": [
+       [
+        "solo_yo",
+        "Solo yo"
+       ],
+       [
+        "2_a_5",
+        "2 a 5"
+       ],
+       [
+        "mas_de_5",
+        "Más de 5"
+       ]
+      ]
+     },
+     {
+      "clave": "controlar",
+      "titulo": "¿Qué te gustaría controlar?",
+      "opciones": [
+       [
+        "ventas_por_persona",
+        "Ventas por persona"
+       ],
+       [
+        "horarios",
+        "Horarios"
+       ],
+       [
+        "metas",
+        "Metas"
+       ],
+       [
+        "permisos",
+        "Permisos"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "que_mi_equipo_no_lo_use",
+        "Que mi equipo no lo use"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "creago": {
+   "inicio": {
+    "clave": "rama",
+    "titulo": "¿Qué te cuesta más con tus redes?",
+    "opciones": [
+     [
+      "tener_ideas",
+      "Tener ideas"
+     ],
+     [
+      "hacer_disenos",
+      "Hacer diseños"
+     ],
+     [
+      "tiempo_para_publicar",
+      "Tiempo para publicar"
+     ],
+     [
+      "ver_resultados",
+      "Ver resultados"
+     ]
+    ]
+   },
+   "ramas": {
+    "tener_ideas": [
+     {
+      "clave": "rubro",
+      "titulo": "¿A qué se dedica tu negocio?",
+      "opciones": [
+       [
+        "bodega_o_tienda",
+        "Bodega o tienda"
+       ],
+       [
+        "restaurante_o_comida",
+        "Restaurante o comida"
+       ],
+       [
+        "salud_o_belleza",
+        "Salud o belleza"
+       ],
+       [
+        "educacion",
+        "Educación"
+       ],
+       [
+        "servicios_profesionales",
+        "Servicios profesionales"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "frecuencia",
+      "titulo": "¿Cada cuánto publicas hoy?",
+      "opciones": [
+       [
+        "casi_nunca",
+        "Casi nunca"
+       ],
+       [
+        "1_vez_por_semana",
+        "1 vez por semana"
+       ],
+       [
+        "varias_por_semana",
+        "Varias por semana"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "que_no_suene_a_mi_marca",
+        "Que no suene a mi marca"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "hacer_disenos": [
+     {
+      "clave": "quien",
+      "titulo": "¿Quién diseña hoy?",
+      "opciones": [
+       [
+        "yo",
+        "Yo"
+       ],
+       [
+        "alguien_del_equipo",
+        "Alguien del equipo"
+       ],
+       [
+        "un_disenador_o_agencia",
+        "Un diseñador o agencia"
+       ],
+       [
+        "nadie",
+        "Nadie"
+       ]
+      ]
+     },
+     {
+      "clave": "herramienta",
+      "titulo": "¿Qué usas?",
+      "opciones": [
+       [
+        "canva",
+        "Canva"
+       ],
+       [
+        "celular",
+        "Celular"
+       ],
+       [
+        "nada",
+        "Nada"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "que_los_disenos_se_vean_genericos",
+        "Que los diseños se vean genéricos"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "tiempo_para_publicar": [
+     {
+      "clave": "redes",
+      "titulo": "¿En qué redes?",
+      "opciones": [
+       [
+        "instagram",
+        "Instagram"
+       ],
+       [
+        "facebook",
+        "Facebook"
+       ],
+       [
+        "tiktok",
+        "TikTok"
+       ],
+       [
+        "varias",
+        "Varias"
+       ]
+      ]
+     },
+     {
+      "clave": "tiempo",
+      "titulo": "¿Cuánto tiempo le dedicas a la semana?",
+      "opciones": [
+       [
+        "menos_de_1_h",
+        "Menos de 1 h"
+       ],
+       [
+        "1_a_3_h",
+        "1 a 3 h"
+       ],
+       [
+        "mas_de_3_h",
+        "Más de 3 h"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "conectar_mis_redes",
+        "Conectar mis redes"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "ver_resultados": [
+     {
+      "clave": "meta",
+      "titulo": "¿Qué esperas lograr?",
+      "opciones": [
+       [
+        "mas_ventas",
+        "Más ventas"
+       ],
+       [
+        "mas_seguidores",
+        "Más seguidores"
+       ],
+       [
+        "mas_mensajes",
+        "Más mensajes"
+       ]
+      ]
+     },
+     {
+      "clave": "publicidad",
+      "titulo": "¿Pagas publicidad?",
+      "opciones": [
+       [
+        "si",
+        "Sí"
+       ],
+       [
+        "a_veces",
+        "A veces"
+       ],
+       [
+        "no",
+        "No"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "no_se_si_funciona",
+        "No sé si funciona"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "webs": {
+   "inicio": {
+    "clave": "rama",
+    "titulo": "¿Qué necesitas?",
+    "opciones": [
+     [
+      "mi_primera_web",
+      "Mi primera web"
+     ],
+     [
+      "renovar_mi_web",
+      "Renovar mi web"
+     ],
+     [
+      "vender_por_internet",
+      "Vender por internet"
+     ],
+     [
+      "pagina_para_una_campana",
+      "Página para una campaña"
+     ],
+     [
+      "aparecer_en_google",
+      "Aparecer en Google"
+     ]
+    ]
+   },
+   "ramas": {
+    "mi_primera_web": [
+     {
+      "clave": "rubro",
+      "titulo": "¿A qué se dedica tu negocio?",
+      "opciones": [
+       [
+        "bodega_o_tienda",
+        "Bodega o tienda"
+       ],
+       [
+        "restaurante_o_comida",
+        "Restaurante o comida"
+       ],
+       [
+        "salud_o_belleza",
+        "Salud o belleza"
+       ],
+       [
+        "educacion",
+        "Educación"
+       ],
+       [
+        "servicios_profesionales",
+        "Servicios profesionales"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "objetivo",
+      "titulo": "¿Qué debe hacer tu web?",
+      "opciones": [
+       [
+        "mostrar_mis_servicios",
+        "Mostrar mis servicios"
+       ],
+       [
+        "recibir_mensajes",
+        "Recibir mensajes"
+       ],
+       [
+        "vender",
+        "Vender"
+       ],
+       [
+        "mostrar_un_catalogo",
+        "Mostrar un catálogo"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "el_dominio_y_el_hosting",
+        "El dominio y el hosting"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "renovar_mi_web": [
+     {
+      "clave": "falla",
+      "titulo": "¿Qué falla hoy?",
+      "opciones": [
+       [
+        "se_ve_antigua",
+        "Se ve antigua"
+       ],
+       [
+        "va_lenta",
+        "Va lenta"
+       ],
+       [
+        "no_sale_en_google",
+        "No sale en Google"
+       ],
+       [
+        "no_la_puedo_cambiar",
+        "No la puedo cambiar"
+       ]
+      ]
+     },
+     {
+      "clave": "quien",
+      "titulo": "¿Quién la hizo?",
+      "opciones": [
+       [
+        "yo",
+        "Yo"
+       ],
+       [
+        "otra_agencia",
+        "Otra agencia"
+       ],
+       [
+        "no_se",
+        "No sé"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "perder_lo_que_ya_tengo",
+        "Perder lo que ya tengo"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "vender_por_internet": [
+     {
+      "clave": "vende",
+      "titulo": "¿Qué vendes?",
+      "opciones": [
+       [
+        "productos",
+        "Productos"
+       ],
+       [
+        "servicios",
+        "Servicios"
+       ],
+       [
+        "comida",
+        "Comida"
+       ],
+       [
+        "otro",
+        "Otro"
+       ]
+      ]
+     },
+     {
+      "clave": "cobro",
+      "titulo": "¿Cómo cobras?",
+      "opciones": [
+       [
+        "yape_o_plin",
+        "Yape o Plin"
+       ],
+       [
+        "transferencia",
+        "Transferencia"
+       ],
+       [
+        "tarjeta",
+        "Tarjeta"
+       ],
+       [
+        "contra_entrega",
+        "Contra entrega"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "manejar_los_pagos",
+        "Manejar los pagos"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "pagina_para_una_campana": [
+     {
+      "clave": "publicidad",
+      "titulo": "¿Dónde harás publicidad?",
+      "opciones": [
+       [
+        "facebook_o_instagram",
+        "Facebook o Instagram"
+       ],
+       [
+        "google",
+        "Google"
+       ],
+       [
+        "tiktok",
+        "TikTok"
+       ],
+       [
+        "aun_no_se",
+        "Aún no sé"
+       ]
+      ]
+     },
+     {
+      "clave": "plazo",
+      "titulo": "¿Para cuándo la necesitas?",
+      "opciones": [
+       [
+        "esta_semana",
+        "Esta semana"
+       ],
+       [
+        "este_mes",
+        "Este mes"
+       ],
+       [
+        "sin_apuro",
+        "Sin apuro"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "los_tiempos",
+        "Los tiempos"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "aparecer_en_google": [
+     {
+      "clave": "tiene_web",
+      "titulo": "¿Tienes web hoy?",
+      "opciones": [
+       [
+        "si",
+        "Sí"
+       ],
+       [
+        "no",
+        "No"
+       ]
+      ]
+     },
+     {
+      "clave": "maps",
+      "titulo": "¿Tienes perfil en Google Maps?",
+      "opciones": [
+       [
+        "si",
+        "Sí"
+       ],
+       [
+        "no",
+        "No"
+       ],
+       [
+        "no_se",
+        "No sé"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "no_se_como_funciona",
+        "No sé cómo funciona"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "mercadito": {
+   "inicio": {
+    "clave": "rama",
+    "titulo": "¿Qué vendes?",
+    "opciones": [
+     [
+      "comida",
+      "Comida"
+     ],
+     [
+      "ropa_y_accesorios",
+      "Ropa y accesorios"
+     ],
+     [
+      "abarrotes",
+      "Abarrotes"
+     ],
+     [
+      "artesania",
+      "Artesanía"
+     ],
+     [
+      "servicios",
+      "Servicios"
+     ],
+     [
+      "otro",
+      "Otro"
+     ]
+    ]
+   },
+   "ramas": {
+    "comida": [
+     {
+      "clave": "canal",
+      "titulo": "¿Por dónde vendes hoy?",
+      "opciones": [
+       [
+        "whatsapp",
+        "WhatsApp"
+       ],
+       [
+        "facebook_o_instagram",
+        "Facebook o Instagram"
+       ],
+       [
+        "local",
+        "Local"
+       ],
+       [
+        "todavia_no_vendo",
+        "Todavía no vendo"
+       ]
+      ]
+     },
+     {
+      "clave": "necesita",
+      "titulo": "¿Qué te gustaría resolver?",
+      "opciones": [
+       [
+        "mostrar_mi_catalogo",
+        "Mostrar mi catálogo"
+       ],
+       [
+        "recibir_pedidos_ordenados",
+        "Recibir pedidos ordenados"
+       ],
+       [
+        "aparecer_en_google",
+        "Aparecer en Google"
+       ],
+       [
+        "dejar_de_pagar_comisiones",
+        "Dejar de pagar comisiones"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "subir_mis_productos",
+        "Subir mis productos"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "ropa_y_accesorios": [
+     {
+      "clave": "canal",
+      "titulo": "¿Por dónde vendes hoy?",
+      "opciones": [
+       [
+        "whatsapp",
+        "WhatsApp"
+       ],
+       [
+        "facebook_o_instagram",
+        "Facebook o Instagram"
+       ],
+       [
+        "local",
+        "Local"
+       ],
+       [
+        "todavia_no_vendo",
+        "Todavía no vendo"
+       ]
+      ]
+     },
+     {
+      "clave": "necesita",
+      "titulo": "¿Qué te gustaría resolver?",
+      "opciones": [
+       [
+        "mostrar_mi_catalogo",
+        "Mostrar mi catálogo"
+       ],
+       [
+        "recibir_pedidos_ordenados",
+        "Recibir pedidos ordenados"
+       ],
+       [
+        "aparecer_en_google",
+        "Aparecer en Google"
+       ],
+       [
+        "dejar_de_pagar_comisiones",
+        "Dejar de pagar comisiones"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "subir_mis_productos",
+        "Subir mis productos"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "abarrotes": [
+     {
+      "clave": "canal",
+      "titulo": "¿Por dónde vendes hoy?",
+      "opciones": [
+       [
+        "whatsapp",
+        "WhatsApp"
+       ],
+       [
+        "facebook_o_instagram",
+        "Facebook o Instagram"
+       ],
+       [
+        "local",
+        "Local"
+       ],
+       [
+        "todavia_no_vendo",
+        "Todavía no vendo"
+       ]
+      ]
+     },
+     {
+      "clave": "necesita",
+      "titulo": "¿Qué te gustaría resolver?",
+      "opciones": [
+       [
+        "mostrar_mi_catalogo",
+        "Mostrar mi catálogo"
+       ],
+       [
+        "recibir_pedidos_ordenados",
+        "Recibir pedidos ordenados"
+       ],
+       [
+        "aparecer_en_google",
+        "Aparecer en Google"
+       ],
+       [
+        "dejar_de_pagar_comisiones",
+        "Dejar de pagar comisiones"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "subir_mis_productos",
+        "Subir mis productos"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "artesania": [
+     {
+      "clave": "canal",
+      "titulo": "¿Por dónde vendes hoy?",
+      "opciones": [
+       [
+        "whatsapp",
+        "WhatsApp"
+       ],
+       [
+        "facebook_o_instagram",
+        "Facebook o Instagram"
+       ],
+       [
+        "local",
+        "Local"
+       ],
+       [
+        "todavia_no_vendo",
+        "Todavía no vendo"
+       ]
+      ]
+     },
+     {
+      "clave": "necesita",
+      "titulo": "¿Qué te gustaría resolver?",
+      "opciones": [
+       [
+        "mostrar_mi_catalogo",
+        "Mostrar mi catálogo"
+       ],
+       [
+        "recibir_pedidos_ordenados",
+        "Recibir pedidos ordenados"
+       ],
+       [
+        "aparecer_en_google",
+        "Aparecer en Google"
+       ],
+       [
+        "dejar_de_pagar_comisiones",
+        "Dejar de pagar comisiones"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "subir_mis_productos",
+        "Subir mis productos"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "servicios": [
+     {
+      "clave": "canal",
+      "titulo": "¿Por dónde vendes hoy?",
+      "opciones": [
+       [
+        "whatsapp",
+        "WhatsApp"
+       ],
+       [
+        "facebook_o_instagram",
+        "Facebook o Instagram"
+       ],
+       [
+        "local",
+        "Local"
+       ],
+       [
+        "todavia_no_vendo",
+        "Todavía no vendo"
+       ]
+      ]
+     },
+     {
+      "clave": "necesita",
+      "titulo": "¿Qué te gustaría resolver?",
+      "opciones": [
+       [
+        "mostrar_mi_catalogo",
+        "Mostrar mi catálogo"
+       ],
+       [
+        "recibir_pedidos_ordenados",
+        "Recibir pedidos ordenados"
+       ],
+       [
+        "aparecer_en_google",
+        "Aparecer en Google"
+       ],
+       [
+        "dejar_de_pagar_comisiones",
+        "Dejar de pagar comisiones"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "subir_mis_productos",
+        "Subir mis productos"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ],
+    "otro": [
+     {
+      "clave": "canal",
+      "titulo": "¿Por dónde vendes hoy?",
+      "opciones": [
+       [
+        "whatsapp",
+        "WhatsApp"
+       ],
+       [
+        "facebook_o_instagram",
+        "Facebook o Instagram"
+       ],
+       [
+        "local",
+        "Local"
+       ],
+       [
+        "todavia_no_vendo",
+        "Todavía no vendo"
+       ]
+      ]
+     },
+     {
+      "clave": "necesita",
+      "titulo": "¿Qué te gustaría resolver?",
+      "opciones": [
+       [
+        "mostrar_mi_catalogo",
+        "Mostrar mi catálogo"
+       ],
+       [
+        "recibir_pedidos_ordenados",
+        "Recibir pedidos ordenados"
+       ],
+       [
+        "aparecer_en_google",
+        "Aparecer en Google"
+       ],
+       [
+        "dejar_de_pagar_comisiones",
+        "Dejar de pagar comisiones"
+       ]
+      ]
+     },
+     {
+      "clave": "freno",
+      "titulo": "¿Qué te frena?",
+      "opciones": [
+       [
+        "el_precio",
+        "El precio"
+       ],
+       [
+        "subir_mis_productos",
+        "Subir mis productos"
+       ],
+       [
+        "nada",
+        "Nada"
+       ]
+      ]
+     }
+    ]
+   }
+  }
+ }
+}

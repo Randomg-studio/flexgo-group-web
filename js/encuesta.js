@@ -1,6 +1,6 @@
 // Encuesta corta de las páginas de servicios. Las respuestas van a Logrin por la función encuesta_web_enviar.
 // Sale una sola vez (al leer la mitad de la página o a los 30 s), se puede cerrar y no vuelve en 60 días.
-// Uso: <script src="js/encuesta.js?v=1" data-pagina="kivo"></script>
+// Uso: <script src="js/encuesta.js?v=3" data-pagina="kivo"></script>  (elio, eleva, kivo, creago, webs)
 (() => {
   'use strict';
   const D = window.FLEXGO;
@@ -9,20 +9,9 @@
   const DIAS = 60;
   const CLAVE = `encuesta-${PAGINA}`;
 
-  const RUBROS = [
-    ['tienda', 'Bodega o tienda'], ['comida', 'Restaurante o comida'], ['salud_belleza', 'Salud o belleza'],
-    ['educacion', 'Educación'], ['servicios', 'Servicios profesionales'], ['sin_negocio', 'Todavía no tengo negocio'], ['otro', 'Otro'],
-  ];
-  const NECESIDAD = {
-    kivo: [['whatsapp_rapido', 'Responder más rápido por WhatsApp'], ['fuera_horario', 'Atender fuera de horario'], ['quien_compra', 'Saber quién está listo para comprar'], ['pedidos_citas', 'Tomar pedidos o citas'], ['seguimiento', 'Hacer seguimiento a clientes']],
-    logrin: [['ventas_caja', 'Controlar ventas y caja'], ['inventario', 'Llevar el inventario'], ['cuanto_gano', 'Saber cuánto gano'], ['equipo', 'Ordenar a mi equipo'], ['dejar_cuaderno', 'Dejar el cuaderno o el Excel']],
-    creago: [['publicar_seguido', 'Publicar más seguido'], ['disenos_pro', 'Diseños que se vean profesionales'], ['ideas', 'Ideas de qué publicar'], ['programar', 'Programar publicaciones'], ['ahorrar_disenador', 'Ahorrar en diseñador']],
-    webs: [['primera_web', 'Tener mi primera web'], ['renovar', 'Renovar mi web'], ['vender_online', 'Vender por internet'], ['google', 'Aparecer en Google'], ['pedidos_citas', 'Recibir pedidos o citas']],
-    elio: [['estudiar', 'Estudiar o hacer tareas'], ['trabajo', 'Trabajo y redacción'], ['ideas_negocio', 'Ideas para mi negocio'], ['pdf_imagenes', 'Leer PDF e imágenes'], ['curiosidad', 'Solo tengo curiosidad']],
-    eleva: [['ia_trabajo', 'Aprender IA para mi trabajo'], ['vender_redes', 'Aprender a vender por redes'], ['herramientas', 'Usar herramientas digitales'], ['formar_equipo', 'Formar a mi equipo'], ['certificarme', 'Certificarme']],
-  };
-  const FRENOS = [['precio', 'El precio'], ['no_se_si_sirve', 'No sé si me sirve'], ['tiempo', 'No tengo tiempo para aprender'], ['hablar_persona', 'Prefiero hablar con alguien'], ['nada', 'Nada, quiero empezar']];
-  if (!NECESIDAD[PAGINA] || !D?.kivo?.clave) return;
+  // Encuesta en árbol (aprobada el 26-nov): la primera respuesta (rama) decide las preguntas siguientes.
+  // Las preguntas salen de datos/encuesta-arbol.json, la misma lista que valida Logrin (encuesta_opciones).
+  if (!PAGINA || !D?.kivo?.clave) return;
 
   const leer = () => { try { return Number(localStorage.getItem(CLAVE)) || 0; } catch { return Date.now(); } };
   const marcar = () => { try { localStorage.setItem(CLAVE, String(Date.now())); } catch { /* sin almacenamiento */ } };
@@ -34,14 +23,13 @@
     return n;
   };
 
-  const r = { rubro: '', necesidad: '', freno: '' };
-  const pasos = [
-    { campo: 'rubro', titulo: '¿A qué se dedica tu negocio?', opciones: RUBROS },
-    { campo: 'necesidad', titulo: '¿Qué te gustaría resolver?', opciones: NECESIDAD[PAGINA] },
-    { campo: 'freno', titulo: '¿Qué te frena para empezar?', opciones: FRENOS },
-  ];
+  let arbol = null; // { inicio, ramas }
+  let rama = '';
+  let r = {};
   let paso = 0;
   let tarjeta = null;
+  const pasos = () => [arbol.inicio, ...(rama ? arbol.ramas[rama] : [])];
+  const total = () => 1 + (rama ? arbol.ramas[rama].length : 3) + 1;
 
   const cerrar = () => {
     marcar();
@@ -49,7 +37,7 @@
     tarjeta = null;
   };
 
-  const barra = () => el('div', { className: 'enc-avance', role: 'progressbar', ariaValueMin: '1', ariaValueMax: '4', ariaValueNow: String(paso + 1), ariaLabel: `Paso ${paso + 1} de 4` },
+  const barra = () => el('div', { className: 'enc-avance', role: 'progressbar', ariaValueMin: '1', ariaValueMax: String(total()), ariaValueNow: String(paso + 1), ariaLabel: `Paso ${paso + 1} de ${total()}` },
     el('span'));
 
   const cuerpo = () => tarjeta.querySelector('.enc-cuerpo');
@@ -57,17 +45,24 @@
     const c = cuerpo();
     c.replaceChildren();
     const b = barra();
-    b.firstChild.className = `enc-lleno p${paso + 1}`;
+    b.firstChild.className = 'enc-lleno';
+    b.firstChild.style.width = `${Math.round(((paso + 1) / total()) * 100)}%`;
     c.append(b);
-    if (paso < pasos.length) {
-      const p = pasos[paso];
+    const lista_pasos = pasos();
+    if (paso < lista_pasos.length) {
+      const p = lista_pasos[paso];
+      const actual = paso === 0 ? rama : r[p.clave];
       const lista = el('div', { className: 'enc-opciones', role: 'group' });
       const h = el('p', { className: 'enc-pregunta', id: `enc-q${paso}` }, p.titulo);
       lista.setAttribute('aria-labelledby', h.id);
       p.opciones.forEach(([valor, texto]) => {
         const o = el('button', { type: 'button', className: 'enc-opcion' }, texto);
-        if (r[p.campo] === valor) o.classList.add('elegida');
-        o.addEventListener('click', () => { r[p.campo] = valor; paso += 1; pintar(); });
+        if (actual === valor) o.classList.add('elegida');
+        o.addEventListener('click', () => {
+          if (paso === 0) { if (rama !== valor) r = {}; rama = valor; } else r[p.clave] = valor;
+          paso += 1;
+          pintar();
+        });
         lista.append(o);
       });
       c.append(h, lista);
@@ -109,7 +104,7 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json', apikey: D.kivo.clave, Authorization: `Bearer ${D.kivo.clave}` },
           body: JSON.stringify({ p: {
-            pagina: PAGINA, ...r,
+            pagina: PAGINA, rama, respuestas: r,
             comentario: coment.value.trim().slice(0, 300),
             contacto: dato && acepto.checked ? dato.slice(0, 120) : '',
             acepta: Boolean(dato && acepto.checked),
@@ -134,8 +129,15 @@
     });
   };
 
-  const mostrar = () => {
+  const mostrar = async () => {
     if (tarjeta || Date.now() - leer() < DIAS * 864e5) return;
+    if (!arbol) {
+      try {
+        const d = await (await fetch('datos/encuesta-arbol.json?v=2026-11-26')).json();
+        arbol = d.paginas?.[PAGINA] || null;
+      } catch { arbol = null; }
+      if (!arbol) { reintentar(); return; } // no bajó el árbol: se vuelve a intentar al seguir leyendo
+    }
     const chat = document.getElementById('chat');
     if (chat && !chat.hidden) { setTimeout(mostrar, 20000); return; }
     const x = el('button', { type: 'button', className: 'enc-x', ariaLabel: 'Cerrar la encuesta' }, '×');
@@ -159,6 +161,7 @@
     const h = document.documentElement;
     if ((h.scrollTop + innerHeight) / h.scrollHeight >= 0.5) disparar();
   };
+  const reintentar = () => { listo = false; window.addEventListener('scroll', alBajar, { passive: true }); };
   window.addEventListener('scroll', alBajar, { passive: true });
   const reloj = setTimeout(disparar, 30000);
 })();
