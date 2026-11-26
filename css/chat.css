@@ -1,0 +1,15 @@
+/* Chat de Kivo: arreglos comunes a todas las páginas (se carga después de la hoja de cada página).
+   El chat va por encima de la barra del menú (z-index 40) para que su encabezado y el botón de minimizar siempre se vean. */
+.kivo-chat{z-index:60}
+.chat-acciones{display:flex;align-items:center;gap:8px}
+.chat-nuevo{min-height:36px;padding:0 12px;border:1px solid #9fccea55;border-radius:999px;background:#a5d9ff21;color:#f1f9ff;font:inherit;font-size:12.5px;font-weight:700;line-height:1;white-space:nowrap;cursor:pointer}
+.chat-nuevo:hover{background:#a5d9ff40}
+.chat-header .chat-close{width:44px;height:44px;font-size:26px;line-height:1;cursor:pointer}
+.chat-header :focus-visible{outline:2px solid #d1f8ff;outline-offset:2px}
+@media(max-width:720px){
+  .kivo-chat{right:0;bottom:0;width:100vw;height:100dvh;max-height:100dvh;border-radius:0}
+  .kivo-chat .chat-header{padding-top:max(13px,env(safe-area-inset-top));border-radius:0}
+  .chat-header .chat-avatar{width:42px;height:42px}
+  html.chat-abierto,html.chat-abierto body{overflow:hidden}
+}
+@media(max-width:370px){.chat-nuevo{padding:0 10px;font-size:12px}}

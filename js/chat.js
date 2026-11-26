@@ -51,24 +51,80 @@
     return mejor;
   };
 
-  // Solo se vuelven link las direcciones de FlexGo y de WhatsApp.
-  const LINK = /https:\/\/(?:(?:[a-z0-9-]+\.)?flexgogroup\.com|wa\.me)(?:\/\S*)?/gi;
+  // Las direcciones de las respuestas se vuelven enlaces clicables.
+  // Seguro: el texto nunca se trata como HTML (solo textContent) y solo se aceptan
+  // http(s), wa.me y tel:. Nada de javascript: ni data:.
+  const LINK = /\bhttps?:\/\/[^\s<>"']+|\bwa\.me\/[^\s<>"']+|\btel:\+?[\d-]{6,}/gi;
+  const recorta = (u) => {
+    // Quita la puntuación del final («visita x.com/.» → x.com/) y un «)» que no abrió.
+    for (;;) {
+      const antes = u;
+      u = u.replace(/[.,;:!?¡¿»"'”’…]+$/, '');
+      if (u.endsWith(')') && (u.match(/\(/g) || []).length < (u.match(/\)/g) || []).length) u = u.slice(0, -1);
+      if (u === antes) return u;
+    }
+  };
+  const destino = (u) => {
+    const href = /^wa\.me\//i.test(u) ? `https://${u}` : u;
+    try {
+      const x = new URL(href);
+      if (x.protocol === 'tel:') return href;
+      if ((x.protocol === 'https:' || x.protocol === 'http:') && x.hostname.includes('.')) return x.href;
+    } catch { /* no es una dirección válida */ }
+    return '';
+  };
   const conLinks = (p, t) => {
     let i = 0;
     for (const m of t.matchAll(LINK)) {
-      const url = m[0].replace(/[.,;:]+$/, '');
+      const texto = recorta(m[0]);
+      const href = destino(texto);
+      if (!href) continue;
       const a = document.createElement('a');
-      a.href = url;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.textContent = url;
+      a.href = href;
+      if (!href.startsWith('tel:')) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
+      a.textContent = texto.replace(/^tel:/i, '');
       p.append(t.slice(i, m.index), a);
-      i = m.index + url.length;
+      i = m.index + texto.length;
     }
     p.append(t.slice(i));
   };
 
-  const pinta = (t, { yo = false, autor = '' } = {}) => {
+  // La conversación se guarda en esta pestaña (sessionStorage): sigue igual al recargar o
+  // al cambiar de página, y empieza de nuevo solo al cerrar la pestaña.
+  const LOG = 'kivo-chat-log';
+  const TOPE = 80;
+  let registro = [];
+  let restaurando = false;
+  const guardarLog = () => {
+    try {
+      if (registro.length > TOPE) registro = registro.slice(-TOPE);
+      let s = JSON.stringify({ desde, abierto: !chat.hidden, m: registro });
+      while (s.length > 60000 && registro.length > 1) {
+        registro = registro.slice(Math.ceil(registro.length / 4));
+        s = JSON.stringify({ desde, abierto: !chat.hidden, m: registro });
+      }
+      sessionStorage.setItem(LOG, s);
+    } catch {
+      /* sin almacenamiento, la conversación dura mientras la página siga abierta */
+    }
+  };
+  const leerLog = () => {
+    try {
+      const v = JSON.parse(sessionStorage.getItem(LOG) || 'null');
+      return v && Array.isArray(v.m) ? v : null;
+    } catch {
+      return null;
+    }
+  };
+
+  const pinta = (t, { yo = false, autor = '', guarda = true } = {}) => {
+    if (guarda && !restaurando) {
+      registro.push(yo ? { t: String(t), yo: true } : { t: String(t), autor });
+      guardarLog();
+    }
     const p = document.createElement('p');
     if (yo) p.className = 'yo';
     if (autor && autor !== 'Kivo') {
@@ -85,18 +141,22 @@
   };
 
   const pintaAsesor = (texto) => {
-    const p = pinta('No pude responderte por aquí. Un asesor puede ayudarte: ');
+    const p = pinta('No pude responderte por aquí. Un asesor puede ayudarte: ', { guarda: false });
+    if (!restaurando) {
+      registro.push({ asesor: String(texto) });
+      guardarLog();
+    }
     const a = document.createElement('a');
     a.href = `https://wa.me/${D.whatsapp}?text=${encodeURIComponent(`Hola, tengo esta consulta: ${texto}`)}`;
     a.target = '_blank';
-    a.rel = 'noopener';
+    a.rel = 'noopener noreferrer';
     a.textContent = 'escribir por WhatsApp';
     p.append(a, '.');
   };
 
   const mostrarEscribiendo = (si) => {
     if (si && !escribiendo) {
-      escribiendo = pinta('Kivo está escribiendo…');
+      escribiendo = pinta('Kivo está escribiendo…', { guarda: false });
       escribiendo.classList.add('escribe');
     } else if (!si && escribiendo) {
       escribiendo.remove();
@@ -219,29 +279,88 @@
     rapidas.append(b);
   });
 
-  const abrir = (si) => {
+  const saludar = () => {
+    saludado = true;
+    pinta('¡Hola! 👋 Soy Kivo, el asistente de IA de FlexGo. ¿Qué te gustaría resolver en tu negocio?');
+  };
+
+  // En el celular el chat ocupa toda la pantalla: el botón «atrás» lo minimiza.
+  const enCelular = () => window.matchMedia('(max-width: 720px)').matches;
+  const abrir = (si, { foco = true } = {}) => {
     chat.hidden = !si;
     boton.hidden = si;
     boton.setAttribute('aria-expanded', String(si));
+    document.documentElement.classList.toggle('chat-abierto', si);
     if (si) {
+      if (enCelular() && !history.state?.kivoChat) {
+        try { history.pushState({ ...(history.state || {}), kivoChat: true }, ''); } catch { /* sin historial */ }
+      }
       if (!saludado) {
-        saludado = true;
-        pinta('¡Hola! 👋 Soy Kivo, el asistente de IA de FlexGo. ¿Qué te gustaría resolver en tu negocio?');
+        saludar();
         if (conv) leer().catch(() => {});
       }
+      mensajes.parentElement.scrollTop = mensajes.parentElement.scrollHeight;
       programar();
-      texto.focus();
+      if (foco) texto.focus();
     } else {
       clearTimeout(temporizador);
-      boton.focus();
+      if (foco) boton.focus();
     }
+    guardarLog();
   };
+  const minimizar = () => {
+    if (history.state?.kivoChat) history.back();
+    else abrir(false);
+  };
+  window.addEventListener('popstate', () => {
+    if (!chat.hidden && !history.state?.kivoChat) abrir(false);
+  });
+
+  // Encabezado: «Nuevo chat» y el botón para minimizar, siempre a la vista.
+  const cerrarBtn = $('#chat-cerrar');
+  cerrarBtn.setAttribute('aria-label', 'Minimizar el chat de Kivo');
+  cerrarBtn.title = 'Minimizar';
+  const acciones = document.createElement('div');
+  acciones.className = 'chat-acciones';
+  const nuevo = document.createElement('button');
+  nuevo.type = 'button';
+  nuevo.className = 'chat-nuevo';
+  nuevo.textContent = 'Nuevo chat';
+  nuevo.setAttribute('aria-label', 'Empezar una conversación nueva');
+  cerrarBtn.replaceWith(acciones);
+  acciones.append(nuevo, cerrarBtn);
+  nuevo.addEventListener('click', () => {
+    clearTimeout(temporizador);
+    conv = null;
+    guardar(null);
+    desde = 0;
+    registro = [];
+    mostrarEscribiendo(false);
+    mensajes.replaceChildren();
+    saludar();
+    texto.focus();
+  });
 
   boton.addEventListener('click', () => abrir(true));
-  $('#chat-cerrar').addEventListener('click', () => abrir(false));
+  cerrarBtn.addEventListener('click', minimizar);
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !chat.hidden) abrir(false);
+    if (e.key === 'Escape' && !chat.hidden) minimizar();
   });
+
+  // Al recargar o cambiar de página se repinta la conversación tal como estaba.
+  const previo = leerLog();
+  if (previo && previo.m.length) {
+    restaurando = true;
+    registro = previo.m.slice(-TOPE);
+    desde = Number(previo.desde) || 0;
+    registro.forEach((m) => {
+      if (m.asesor) pintaAsesor(m.asesor);
+      else pinta(m.t, { yo: Boolean(m.yo), autor: m.autor || '' });
+    });
+    restaurando = false;
+    saludado = true;
+    if (previo.abierto) abrir(true, { foco: false });
+  }
   $('#chat-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const t = texto.value.trim();
