@@ -22,30 +22,37 @@
 
   /* Preguntas frecuentes: la misma lista que usa el chat */
   const lista = $('#faq-lista');
-  window.FLEXGO_FAQ.forEach(({ p, r }, i) => {
-    const item = document.createElement('div');
-    item.className = 'faq-item';
-    const h = document.createElement('h3');
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.id = `faq-p-${i}`;
-    b.setAttribute('aria-controls', `faq-r-${i}`);
-    const t = document.createElement('span');
-    t.textContent = p;
-    b.append(t, document.createElement('i'));
-    h.append(b);
-    const resp = document.createElement('div');
-    resp.className = 'faq-resp';
-    resp.id = `faq-r-${i}`;
-    resp.setAttribute('role', 'region');
-    resp.setAttribute('aria-labelledby', b.id);
-    const dentro = document.createElement('div');
-    const texto = document.createElement('p');
-    texto.textContent = r;
-    dentro.append(texto);
-    resp.append(dentro);
-    item.append(h, resp);
-    lista.append(item);
+  // index.html ya trae las preguntas en HTML (scripts/faq-estatico.mjs) para que los robots las lean;
+  // si faltaran, se arman aquí con la misma lista. Luego solo se conectan los botones.
+  if (!lista.children.length) {
+    window.FLEXGO_FAQ.forEach(({ p, r }, i) => {
+      const item = document.createElement('div');
+      item.className = 'faq-item';
+      const h = document.createElement('h3');
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.id = `faq-p-${i}`;
+      b.setAttribute('aria-controls', `faq-r-${i}`);
+      const t = document.createElement('span');
+      t.textContent = p;
+      b.append(t, document.createElement('i'));
+      h.append(b);
+      const resp = document.createElement('div');
+      resp.className = 'faq-resp';
+      resp.id = `faq-r-${i}`;
+      resp.setAttribute('role', 'region');
+      resp.setAttribute('aria-labelledby', b.id);
+      const dentro = document.createElement('div');
+      const texto = document.createElement('p');
+      texto.textContent = r;
+      dentro.append(texto);
+      resp.append(dentro);
+      item.append(h, resp);
+      lista.append(item);
+    });
+  }
+  lista.querySelectorAll('.faq-item').forEach((item, i) => {
+    const b = item.querySelector('button');
     const poner = (si) => { item.classList.toggle('abierta', si); b.setAttribute('aria-expanded', String(si)); };
     poner(i === 0);
     b.addEventListener('click', () => poner(!item.classList.contains('abierta')));

@@ -25,7 +25,10 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
       "@id": "https://flexgogroup.com/#organizacion",
       "name": "FlexGo Group",
       "alternateName": [
@@ -56,10 +59,20 @@
         "addressRegion": "San Martín",
         "addressCountry": "PE"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Perú"
-      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tarapoto"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "San Martín"
+        },
+        {
+          "@type": "Country",
+          "name": "Perú"
+        }
+      ],
       "telephone": "+51-917-952-528",
       "email": "contacto@flexgogroup.com",
       "contactPoint": {
@@ -79,7 +92,9 @@
         "Integraciones",
         "Automatización",
         "Contenido con IA",
-        "Páginas web"
+        "Páginas web",
+        "ARM: sistema de ventas con agentes de IA",
+        "Páginas web en Tarapoto"
       ],
       "sameAs": [
         "https://www.instagram.com/flexgo.group/",
@@ -105,6 +120,11 @@
           "@type": "Brand",
           "name": "Mi Mercadito",
           "url": "https://logrin.flexgogroup.com/?mercadito"
+        },
+        {
+          "@type": "Brand",
+          "name": "Elio",
+          "url": "https://elio.flexgogroup.com/"
         }
       ],
       "hasOfferCatalog": {
@@ -176,7 +196,12 @@
             "name": "Landing para negocio pequeño (precio de lanzamiento)",
             "price": "250",
             "priceCurrency": "PEN",
-            "priceSpecification": { "@type": "UnitPriceSpecification", "price": "300", "priceCurrency": "PEN", "priceType": "https://schema.org/ListPrice" },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "300",
+              "priceCurrency": "PEN",
+              "priceType": "https://schema.org/ListPrice"
+            },
             "itemOffered": {
               "@type": "Service",
               "name": "Landing para negocio pequeño",
@@ -198,7 +223,11 @@
             "@type": "Offer",
             "name": "Web Ultra para empresas",
             "priceCurrency": "PEN",
-            "priceSpecification": { "@type": "PriceSpecification", "minPrice": "1500", "priceCurrency": "PEN" },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "1500",
+              "priceCurrency": "PEN"
+            },
             "itemOffered": {
               "@type": "Service",
               "name": "Página web Ultra",
@@ -212,8 +241,19 @@
             "priceCurrency": "PEN",
             "description": "Precio de lanzamiento para las primeras 20 tiendas durante 6 meses; después S/ 47 al mes (plan Solo tienda).",
             "priceSpecification": [
-              { "@type": "UnitPriceSpecification", "price": "14.99", "priceCurrency": "PEN", "unitText": "MONTH" },
-              { "@type": "UnitPriceSpecification", "price": "47", "priceCurrency": "PEN", "unitText": "MONTH", "priceType": "https://schema.org/ListPrice" }
+              {
+                "@type": "UnitPriceSpecification",
+                "price": "14.99",
+                "priceCurrency": "PEN",
+                "unitText": "MONTH"
+              },
+              {
+                "@type": "UnitPriceSpecification",
+                "price": "47",
+                "priceCurrency": "PEN",
+                "unitText": "MONTH",
+                "priceType": "https://schema.org/ListPrice"
+              }
             ],
             "itemOffered": {
               "@type": "Service",
@@ -246,7 +286,28 @@
             }
           }
         ]
-      }
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "knowsLanguage": "es"
     },
     {
       "@type": "WebSite",
@@ -300,6 +361,7 @@
 <link rel="stylesheet" href="css/barra.css?v=2">
 <link rel="stylesheet" href="css/pie.css?v=1">
 <script src="js/inicio.js"></script>
+<!--faq-schema:inicio--><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://flexgogroup.com/#preguntas","mainEntity":[{"@type":"Question","name":"¿Qué es FlexGo Group?","acceptedAnswer":{"@type":"Answer","text":"Es una empresa de tecnología que reúne servicios digitales para negocios: gestión de ventas, tiendas en línea, contenido e inteligencia artificial. Nuestro objetivo es que la tecnología sea clara y útil para ti."}},{"@type":"Question","name":"¿Qué servicios ofrecen?","acceptedAnswer":{"@type":"Answer","text":"Hoy puedes usar Kivo Agentes (agentes de IA que atienden a tus clientes), Logrin Negocio, CreaGo, Mi Mercadito y Elio, nuestro asistente de IA para conversar (pruébalo gratis en https://elio.flexgogroup.com/). Y estamos preparando Eleva, nuestra marca educativa. También hacemos páginas web, chatbots y automatizaciones a medida."}},{"@type":"Question","name":"¿Qué es Logrin Negocio?","acceptedAnswer":{"@type":"Answer","text":"Es un sistema en la nube para manejar tu negocio: ventas, inventario, clientes, finanzas, marketing y metas en un solo lugar, desde el celular o la computadora."}},{"@type":"Question","name":"¿Puedo probar Logrin Negocio gratis?","acceptedAnswer":{"@type":"Answer","text":"Sí. Logrin Negocio tiene una prueba gratis de 7 días, sin tarjeta. Empieza aquí: https://logrin.flexgogroup.com/?prueba"}},{"@type":"Question","name":"¿Qué es Mi Mercadito?","acceptedAnswer":{"@type":"Answer","text":"Es tu tienda en línea, con un enlace para compartir en tus redes y por WhatsApp, dentro de un mercado que reúne a los negocios que usan Logrin. Precio de lanzamiento: S/ 14.99 al mes (antes S/ 47), solo para las primeras 20 tiendas y durante 6 meses; después pasa a S/ 47 al mes (plan Solo tienda). Empieza aquí: https://logrin.flexgogroup.com/?prueba=tienda&lanzamiento=mm"}},{"@type":"Question","name":"¿Qué es Eleva?","acceptedAnswer":{"@type":"Answer","text":"Eleva by FlexGo Group es nuestra marca educativa: cursos y acompañamiento para aprender tecnología e IA a tu ritmo. Está en preparación; todavía no tiene precios ni fecha de inicio. Puedes unirte a la lista de espera en https://flexgogroup.com/eleva.html"}},{"@type":"Question","name":"¿Qué es Elio?","acceptedAnswer":{"@type":"Answer","text":"Elio by FlexGo Group es nuestro asistente de inteligencia artificial para conversar: explorar ideas, aprender y avanzar en tus tareas. Ya está disponible: pruébalo gratis en https://elio.flexgogroup.com/ (4 preguntas sin cuenta y luego te registras gratis). Planes: Libre S/ 0 (20 mensajes al día), Impulso S/ 29.90 al mes (100 mensajes rápidos al día, 300 en modo Razonamiento al mes, PDF e imágenes) y Ultra S/ 79.90 al mes (150 rápidos al día, 800 en Razonamiento y 200 en modo Experto al mes). Se paga por Yape dentro de la app."}},{"@type":"Question","name":"¿Qué es CreaGo?","acceptedAnswer":{"@type":"Answer","text":"Es nuestro servicio para crear imágenes, textos y planificación de contenido para tu marca. Puedes crear tu cuenta en https://creago.flexgogroup.com"}},{"@type":"Question","name":"¿Qué son los Agentes de IA?","acceptedAnswer":{"@type":"Answer","text":"Es Kivo Agentes: un agente de IA que atiende a tus clientes por WhatsApp, tu web, Messenger e Instagram, toma pedidos y citas y califica a cada interesado, siempre con la opción de pasar con una persona. Planes desde S/ 149 al mes y puedes probarlo gratis con los datos de tu negocio. Mira los detalles en https://flexgogroup.com/kivo.html"}},{"@type":"Question","name":"¿Hacen páginas web o soluciones a medida?","acceptedAnswer":{"@type":"Answer","text":"Sí. Hacemos webs en tres planes: landing para negocio pequeño a S/ 250 (precio de lanzamiento, antes S/ 300), web Pro a S/ 850 y web Ultra para empresas desde S/ 1.500. El dominio y el hosting van aparte, y el mantenimiento opcional cuesta S/ 39 al mes. Mira los detalles en https://flexgogroup.com/paginas-web.html. También hacemos chatbots y automatizaciones a medida."}},{"@type":"Question","name":"¿Cuánto cuestan sus servicios?","acceptedAnswer":{"@type":"Answer","text":"Kivo Agentes: desde S/ 149 al mes. Mi Mercadito: S/ 14.99 al mes de lanzamiento (antes S/ 47). Páginas web: desde S/ 250, pago único. Logrin Negocio y CreaGo tienen sus planes en su página, y Logrin se prueba 7 días gratis. Las soluciones a medida se cotizan según lo que necesites. Escríbenos y te orientamos sin compromiso."}},{"@type":"Question","name":"¿Cómo cuidan mis datos?","acceptedAnswer":{"@type":"Answer","text":"Tratamos tus datos conforme a la Ley N.° 29733 y solo para responderte o darte el servicio que pediste. No pidas ni compartas contraseñas o tarjetas por el chat. Puedes leer nuestra Política de privacidad."}},{"@type":"Question","name":"¿Cómo puedo ser aliado de FlexGo?","acceptedAnswer":{"@type":"Answer","text":"Buscamos personas y empresas que quieran trabajar con nosotros. Escríbenos por WhatsApp o correo, cuéntanos qué haces y vemos juntos cómo colaborar."}},{"@type":"Question","name":"¿Cómo los contacto y cuál es su horario?","acceptedAnswer":{"@type":"Answer","text":"Puedes escribirnos por WhatsApp al +51 917 952 528 o a contacto@flexgogroup.com. Atendemos de lunes a viernes, de 9 a. m. a 6 p. m., y los sábados, de 9 a. m. a 1 p. m."}}]}</script><!--faq-schema:fin-->
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -618,7 +680,7 @@
       <span class="faq-raya" aria-hidden="true"></span>
       <p class="section-label">Preguntas frecuentes</p>
       <h2 id="faq-title">Lo que más nos <em>preguntan.</em></h2>
-      <div class="faq-lista" id="faq-lista"></div>
+      <div class="faq-lista" id="faq-lista"><!--faq:inicio--><div class="faq-item abierta"><h3><button type="button" id="faq-p-0" aria-controls="faq-r-0" aria-expanded="true"><span>¿Qué es FlexGo Group?</span><i></i></button></h3><div class="faq-resp" id="faq-r-0" role="region" aria-labelledby="faq-p-0"><div><p>Es una empresa de tecnología que reúne servicios digitales para negocios: gestión de ventas, tiendas en línea, contenido e inteligencia artificial. Nuestro objetivo es que la tecnología sea clara y útil para ti.</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-1" aria-controls="faq-r-1" aria-expanded="false"><span>¿Qué servicios ofrecen?</span><i></i></button></h3><div class="faq-resp" id="faq-r-1" role="region" aria-labelledby="faq-p-1"><div><p>Hoy puedes usar Kivo Agentes (agentes de IA que atienden a tus clientes), Logrin Negocio, CreaGo, Mi Mercadito y Elio, nuestro asistente de IA para conversar (pruébalo gratis en https://elio.flexgogroup.com/). Y estamos preparando Eleva, nuestra marca educativa. También hacemos páginas web, chatbots y automatizaciones a medida.</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-2" aria-controls="faq-r-2" aria-expanded="false"><span>¿Qué es Logrin Negocio?</span><i></i></button></h3><div class="faq-resp" id="faq-r-2" role="region" aria-labelledby="faq-p-2"><div><p>Es un sistema en la nube para manejar tu negocio: ventas, inventario, clientes, finanzas, marketing y metas en un solo lugar, desde el celular o la computadora.</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-3" aria-controls="faq-r-3" aria-expanded="false"><span>¿Puedo probar Logrin Negocio gratis?</span><i></i></button></h3><div class="faq-resp" id="faq-r-3" role="region" aria-labelledby="faq-p-3"><div><p>Sí. Logrin Negocio tiene una prueba gratis de 7 días, sin tarjeta. Empieza aquí: https://logrin.flexgogroup.com/?prueba</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-4" aria-controls="faq-r-4" aria-expanded="false"><span>¿Qué es Mi Mercadito?</span><i></i></button></h3><div class="faq-resp" id="faq-r-4" role="region" aria-labelledby="faq-p-4"><div><p>Es tu tienda en línea, con un enlace para compartir en tus redes y por WhatsApp, dentro de un mercado que reúne a los negocios que usan Logrin. Precio de lanzamiento: S/ 14.99 al mes (antes S/ 47), solo para las primeras 20 tiendas y durante 6 meses; después pasa a S/ 47 al mes (plan Solo tienda). Empieza aquí: https://logrin.flexgogroup.com/?prueba=tienda&amp;lanzamiento=mm</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-5" aria-controls="faq-r-5" aria-expanded="false"><span>¿Qué es Eleva?</span><i></i></button></h3><div class="faq-resp" id="faq-r-5" role="region" aria-labelledby="faq-p-5"><div><p>Eleva by FlexGo Group es nuestra marca educativa: cursos y acompañamiento para aprender tecnología e IA a tu ritmo. Está en preparación; todavía no tiene precios ni fecha de inicio. Puedes unirte a la lista de espera en https://flexgogroup.com/eleva.html</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-6" aria-controls="faq-r-6" aria-expanded="false"><span>¿Qué es Elio?</span><i></i></button></h3><div class="faq-resp" id="faq-r-6" role="region" aria-labelledby="faq-p-6"><div><p>Elio by FlexGo Group es nuestro asistente de inteligencia artificial para conversar: explorar ideas, aprender y avanzar en tus tareas. Ya está disponible: pruébalo gratis en https://elio.flexgogroup.com/ (4 preguntas sin cuenta y luego te registras gratis). Planes: Libre S/ 0 (20 mensajes al día), Impulso S/ 29.90 al mes (100 mensajes rápidos al día, 300 en modo Razonamiento al mes, PDF e imágenes) y Ultra S/ 79.90 al mes (150 rápidos al día, 800 en Razonamiento y 200 en modo Experto al mes). Se paga por Yape dentro de la app.</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-7" aria-controls="faq-r-7" aria-expanded="false"><span>¿Qué es CreaGo?</span><i></i></button></h3><div class="faq-resp" id="faq-r-7" role="region" aria-labelledby="faq-p-7"><div><p>Es nuestro servicio para crear imágenes, textos y planificación de contenido para tu marca. Puedes crear tu cuenta en https://creago.flexgogroup.com</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-8" aria-controls="faq-r-8" aria-expanded="false"><span>¿Qué son los Agentes de IA?</span><i></i></button></h3><div class="faq-resp" id="faq-r-8" role="region" aria-labelledby="faq-p-8"><div><p>Es Kivo Agentes: un agente de IA que atiende a tus clientes por WhatsApp, tu web, Messenger e Instagram, toma pedidos y citas y califica a cada interesado, siempre con la opción de pasar con una persona. Planes desde S/ 149 al mes y puedes probarlo gratis con los datos de tu negocio. Mira los detalles en https://flexgogroup.com/kivo.html</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-9" aria-controls="faq-r-9" aria-expanded="false"><span>¿Hacen páginas web o soluciones a medida?</span><i></i></button></h3><div class="faq-resp" id="faq-r-9" role="region" aria-labelledby="faq-p-9"><div><p>Sí. Hacemos webs en tres planes: landing para negocio pequeño a S/ 250 (precio de lanzamiento, antes S/ 300), web Pro a S/ 850 y web Ultra para empresas desde S/ 1.500. El dominio y el hosting van aparte, y el mantenimiento opcional cuesta S/ 39 al mes. Mira los detalles en https://flexgogroup.com/paginas-web.html. También hacemos chatbots y automatizaciones a medida.</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-10" aria-controls="faq-r-10" aria-expanded="false"><span>¿Cuánto cuestan sus servicios?</span><i></i></button></h3><div class="faq-resp" id="faq-r-10" role="region" aria-labelledby="faq-p-10"><div><p>Kivo Agentes: desde S/ 149 al mes. Mi Mercadito: S/ 14.99 al mes de lanzamiento (antes S/ 47). Páginas web: desde S/ 250, pago único. Logrin Negocio y CreaGo tienen sus planes en su página, y Logrin se prueba 7 días gratis. Las soluciones a medida se cotizan según lo que necesites. Escríbenos y te orientamos sin compromiso.</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-11" aria-controls="faq-r-11" aria-expanded="false"><span>¿Cómo cuidan mis datos?</span><i></i></button></h3><div class="faq-resp" id="faq-r-11" role="region" aria-labelledby="faq-p-11"><div><p>Tratamos tus datos conforme a la Ley N.° 29733 y solo para responderte o darte el servicio que pediste. No pidas ni compartas contraseñas o tarjetas por el chat. Puedes leer nuestra Política de privacidad.</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-12" aria-controls="faq-r-12" aria-expanded="false"><span>¿Cómo puedo ser aliado de FlexGo?</span><i></i></button></h3><div class="faq-resp" id="faq-r-12" role="region" aria-labelledby="faq-p-12"><div><p>Buscamos personas y empresas que quieran trabajar con nosotros. Escríbenos por WhatsApp o correo, cuéntanos qué haces y vemos juntos cómo colaborar.</p></div></div></div><div class="faq-item"><h3><button type="button" id="faq-p-13" aria-controls="faq-r-13" aria-expanded="false"><span>¿Cómo los contacto y cuál es su horario?</span><i></i></button></h3><div class="faq-resp" id="faq-r-13" role="region" aria-labelledby="faq-p-13"><div><p>Puedes escribirnos por WhatsApp al +51 917 952 528 o a contacto@flexgogroup.com. Atendemos de lunes a viernes, de 9 a. m. a 6 p. m., y los sábados, de 9 a. m. a 1 p. m.</p></div></div></div><!--faq:fin--></div>
       <a class="button button--primary faq-wa" data-wa="Hola, tengo una pregunta sobre FlexGo." href="#contacto">Escribir por WhatsApp</a>
     </div>
   </section>
@@ -674,7 +736,7 @@
   </section>
 </main>
 
-<footer class="pie"><div class="pie-in"><div class="pie-grid"><div class="pie-marca"><a href="index.html" aria-label="FlexGo Group, inicio"><img src="assets/imagenes/kivo-pagina/logo-flexgo.webp" width="299" height="62" alt="FlexGo Group" loading="lazy"></a><p>Tecnología que te impulsa.</p><p><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2"/></svg>Tarapoto, San Martín, Perú</p><div class="pie-redes"><a href="https://web.facebook.com/flexgo.pe/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-3a4 4 0 0 0-4 4v4H5v3h3v8h4v-8h4l1-3h-5V7c0-1 1-1 3-1Z"/></svg>Facebook ↗</a><a href="https://www.instagram.com/flexgo.group/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg>Instagram ↗</a></div></div><div class="pie-col"><h2>Productos</h2><a href="https://logrin.flexgogroup.com/">Logrin Negocio</a><a href="creago.html">CreaGo</a><a href="kivo.html">Kivo Agentes</a><a href="https://logrin.flexgogroup.com/?mercadito" target="_blank" rel="noopener noreferrer">Mi Mercadito</a><a href="eleva.html">Eleva</a><a href="elio.html">Elio</a></div><div class="pie-col"><h2>Empresa</h2><a href="nosotros.html">Nosotros</a><a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#preguntas">Preguntas frecuentes</a><a href="noticias.html">Noticias</a></div><div class="pie-col"><h2>Contacto</h2><a href="https://wa.me/51917952528?text=Hola%2C%20quiero%20conversar%20con%20un%20asesor%20de%20FlexGo." target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>WhatsApp +51 917 952 528</a><a href="mailto:contacto@flexgogroup.com"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>contacto@flexgogroup.com</a><a href="contacto.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4Z"/><path d="M8 9h8M8 12h5"/></svg>Formulario de contacto</a><a href="legal/privacidad.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h9l5 5v15H5Z M14 2v6h5 M8 12h8m-8 4h8"/></svg>Política de privacidad</a><a href="legal/terminos.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h9l5 5v15H5Z M14 2v6h5 M8 12h8m-8 4h8"/></svg>Términos y condiciones</a></div></div><p class="pie-copy">© <span id="anio">2026</span> FlexGo. Todos los derechos reservados.</p></div></footer>
+<footer class="pie"><div class="pie-in"><div class="pie-grid"><div class="pie-marca"><a href="index.html" aria-label="FlexGo Group, inicio"><img src="assets/imagenes/kivo-pagina/logo-flexgo.webp" width="299" height="62" alt="FlexGo Group" loading="lazy"></a><p>Tecnología que te impulsa.</p><p><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2"/></svg>Tarapoto, San Martín, Perú</p><div class="pie-redes"><a href="https://web.facebook.com/flexgo.pe/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-3a4 4 0 0 0-4 4v4H5v3h3v8h4v-8h4l1-3h-5V7c0-1 1-1 3-1Z"/></svg>Facebook ↗</a><a href="https://www.instagram.com/flexgo.group/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg>Instagram ↗</a></div></div><div class="pie-col"><h2>Productos</h2><a href="https://logrin.flexgogroup.com/">Logrin Negocio</a><a href="creago.html">CreaGo</a><a href="kivo.html">Kivo Agentes</a><a href="https://logrin.flexgogroup.com/?mercadito" target="_blank" rel="noopener noreferrer">Mi Mercadito</a><a href="eleva.html">Eleva</a><a href="elio.html">Elio</a></div><div class="pie-col"><h2>Empresa</h2><a href="nosotros.html">Nosotros</a><a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#preguntas">Preguntas frecuentes</a><a href="noticias.html">Noticias</a><a href="tarapoto.html">FlexGo en Tarapoto</a></div><div class="pie-col"><h2>Contacto</h2><a href="https://wa.me/51917952528?text=Hola%2C%20quiero%20conversar%20con%20un%20asesor%20de%20FlexGo." target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>WhatsApp +51 917 952 528</a><a href="mailto:contacto@flexgogroup.com"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>contacto@flexgogroup.com</a><a href="contacto.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4Z"/><path d="M8 9h8M8 12h5"/></svg>Formulario de contacto</a><a href="legal/privacidad.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h9l5 5v15H5Z M14 2v6h5 M8 12h8m-8 4h8"/></svg>Política de privacidad</a><a href="legal/terminos.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h9l5 5v15H5Z M14 2v6h5 M8 12h8m-8 4h8"/></svg>Términos y condiciones</a></div></div><p class="pie-copy">© <span id="anio">2026</span> FlexGo. Todos los derechos reservados.</p></div></footer>
 
 <dialog class="service-dialog" id="detalle" aria-labelledby="detalle-titulo">
   <button class="icon-button dialog-close" type="button" aria-label="Cerrar" data-cerrar-detalle>×</button>
@@ -712,7 +774,7 @@
 </section>
 
 <script src="js/datos.js?v=8"></script>
-<script src="js/escenas.js?v=2"></script>
+<script src="js/escenas.js?v=3"></script>
 <script src="js/chat.js?v=3"></script>
 <script src="js/avisame.js"></script>
 <script src="js/menu-servicios.js"></script>
