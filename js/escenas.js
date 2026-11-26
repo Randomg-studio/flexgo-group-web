@@ -194,7 +194,7 @@
   const pista = $('.eco-pista');
   const slides = $$('.eco-slide');
   const contador = $('.contador-actual');
-  const ROMANOS = ['I', 'II', 'III', 'IV'];
+  const ROMANOS = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
   const ecoPin = $('.eco-pin');
   const salida = $('.eco-salida');
   const mision = $('.mision');

@@ -331,3 +331,9 @@ dialog img{width:100%;max-height:70vh;object-fit:contain;border-radius:12px}
 .example-label strong{white-space:nowrap}
 @media(max-width:1100px){.examples{grid-auto-columns:calc((100% - 2*16px)/2.6)}}
 @media(max-width:720px){.examples{grid-auto-columns:calc((100% - 14px)/1.55);gap:14px;padding-right:12%}}
+/* Créditos, complemento y permanencia (26-nov) */
+.plan-creditos{max-width:760px;margin:22px auto 0;color:var(--suave);font-size:14.5px;line-height:1.6}
+.plan-extra{max-width:760px;margin:26px auto 0;padding:20px 24px;border:1px solid #ff079055;border-radius:18px;background:#ff07900f;text-align:left}
+.plan-extra h3{margin:0 0 6px;font-size:18px}
+.plan-extra h3 span{margin-left:8px;color:#ff3aa8;white-space:nowrap}
+.plan-extra p{margin:0;color:var(--suave);font-size:15px;line-height:1.55}

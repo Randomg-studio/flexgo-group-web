@@ -53,7 +53,7 @@
   const pintar = () => {
     const ver = actual === 'todas' ? todas : todas.filter((n) => n.categoria === actual);
     lista.replaceChildren(...ver.map(tarjeta));
-    if (!ver.length) lista.append(el('p', 'vidrio nt-vacio', todas.length ? 'Todavía no hay noticias de este tema. Vuelve mañana.' : 'Pronto verás aquí las primeras noticias. Se actualizan solas cada mañana.'));
+    if (!ver.length) lista.append(el('p', 'vidrio nt-vacio', todas.length ? 'Todavía no hay noticias de este tema. Vuelve mañana.' : 'Muy pronto: estamos preparando las primeras noticias. Déjanos tu contacto abajo y te avisamos cuando salgan.'));
     filtros.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === actual)));
   };
 

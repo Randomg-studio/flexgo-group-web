@@ -85,3 +85,4 @@
   .faq details{padding:0 18px}
 }
 .wp-precio b em{font-size:.5em;font-style:normal;font-weight:500;color:var(--suave)}
+.combina>:last-child:nth-child(3n+1){grid-column:1/-1}

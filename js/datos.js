@@ -67,7 +67,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué son los Agentes de IA?',
-    r: 'Es Kivo Agentes: un agente de IA que atiende a tus clientes por WhatsApp, tu web, Messenger e Instagram, toma pedidos y citas y califica a cada interesado, siempre con la opción de pasar con una persona. Planes desde S/ 149 al mes y puedes probarlo gratis con los datos de tu negocio. Mira los detalles en https://flexgogroup.com/kivo.html',
+    r: 'Es Kivo Agentes: un agente de IA que atiende a tus clientes en tu web o con su propio enlace, toma pedidos y citas y califica a cada interesado, siempre con la opción de pasar con una persona. Planes desde S/ 149 al mes. Para que atienda también en WhatsApp, Messenger o Instagram, cada red se suma con Red extra (S/ 69 al mes por red) y puedes probarlo gratis con los datos de tu negocio. Mira los detalles en https://flexgogroup.com/kivo.html',
     c: ['agente', 'agentes', 'chatbot', 'chatbots', 'bot', 'inteligencia artificial', ' ia ', 'whatsapp automatico', 'automatizar'],
   },
   {
@@ -77,7 +77,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Cuánto cuestan sus servicios?',
-    r: 'Kivo Agentes: desde S/ 149 al mes. Mi Mercadito: S/ 14.99 al mes de lanzamiento (antes S/ 47). Páginas web: desde S/ 250, pago único. Logrin Negocio y CreaGo tienen sus planes en su página, y Logrin se prueba 7 días gratis. Las soluciones a medida se cotizan según lo que necesites. Escríbenos y te orientamos sin compromiso.',
+    r: 'Elio: plan Libre gratis, Impulso S/ 29.90 al mes y Ultra S/ 79.90 al mes. Kivo Agentes: desde S/ 149 al mes (cada red social, con Red extra a S/ 69 al mes). Mi Mercadito: S/ 14.99 al mes de lanzamiento (antes S/ 47). Páginas web: desde S/ 250, pago único. Logrin Negocio y CreaGo tienen sus planes en su página, y Logrin se prueba 7 días gratis. Las soluciones a medida se cotizan según lo que necesites. Escríbenos y te orientamos sin compromiso.',
     c: ['precio', 'precios', 'costo', 'cuesta', 'cuanto', 'planes', 'cotizar', 'cotizacion', 'tarifa'],
   },
   {

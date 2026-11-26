@@ -380,3 +380,10 @@ main > section { position: relative; }
 .sv-grid--pronto { grid-template-columns: 1fr; }
 .sv-marca img { object-fit: contain; flex: none; }
 .sv-card--ancho .sv-marca { margin-top: 4px; }
+/* Ecosistema: Elio y Eleva primero (6 diapositivas) */
+.eco-slide--elio .eco-fondo { background: radial-gradient(ellipse at 78% 45%, #2a7bff55, transparent 58%), linear-gradient(140deg, #0f2c55, #061427 72%); }
+.eco-slide--eleva .eco-fondo { background: radial-gradient(ellipse at 80% 40%, #00bceb44, transparent 58%), linear-gradient(140deg, #0b2a57, #061427 72%); }
+.eco-slide--elio .eco-fondo img, .eco-slide--eleva .eco-fondo img { position: absolute; right: 9%; top: 50%; width: min(30%, 400px); height: auto; transform: translateY(-50%); }
+.eco-slide--eleva .eco-fondo img { width: min(28%, 340px); filter: drop-shadow(0 0 40px #00bceb55); }
+@media (min-width: 851px) and (prefers-reduced-motion: no-preference) { .motion-on .eco { height: 760vh; } }
+@media (max-width: 760px) { .eco-slide--elio .eco-fondo img, .eco-slide--eleva .eco-fondo img { opacity: .35; width: 60%; right: -8%; } }
