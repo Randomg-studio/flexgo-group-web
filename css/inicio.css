@@ -97,3 +97,5 @@
   .eco-item{min-height:68px}
 }
 @media(prefers-reduced-motion:reduce){.eco-item::before,.eco-kivo .kivo-eye,.eco-circulo .eco-kivo{animation:none}}
+.eco-ico--logo{background:#0e2c52}
+.eco-ico--logo img{width:34px;height:34px;object-fit:contain;border-radius:9px}

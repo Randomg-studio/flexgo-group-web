@@ -290,3 +290,4 @@ main{background:radial-gradient(ellipse at 4% 55%,#2a4f8a33 0%,transparent 30%),
   .acciones{max-width:340px}
 }
 .ico-wa{width:1.15em;height:1.15em;flex:none;vertical-align:-.15em}
+.card-ico--logo img{width:78%;height:78%;object-fit:contain;border-radius:9px}

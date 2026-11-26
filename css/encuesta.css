@@ -1,0 +1,43 @@
+/* Encuesta de las páginas de servicios: tarjeta pequeña abajo a la izquierda (la burbuja de Kivo va a la derecha). */
+.encuesta{position:fixed;z-index:45;left:max(18px,env(safe-area-inset-left));bottom:max(18px,env(safe-area-inset-bottom));width:min(360px,calc(100vw - 36px));padding:16px 16px 12px;border:1px solid #7bd3ff66;border-radius:20px;background:linear-gradient(160deg,#0c2747,#071a33);color:#eef7ff;font-size:15px;line-height:1.4;box-shadow:0 18px 50px #0008,0 0 30px #2dc8ff22;animation:enc-sube .35s ease both}
+@keyframes enc-sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.encuesta p{margin:0;color:inherit}
+.enc-cabeza{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.enc-titulo{color:#7fdcff!important;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.enc-x{display:grid;place-items:center;flex:none;width:40px;height:40px;margin:-8px -8px -8px 0;padding:0;border:0;border-radius:50%;background:transparent;color:#cfe6f7;font-size:24px;line-height:1;cursor:pointer}
+.enc-x:hover{background:#ffffff14}
+.enc-avance{height:4px;margin:10px 0 12px;border-radius:9px;background:#ffffff1f;overflow:hidden}
+.enc-lleno{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#00bceb,#7fe3ff);transition:width .3s}
+.enc-lleno.p1{width:25%}.enc-lleno.p2{width:50%}.enc-lleno.p3{width:75%}.enc-lleno.p4{width:100%}
+.enc-pregunta{display:block;margin-bottom:10px!important;font-size:17px;font-weight:700;color:#fff}
+.enc-opciones{display:grid;gap:7px}
+.enc-opcion{min-height:42px;padding:9px 13px;border:1px solid #8fd0f04d;border-radius:12px;background:#ffffff0d;color:#eef7ff;font:inherit;font-size:14.5px;text-align:left;cursor:pointer;transition:background .15s,border-color .15s}
+.enc-opcion:hover,.enc-opcion.elegida{border-color:#00bceb;background:#00bceb26}
+.enc-atras{margin-top:10px;padding:6px 0;border:0;background:none;color:#a9cbe4;font:inherit;font-size:13.5px;cursor:pointer}
+.enc-atras:hover{color:#fff}
+.enc-final{display:grid;gap:8px}
+.enc-final textarea,.enc-final input[type=text]{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #8fd0f04d;border-radius:12px;background:#ffffff12;color:#fff;font:inherit;font-size:16px;resize:vertical}
+.enc-final textarea:focus,.enc-final input[type=text]:focus{outline:none;border-color:#00bceb;box-shadow:0 0 0 3px #00bceb40}
+.enc-final ::placeholder{color:#9db7cc}
+.enc-etiqueta{margin-top:4px;font-size:14px;color:#d7e9f6}
+.enc-acepto{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:#c5dbec}
+.enc-acepto input{margin-top:2px;accent-color:#00bceb}
+.enc-acepto a{color:#7fdcff}
+.enc-trampa{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.enc-estado{min-height:1.2em;font-size:13.5px}
+.enc-estado.error{color:#ffc2c2!important}
+.enc-botones{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.enc-botones .enc-atras{margin:0}
+.enc-enviar{min-height:44px;padding:0 22px;border:0;border-radius:12px;background:#00bceb;color:#04182f;font:inherit;font-weight:800;cursor:pointer}
+.enc-enviar:hover{background:#3fd5f7}
+.enc-enviar:disabled{opacity:.6;cursor:wait}
+.enc-ahora-no{display:block;margin:8px auto 0;padding:6px 10px;border:0;background:none;color:#9fbad0;font:inherit;font-size:13px;text-decoration:underline;cursor:pointer}
+.enc-gracias{font-size:20px;font-weight:800;color:#fff}
+.enc-sub{margin-top:4px!important;color:#c5dbec!important}
+.encuesta :focus-visible{outline:2px solid #7fdcff;outline-offset:2px}
+@media(max-width:720px){
+  .encuesta{left:10px;right:10px;width:auto;bottom:max(82px,calc(env(safe-area-inset-bottom) + 76px));max-height:calc(100dvh - 120px);overflow-y:auto;padding:14px 14px 10px}
+  .enc-opcion{min-height:40px;padding:8px 12px}
+}
+html.chat-abierto .encuesta{display:none}
+@media(prefers-reduced-motion:reduce){.encuesta{animation:none}.enc-lleno{transition:none}}

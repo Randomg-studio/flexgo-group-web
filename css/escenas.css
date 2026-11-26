@@ -375,3 +375,8 @@ main > section { position: relative; }
 .sv-nota { margin-top: 10px; color: var(--muted); font-size: 13px !important; line-height: 1.5; }
 .sv-nota a { color: var(--cyan); }
 .sv-dato s { margin-left: 6px; color: #8fa3bf; font-weight: 400; font-size: .9em; }
+/* Orden de servicios (26-nov): Elio a lo ancho y 6 productos en 3 columnas; «Más servicios» en 3 columnas. */
+@media (min-width: 1101px) { .sv-grid--ia, .sv-grid--tres { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.sv-grid--pronto { grid-template-columns: 1fr; }
+.sv-marca img { object-fit: contain; flex: none; }
+.sv-card--ancho .sv-marca { margin-top: 4px; }

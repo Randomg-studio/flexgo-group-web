@@ -98,3 +98,6 @@
 .ms.ms-movil .ms-item { padding: 9px 10px; }
 
 @media (prefers-reduced-motion: reduce) { .ms.abierto .ms-panel { animation: none; } .ms-boton svg { transition: none; } }
+/* Productos con logo propio: se muestra su logo en vez del ícono genérico. */
+.ms-ico--logo { background: none; }
+.ms-ico--logo img { width: 32px; height: 32px; object-fit: contain; border-radius: 8px; }

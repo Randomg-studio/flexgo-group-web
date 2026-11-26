@@ -33,3 +33,6 @@
   .pie-col:last-child{grid-column:1/-1}
   .pie-copy{margin-top:36px}
 }
+/* Logos de los productos en la columna Productos */
+.pie-col .pie-logo{width:20px;height:20px;flex:none;object-fit:contain;border-radius:5px}
+.pie-col svg.pie-logo--ico{width:18px;height:18px;margin:0 1px;color:var(--p-tenue)}
