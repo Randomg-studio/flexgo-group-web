@@ -57,9 +57,9 @@ const itemEco = (s) => {
   return `<li class="eco-item${s.pronto ? ' es-pronto' : ''}">${ico}<span class="eco-txt"><strong>${esc(nombre)}</strong><small>${esc(e.desc)}</small>${pronto}</span><a class="eco-mas" href="${esc(ruta(href, 'index.html'))}"${nueva} aria-label="${esc(e.aria || `Ver ${nombre}`)}"><span aria-hidden="true">+</span></a></li>`;
 };
 export const htmlEco = (S) => {
+  // Izquierda: productos propios (los que van en el pie); derecha: servicios y soluciones.
   const lista = S.filter((s) => s.eco);
-  const mitad = Math.ceil(lista.length / 2) - 1; // izquierda: los primeros (productos propios)
-  return [lista.slice(0, mitad).map(itemEco).join(''), lista.slice(mitad).map(itemEco).join('')];
+  return [lista.filter((s) => s.pie).map(itemEco).join(''), lista.filter((s) => !s.pie).map(itemEco).join('')];
 };
 
 const reemplazar = (s, ini, fin, nuevo, f, que) => {

@@ -41,6 +41,12 @@ const tramo = (s, ini, fin) => {
 const nombres = (h, re) => [...h.matchAll(re)].map((m) => m[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim());
 const orden = (a, b) => (a.join(' › ') === b.join(' › ') ? '' : `\n     hay:      ${a.join(' › ') || '(nada)'}\n     debe ser: ${b.join(' › ')}`);
 
+// Reglas fijas del dueño (26-nov): Elio está activo y cobra, va primero y sin «Próximamente».
+// Las tareas e investigación para estudiantes son parte de Elio, no un servicio aparte.
+if (S[0]?.id !== 'elio') mal(`Elio debe ir primero en la lista de servicios (hoy va primero: ${S[0]?.nombre})`);
+if (S.find((x) => x.id === 'elio')?.pronto) mal('Elio está activo: no debe decir «Próximamente»');
+for (const x of S) if (/investigaci|tareas con ia/i.test(`${x.nombre} ${x.eco?.desc || ''}`) && x.id !== 'elio') mal(`${x.nombre}: investigación y tareas con IA son parte de Elio; no lo pongas como servicio aparte`);
+
 const enlaces = new Set();
 const html = {};
 for (const f of paginas()) {

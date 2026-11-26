@@ -104,8 +104,8 @@ window.FLEXGO_FAQ = [
 // logo = archivo en assets/imagenes/logos/ (si no hay, se usa icono); pronto = muestra «Próximamente».
 window.FLEXGO_SERVICIOS = [
   { id: 'elio', nombre: 'Elio', href: 'elio.html', logo: 'elio.webp', tarjeta: true,
-    menu: { desc: 'Tu asistente de IA para conversar' },
-    eco: { desc: 'Tu asistente de IA para conversar', aria: 'Conoce Elio, asistente de IA de FlexGo Group' }, pie: true },
+    menu: { desc: 'Tu asistente de IA para estudiar, investigar y trabajar' },
+    eco: { desc: 'Para estudiar, investigar y trabajar', aria: 'Conoce Elio, asistente de IA de FlexGo Group' }, pie: true },
   { id: 'eleva', nombre: 'Eleva', href: 'eleva.html', logo: 'eleva.svg', pronto: true, tarjeta: true,
     menu: { desc: 'Educación en tecnología e IA (próximamente)' },
     eco: { desc: 'Aprende tecnología e IA', aria: 'Conoce Eleva, educación de FlexGo Group' }, pie: true },
@@ -148,7 +148,4 @@ window.FLEXGO_SERVICIOS = [
     ecoIcono: '<path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/>',
     menu: { desc: 'Chatbots, automatizaciones y sistemas con integraciones' },
     eco: { desc: 'Chatbots y automatizaciones' } },
-  { id: 'investigacion', nombre: 'Asistente de investigación', href: 'index.html#avisame', pronto: true, tarjeta: true,
-    icono: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M8 11h6M11 8v6"/>',
-    eco: { desc: 'Tareas con IA para estudiantes', aria: 'Avísame cuando salga Asistente de investigación' } },
 ];
