@@ -60,6 +60,8 @@ for (const f of paginas()) {
     const d = orden(nombres(menu, /<strong>(.*?)<\/strong>/g), S.filter((x) => x.menu).map((x) => x.nombre));
     mal(`${f}: el menú «Servicios» no coincide con la lista única${d || ' (cambió un enlace, un texto o un logo)'}`);
   }
+  const empresa = tramo(s, '<h2>Empresa</h2>', '</div>');
+  if (empresa !== null && !empresa.includes('aliados.html">Sé nuestro aliado</a>')) mal(`${f}: el pie (Empresa) no enlaza «Sé nuestro aliado»`);
   const pie = tramo(s, '<h2>Productos</h2>', '</div>');
   if (pie === null) mal(`${f}: no tiene la columna Productos en el pie`);
   else if (pie !== htmlPie(S, f)) {
@@ -83,6 +85,10 @@ const sobran = tarjetas.filter((id) => !esperadas.includes(id));
 if (faltan.length) mal(`index.html: en «Ver todos los servicios» faltan tarjetas: ${faltan.join(', ')}`);
 if (sobran.length) mal(`index.html: hay tarjetas que no están en la lista única: ${sobran.join(', ')}`);
 if (!faltan.length && !sobran.length && orden(tarjetas, esperadas)) mal(`index.html: las tarjetas de «Ver todos los servicios» no siguen el orden${orden(tarjetas, esperadas)}`);
+
+// Página de aliados estratégicos (26-nov): debe existir y estar enlazada desde la portada.
+if (!html['aliados.html']) mal('Falta la página aliados.html («Sé nuestro aliado»)');
+if (portada && !portada.includes('href="aliados.html"')) mal('index.html: la portada no enlaza «Sé nuestro aliado»');
 
 // Logos y enlaces
 for (const x of S) {

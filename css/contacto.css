@@ -115,3 +115,6 @@
   .tarjeta{padding:24px 20px}
 }
 @media(max-width:760px){.btn-wa{white-space:nowrap;font-size:15px;padding:0 18px}.chip{font-size:11px;letter-spacing:.14em}.datos-contacto li:last-child strong{font-size:14.5px}}
+/* Aliados: el último título mide igual que los demás */
+.datos-contacto.aliados-lista li:last-child strong{font-size:clamp(16px,1.3vw,22px)}
+@media(max-width:760px){.datos-contacto.aliados-lista li:last-child strong{font-size:16.5px}}

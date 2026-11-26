@@ -57,7 +57,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué es Elio?',
-    r: 'Elio by FlexGo Group es nuestro asistente de inteligencia artificial para conversar: explorar ideas, aprender y avanzar en tus tareas. Ya está disponible: pruébalo gratis en https://elio.flexgogroup.com/ (4 preguntas sin cuenta y luego te registras gratis). Tiene 4 motores que gastan créditos por mensaje: Chispa 1, Pulso 2, Órbita 10 y Cumbre 25. Planes: Libre S/ 0 (Chispa, 20 créditos cada 5 horas y 100 por semana), Impulso S/ 29.90 al mes (Chispa, Pulso y Órbita, 60 créditos cada 5 horas y 340 por semana, PDF e imágenes) y Ultra S/ 79.90 al mes (los 4 motores con Cumbre, 150 créditos cada 5 horas y 780 por semana). Incluye Trabajos académicos (citas y referencias en APA 7, Vancouver e ISO 690 con DOI, y esquemas de tesis según guías oficiales de universidades peruanas verificadas: USMP, UPAO y UCV; Elio no inventa referencias), Mi día (recordatorios: escríbele «Recuérdame…»), Mi Biblioteca (guarda documentos y responde citando la fuente) y Trae tu historial de ChatGPT, Claude o Gemini, con guía en https://elio.flexgogroup.com/trae-tu-historial.html. Se paga por Yape dentro de la app.',
+    r: 'Elio by FlexGo Group es nuestro asistente de inteligencia artificial para conversar: explorar ideas, aprender y avanzar en tus tareas. Ya está disponible: pruébalo gratis en https://elio.flexgogroup.com/ (4 preguntas sin cuenta y luego te registras gratis). Tiene 4 motores que gastan créditos por mensaje: Chispa 1, Pulso 2, Órbita 10 y Cumbre 25. Planes: Libre S/ 0 (Chispa, 20 créditos cada 5 horas y 100 por semana), Impulso S/ 29.90 al mes (Chispa, Pulso y Órbita, 60 créditos cada 5 horas y 340 por semana, PDF e imágenes) y Ultra S/ 79.90 al mes (los 4 motores con Cumbre, 150 créditos cada 5 horas y 780 por semana). Incluye Trabajos académicos (citas y referencias en APA 7, Vancouver e ISO 690 con DOI, y esquemas de tesis según guías oficiales de universidades peruanas verificadas: USMP, UPAO y UCV; Elio no inventa referencias), Mi día (recordatorios: escríbele «Recuérdame…»), Mi Biblioteca (guarda documentos y responde citando la fuente) y Trae tu historial de ChatGPT, Claude o Gemini, con guía en https://elio.flexgogroup.com/trae-tu-historial.html. Se paga por Yape dentro de la app; si prefieres Plin, o pagar en dólares con PayPal, escríbenos por WhatsApp.',
     c: ['elio', 'chatgpt', 'chat gpt', 'asistente de ia', 'asistente personal', 'chat de ia', 'conversar con ia', 'preguntarle a la ia'],
   },
   {
@@ -77,7 +77,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Cuánto cuestan sus servicios?',
-    r: 'Elio: plan Libre gratis, Impulso S/ 29.90 al mes y Ultra S/ 79.90 al mes. Kivo Agentes: desde S/ 149 al mes (cada red social, con Red extra a S/ 69 al mes). Mi Mercadito: S/ 14.99 al mes de lanzamiento (antes S/ 47). Páginas web: desde S/ 250, pago único. Logrin Negocio y CreaGo tienen sus planes en su página, y Logrin se prueba 7 días gratis. Las soluciones a medida se cotizan según lo que necesites. Escríbenos y te orientamos sin compromiso.',
+    r: 'Elio: plan Libre gratis, Impulso S/ 29.90 al mes y Ultra S/ 79.90 al mes. Kivo Agentes: desde S/ 149 al mes (cada red social, con Red extra a S/ 69 al mes). Mi Mercadito: S/ 14.99 al mes de lanzamiento (antes S/ 47). Páginas web: desde S/ 250, pago único. Logrin Negocio y CreaGo tienen sus planes en su página, y Logrin se prueba 7 días gratis. Las soluciones a medida se cotizan según lo que necesites. Puedes pagar en soles con Yape o Plin, o en dólares con PayPal (consúltanos por WhatsApp). Escríbenos y te orientamos sin compromiso.',
     c: ['precio', 'precios', 'costo', 'cuesta', 'cuanto', 'planes', 'cotizar', 'cotizacion', 'tarifa'],
   },
   {
@@ -87,7 +87,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Cómo puedo ser aliado de FlexGo?',
-    r: 'Buscamos personas y empresas que quieran trabajar con nosotros. Escríbenos por WhatsApp o correo, cuéntanos qué haces y vemos juntos cómo colaborar.',
+    r: 'Si tienes una empresa, buscamos aliados estratégicos, no proveedores: puedes referir o revender nuestros servicios, integrar tus sistemas con Kivo y Logrin, hacer co-marketing o crear una alianza para tu rubro. Propón tu alianza en https://flexgogroup.com/aliados.html o escríbenos por WhatsApp.',
     c: ['aliado', 'aliados', 'alianza', 'socio', 'colaborar', 'trabajar con ustedes', 'referido'],
   },
   {
