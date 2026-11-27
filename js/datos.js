@@ -129,12 +129,12 @@ window.FLEXGO_SERVICIOS = [
     menu: { desc: 'Educación en tecnología e IA (próximamente)' },
     eco: { desc: 'Aprende tecnología e IA', aria: 'Conoce Eleva, educación de FlexGo Group' }, pie: true },
   { id: 'kivo', nombre: 'Kivo Agentes', href: 'kivo.html', logo: 'kivo.webp', tarjeta: true,
-    resenas: { proyecto: 'kivo', rpc: 'kivo_resenas_publicas' }, // función de Logrin (R-178)
+    resenas: { proyecto: 'kivo', rpc: 'kivo_resenas_publicas', dejar: 'https://logrin.flexgogroup.com/#resena=kivo' }, // función de Logrin (R-178); opinar con código al correo (R-180)
     acceso: { url: 'https://logrin.flexgogroup.com/', nota: 'Toca «Soy cliente»' },
     menu: { desc: 'Agentes con tecnología neuronal que atienden a tus clientes a toda hora' },
     eco: { desc: 'Tecnología neuronal que atiende por ti' }, pie: true },
   { id: 'logrin', nombre: 'Logrin Negocio', href: 'https://logrin.flexgogroup.com/', logo: 'logrin.webp', tarjeta: true,
-    resenas: { proyecto: 'kivo', rpc: 'logrin_resenas_publicas' }, // función de Logrin (R-178)
+    resenas: { proyecto: 'kivo', rpc: 'logrin_resenas_publicas', dejar: 'https://logrin.flexgogroup.com/#resena=logrin' }, // función de Logrin (R-178); opinar con código al correo (R-180)
     acceso: { url: 'https://logrin.flexgogroup.com/', nota: 'Toca «Soy cliente»' },
     menu: { desc: 'Ventas, inventario, clientes y cobros en un solo lugar' },
     eco: { desc: 'Gestión integral de tu negocio', nueva: true }, pie: true },
@@ -154,7 +154,7 @@ window.FLEXGO_SERVICIOS = [
     menu: { desc: 'Finanzas claras: simula tu crédito con la TCEA real antes de firmar' },
     eco: { desc: 'Simula tu crédito con la TCEA real', aria: 'Conoce KipuGo, finanzas claras de FlexGo Group' }, pie: true, pieNueva: true },
   { id: 'mercadito', nombre: 'Mi Mercadito', href: 'https://logrin.flexgogroup.com/?mercadito', tarjeta: true,
-    resenas: { proyecto: 'kivo', rpc: 'mercadito_resenas_publicas' }, // función de Logrin (R-178)
+    resenas: { proyecto: 'kivo', rpc: 'mercadito_resenas_publicas', dejar: 'https://logrin.flexgogroup.com/#resena=mercadito' }, // función de Logrin (R-178); opinar con código al correo (R-180)
     acceso: { url: 'https://logrin.flexgogroup.com/', nota: 'Toca «Soy cliente»' },
     icono: '<path d="M5 8h14l-1.2 12H6.2Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
     menu: { desc: 'Tu tienda en línea para compartir por WhatsApp' },
