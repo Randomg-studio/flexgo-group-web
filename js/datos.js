@@ -22,6 +22,8 @@ window.FLEXGO = {
   // La clave es la pública de la página de Logrin; vacía, el chat usa solo las respuestas preparadas.
   // Elio (proyecto propio): solo para leer las reseñas aprobadas. Clave pública (publishable).
   elio: { url: 'https://dpipmmocrooizngopayz.supabase.co', clave: 'sb_publishable_sN1BFTi0lGSGaQO4aw5UGg_KddEbewg' },
+  // NormaGo (proyecto chat-ia-legal): solo URL y clave pública (publishable), para leer sus reseñas aprobadas.
+  normago: { url: 'https://venygswvufoanerexlnk.supabase.co', clave: 'sb_publishable_a6haAJD2Nree6OFJqkTMqQ_MWDxTPFz' },
   kivo: { url: 'https://owtweebqlmoarbsvtiau.supabase.co', clave: 'sb_publishable_YvFAhbXHG1UxlXDnUny5Uw_sRVWE0Wv' },
 };
 
@@ -124,10 +126,12 @@ window.FLEXGO_SERVICIOS = [
     menu: { desc: 'Educación en tecnología e IA (próximamente)' },
     eco: { desc: 'Aprende tecnología e IA', aria: 'Conoce Eleva, educación de FlexGo Group' }, pie: true },
   { id: 'kivo', nombre: 'Kivo Agentes', href: 'kivo.html', logo: 'kivo.webp', tarjeta: true,
+    resenas: { proyecto: 'kivo', rpc: 'kivo_resenas_publicas' }, // función de Logrin (R-178)
     acceso: { url: 'https://logrin.flexgogroup.com/', nota: 'Toca «Soy cliente»' },
     menu: { desc: 'Agentes con tecnología neuronal que atienden a tus clientes a toda hora' },
     eco: { desc: 'Tecnología neuronal que atiende por ti' }, pie: true },
   { id: 'logrin', nombre: 'Logrin Negocio', href: 'https://logrin.flexgogroup.com/', logo: 'logrin.webp', tarjeta: true,
+    resenas: { proyecto: 'kivo', rpc: 'logrin_resenas_publicas' }, // función de Logrin (R-178)
     acceso: { url: 'https://logrin.flexgogroup.com/', nota: 'Toca «Soy cliente»' },
     menu: { desc: 'Ventas, inventario, clientes y cobros en un solo lugar' },
     eco: { desc: 'Gestión integral de tu negocio', nueva: true }, pie: true },
@@ -138,9 +142,11 @@ window.FLEXGO_SERVICIOS = [
   // NormaGo (antes «Chat IA Legal»): isotipo oficial en todos los lugares, como Elio, Kivo y Logrin (pedido del usuario, 27-nov).
   { id: 'normago', nombre: 'NormaGo', href: 'https://normago.flexgogroup.com/', logo: 'normago.webp', beta: true, tarjeta: true,
     acceso: { url: 'https://normago.flexgogroup.com/chat.html' },
+    // resenas: { proyecto: 'normago', rpc: 'normago_resenas_publicas' }, // se activa cuando la función exista (hoy 404)
     menu: { desc: 'Inteligencia artificial jurídica: investiga y analiza el derecho peruano con fuentes oficiales' },
     eco: { desc: 'Inteligencia artificial jurídica', aria: 'Conoce NormaGo, la inteligencia artificial jurídica de FlexGo Group' }, pie: true, pieNueva: true },
   { id: 'mercadito', nombre: 'Mi Mercadito', href: 'https://logrin.flexgogroup.com/?mercadito', tarjeta: true,
+    resenas: { proyecto: 'kivo', rpc: 'mercadito_resenas_publicas' }, // función de Logrin (R-178)
     acceso: { url: 'https://logrin.flexgogroup.com/', nota: 'Toca «Soy cliente»' },
     icono: '<path d="M5 8h14l-1.2 12H6.2Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
     menu: { desc: 'Tu tienda en línea para compartir por WhatsApp' },
