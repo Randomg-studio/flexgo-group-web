@@ -86,7 +86,8 @@
     const lead = sec.querySelector('.rs-lead');
     const caja = sec.querySelector('.rs-lista');
     const dejar = sec.querySelector('.rs-dejar');
-    if (dejar && s.acceso?.url) dejar.href = s.acceso.url;
+    const urlDejar = s.resenas.dejar || s.acceso?.url;
+    if (dejar && urlDejar) dejar.href = urlDejar;
     sec.hidden = false;
     const d = await traer(s);
     if (!d?.total || !d.lista.length) return; // queda «Sé de los primeros…»

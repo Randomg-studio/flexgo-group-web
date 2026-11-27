@@ -117,10 +117,11 @@ window.FLEXGO_FAQ = [
 //   En su propia página sale «Iniciar sesión en <nombre>» en la barra; en las demás, la lista «Iniciar sesión» con todos los que tienen url.
 // resenas = { proyecto, rpc } función pública de reseñas aprobadas en la app (proyecto = clave de window.FLEXGO con url y clave pública).
 //   Responde { total, promedio, resenas: [{ estrellas, texto, nombre, plan, fecha }] }. Lo usa js/resenas.js; sin este campo, la sección no se muestra.
+//   dejar = enlace directo al formulario de reseña del producto (si no hay, el botón lleva a su acceso).
 window.FLEXGO_SERVICIOS = [
   { id: 'elio', nombre: 'Elio', href: 'elio.html', logo: 'elio.webp', tarjeta: true,
     acceso: { url: 'https://elio.flexgogroup.com/' },
-    resenas: { proyecto: 'elio', rpc: 'elio_resenas_publicas' },
+    resenas: { proyecto: 'elio', rpc: 'elio_resenas_publicas', dejar: 'https://elio.flexgogroup.com/?resena' },
     menu: { desc: 'Tu asistente de IA para estudiar, investigar y trabajar' },
     eco: { desc: 'Para estudiar, investigar y trabajar', aria: 'Conoce Elio, asistente de IA de FlexGo Group' }, pie: true },
   { id: 'eleva', nombre: 'Eleva', href: 'eleva.html', logo: 'eleva.svg', pronto: true, tarjeta: true,
