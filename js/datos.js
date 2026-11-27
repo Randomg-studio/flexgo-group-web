@@ -129,7 +129,7 @@ window.FLEXGO_SERVICIOS = [
   // (32, 34 y 20 px) va el ícono de balanza, y el isotipo oficial (logos/normago.webp) solo en su tarjeta.
   { id: 'normago', nombre: 'NormaGo', href: 'https://legal.flexgogroup.com/', beta: true, tarjeta: true,
     icono: '<path d="M12 3v18M7 21h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Zm14 0-3 7a3 3 0 0 0 6 0Z"/>',
-    menu: { desc: 'Inteligencia artificial jurídica para investigar y analizar el derecho' },
+    menu: { desc: 'Chat IA Legal para abogados: consultas del Perú con la fuente oficial a la vista' },
     eco: { desc: 'Inteligencia artificial jurídica', aria: 'Conoce NormaGo, la inteligencia artificial jurídica de FlexGo Group' }, pie: true, pieNueva: true },
   { id: 'mercadito', nombre: 'Mi Mercadito', href: 'https://logrin.flexgogroup.com/?mercadito', tarjeta: true,
     icono: '<path d="M5 8h14l-1.2 12H6.2Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
