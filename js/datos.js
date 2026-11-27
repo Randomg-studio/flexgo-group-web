@@ -148,6 +148,10 @@ window.FLEXGO_SERVICIOS = [
     // resenas: { proyecto: 'normago', rpc: 'normago_resenas_publicas' }, // se activa cuando la función exista (hoy 404)
     menu: { desc: 'Inteligencia artificial jurídica: investiga y analiza el derecho peruano con fuentes oficiales' },
     eco: { desc: 'Inteligencia artificial jurídica', aria: 'Conoce NormaGo, la inteligencia artificial jurídica de FlexGo Group' }, pie: true, pieNueva: true },
+  // KipuGo (27-nov, chat «Finanzas Chat IA»): simulador gratis de créditos; no tiene cuentas, por eso no lleva acceso.
+  { id: 'kipugo', nombre: 'KipuGo', href: 'https://kipugo.flexgogroup.com/', logo: 'kipugo.svg', beta: true, tarjeta: true,
+    menu: { desc: 'Finanzas claras: simula tu crédito con la TCEA real antes de firmar' },
+    eco: { desc: 'Simula tu crédito con la TCEA real', aria: 'Conoce KipuGo, finanzas claras de FlexGo Group' }, pie: true, pieNueva: true },
   { id: 'mercadito', nombre: 'Mi Mercadito', href: 'https://logrin.flexgogroup.com/?mercadito', tarjeta: true,
     resenas: { proyecto: 'kivo', rpc: 'mercadito_resenas_publicas' }, // función de Logrin (R-178)
     acceso: { url: 'https://logrin.flexgogroup.com/', nota: 'Toca «Soy cliente»' },
