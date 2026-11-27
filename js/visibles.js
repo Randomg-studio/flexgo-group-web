@@ -8,7 +8,7 @@
 (() => {
   'use strict';
   // En pausa hasta que exista servicios_visibles() en Logrin (R-179): así no hay pedidos que fallen. Para encenderlo, poner true.
-  const ACTIVO = false;
+  const ACTIVO = true; // encendido el 27-nov: R-179 en vivo
   const CLAVE = 'flexgo-visibles';
   const VIDA = 5 * 60 * 1000;
   const ID = /^[a-z0-9-]{1,40}$/;
