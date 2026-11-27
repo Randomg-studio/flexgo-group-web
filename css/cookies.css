@@ -1,0 +1,21 @@
+/* Aviso de cookies de FlexGo (js/cookies.js). No bloquea la página ni tapa el botón de Kivo. */
+.ck-barra{position:fixed;left:16px;bottom:16px;z-index:45;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;max-width:min(640px,calc(100% - 112px));padding:14px 16px;border:1px solid #ffffff26;border-radius:16px;background:#0b1d3aF2;color:#e8f1ff;box-shadow:0 14px 40px #0006;font:500 14px/1.45 "Manrope","Segoe UI",system-ui,sans-serif}
+.ck-texto{flex:1 1 260px;margin:0;color:#e8f1ff}
+.ck-texto a{color:#7fe3ff;font-weight:700}
+.ck-botones{display:flex;flex-wrap:wrap;gap:8px}
+.ck-btn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 16px;border:1px solid #00C6EB;border-radius:999px;background:#00C6EB;color:#071529;font:700 14px/1 inherit;font-family:inherit;text-decoration:none;cursor:pointer}
+.ck-btn.ck-sec{background:transparent;color:#e8f1ff;border-color:#ffffff55}
+.ck-btn:focus-visible{outline:3px solid #7fe3ff;outline-offset:2px}
+.ck-iguales .ck-btn{min-width:110px}
+.ck-cats{display:grid;gap:8px;flex-basis:100%}
+.ck-cats[hidden]{display:none}
+.ck-cat{display:flex;gap:10px;align-items:flex-start}
+.ck-cat input{width:18px;height:18px;margin-top:2px;accent-color:#00C6EB}
+@media(max-width:560px){.ck-barra{left:12px;bottom:12px;max-width:calc(100% - 96px);padding:12px 14px;font-size:13.5px}.ck-btn{min-height:38px;padding:0 13px}}
+/* Tabla de la Política de cookies */
+.legal-tabla{margin:18px 0;overflow-x:auto;border:1px solid #ffffff26;border-radius:14px}
+.legal-tabla table{width:100%;min-width:560px;border-collapse:collapse;font-size:15px;line-height:1.45}
+.legal-tabla th,.legal-tabla td{padding:12px 14px;border-bottom:1px solid #ffffff1f;text-align:left;vertical-align:top}
+.legal-tabla thead th{background:#ffffff12;font-weight:700}
+.legal-tabla tbody tr:last-child td{border-bottom:0}
+.legal-tabla code{font-size:13.5px;word-break:break-word}

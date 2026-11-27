@@ -20,6 +20,8 @@ window.FLEXGO = {
   aliados: [],
   // Kivo conversa con el mismo sistema de Logrin: los chats llegan a Atención al cliente de la consola.
   // La clave es la pública de la página de Logrin; vacía, el chat usa solo las respuestas preparadas.
+  // Elio (proyecto propio): solo para leer las reseñas aprobadas. Clave pública (publishable).
+  elio: { url: 'https://dpipmmocrooizngopayz.supabase.co', clave: 'sb_publishable_sN1BFTi0lGSGaQO4aw5UGg_KddEbewg' },
   kivo: { url: 'https://owtweebqlmoarbsvtiau.supabase.co', clave: 'sb_publishable_YvFAhbXHG1UxlXDnUny5Uw_sRVWE0Wv' },
 };
 
@@ -57,7 +59,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué es Elio?',
-    r: 'Elio by FlexGo Group es nuestro asistente de inteligencia artificial para conversar: explorar ideas, aprender y avanzar en tus tareas. Ya está disponible: pruébalo gratis en https://elio.flexgogroup.com/ (4 preguntas sin cuenta y luego te registras gratis). Tiene 4 motores que gastan créditos por mensaje: Chispa 1, Pulso 2, Órbita 10 y Cumbre 25. Planes: Libre S/ 0 (Chispa, 20 créditos cada 5 horas y 100 por semana), Impulso S/ 29.90 al mes (Chispa, Pulso y Órbita, 60 créditos cada 5 horas y 340 por semana, PDF e imágenes) y Ultra S/ 79.90 al mes (los 4 motores con Cumbre, 150 créditos cada 5 horas y 780 por semana). Incluye Trabajos académicos (citas y referencias en APA 7, Vancouver e ISO 690 con DOI, y esquemas de tesis según guías oficiales de universidades peruanas verificadas: USMP, UPAO y UCV; Elio no inventa referencias), Mi día (recordatorios: escríbele «Recuérdame…»), Mi Biblioteca (guarda documentos y responde citando la fuente) y Trae tu historial de ChatGPT, Claude o Gemini, con guía en https://elio.flexgogroup.com/trae-tu-historial.html. Se paga por Yape dentro de la app; si prefieres Plin, o pagar en dólares con PayPal, escríbenos por WhatsApp.',
+    r: 'Elio by FlexGo Group es nuestro asistente de inteligencia artificial para conversar: explorar ideas, aprender y avanzar en tus tareas. Ya está disponible: pruébalo gratis en https://elio.flexgogroup.com/ (4 preguntas sin cuenta y luego te registras gratis). Tiene 4 motores que gastan créditos por mensaje: Chispa 1, Pulso 2, Órbita 10 y Cumbre 25. Planes con IGV incluido: Libre S/ 0 (Chispa y 3 mensajes con Órbita a la semana, 10 créditos cada 5 horas y 40 por semana, hasta 2 dispositivos), Impulso S/ 56.99 al mes (Chispa, Pulso y Órbita, 60 créditos cada 5 horas y 340 por semana, PDF e imágenes, 1 persona y hasta 3 dispositivos) y Ultra S/ 159.99 al mes para 2 personas, cada una con su cuenta (los 4 motores con Cumbre, 150 créditos cada 5 horas y 780 por semana, o 75 y 390 por persona si lo compartes, hasta 4 dispositivos). Si es tu primera vez, puedes probar Impulso 3 días gratis, una sola vez y sin tarjeta. Incluye Trabajos académicos (citas y referencias en APA 7, Vancouver e ISO 690 con DOI, y esquemas de tesis según guías oficiales de universidades peruanas verificadas: USMP, UPAO y UCV; Elio no inventa referencias), Mi día (recordatorios: escríbele «Recuérdame…»), Mi Biblioteca (guarda documentos y responde citando la fuente) y Trae tu historial de ChatGPT, Claude o Gemini, con guía en https://elio.flexgogroup.com/trae-tu-historial.html. Se paga por Yape dentro de la app; si prefieres Plin, o pagar en dólares con PayPal, escríbenos por WhatsApp.',
     c: ['elio', 'chatgpt', 'chat gpt', 'asistente de ia', 'asistente personal', 'chat de ia', 'conversar con ia', 'preguntarle a la ia'],
   },
   {
@@ -67,8 +69,13 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Qué son los Agentes de IA?',
-    r: 'Es Kivo Agentes: un agente de IA que atiende a tus clientes en tu web o con su propio enlace, toma pedidos y citas y califica a cada interesado, siempre con la opción de pasar con una persona. Planes desde S/ 149 al mes. Para que atienda también en WhatsApp, Messenger o Instagram, cada red se suma con Red extra (S/ 69 al mes por red) y puedes probarlo gratis con los datos de tu negocio. Mira los detalles en https://flexgogroup.com/kivo.html',
+    r: 'Es Kivo Agentes: agentes con la tecnología neuronal de Kivo que atienden a tus clientes en tu web o con su propio enlace, toma pedidos y citas y califica a cada interesado, siempre con la opción de pasar con una persona. Planes desde S/ 149 al mes. Para que atienda también en WhatsApp, Messenger o Instagram, cada red se suma con Red extra (S/ 69 al mes por red) y puedes probarlo gratis con los datos de tu negocio. Mira los detalles en https://flexgogroup.com/kivo.html',
     c: ['agente', 'agentes', 'chatbot', 'chatbots', 'bot', 'inteligencia artificial', ' ia ', 'whatsapp automatico', 'automatizar'],
+  },
+  {
+    p: '¿Qué es la tecnología neuronal de Kivo?',
+    r: 'Kivo funciona con modelos de inteligencia artificial basados en redes neuronales, configurados por FlexGo con la información de tu negocio. Entiende los mensajes como los escriben tus clientes y responde solo con lo que tu negocio le enseñó. Si no sabe algo, no lo inventa: te avisa para que atiendas tú. Como toda IA, puede equivocarse, y por eso siempre puedes revisar y tomar la conversación.',
+    c: ['tecnologia neuronal', 'neuronal', 'redes neuronales', 'como funciona kivo', 'modelo de ia', 'se equivoca'],
   },
   {
     p: '¿Hacen páginas web o soluciones a medida?',
@@ -77,7 +84,7 @@ window.FLEXGO_FAQ = [
   },
   {
     p: '¿Cuánto cuestan sus servicios?',
-    r: 'Elio: plan Libre gratis, Impulso S/ 29.90 al mes y Ultra S/ 79.90 al mes. Kivo Agentes: desde S/ 149 al mes (cada red social, con Red extra a S/ 69 al mes). Mi Mercadito: S/ 14.99 al mes de lanzamiento (antes S/ 47). Páginas web: desde S/ 250, pago único. Logrin Negocio y CreaGo tienen sus planes en su página, y Logrin se prueba 7 días gratis. Las soluciones a medida se cotizan según lo que necesites. Puedes pagar en soles con Yape o Plin, o en dólares con PayPal (consúltanos por WhatsApp). Escríbenos y te orientamos sin compromiso.',
+    r: 'Elio: plan Libre gratis, Impulso S/ 56.99 al mes y Ultra S/ 159.99 al mes para 2 personas, con IGV incluido. Kivo Agentes: desde S/ 149 al mes (cada red social, con Red extra a S/ 69 al mes). Mi Mercadito: S/ 14.99 al mes de lanzamiento (antes S/ 47). Páginas web: desde S/ 250, pago único. Logrin Negocio y CreaGo tienen sus planes en su página, y Logrin se prueba 7 días gratis. Las soluciones a medida se cotizan según lo que necesites. Puedes pagar en soles con Yape o Plin, o en dólares con PayPal (consúltanos por WhatsApp). Escríbenos y te orientamos sin compromiso.',
     c: ['precio', 'precios', 'costo', 'cuesta', 'cuanto', 'planes', 'cotizar', 'cotizacion', 'tarifa'],
   },
   {
@@ -110,8 +117,8 @@ window.FLEXGO_SERVICIOS = [
     menu: { desc: 'Educación en tecnología e IA (próximamente)' },
     eco: { desc: 'Aprende tecnología e IA', aria: 'Conoce Eleva, educación de FlexGo Group' }, pie: true },
   { id: 'kivo', nombre: 'Kivo Agentes', href: 'kivo.html', logo: 'kivo.webp', tarjeta: true,
-    menu: { desc: 'Agentes de IA que atienden a tus clientes a toda hora' },
-    eco: { desc: 'Agentes de IA que atienden por ti' }, pie: true },
+    menu: { desc: 'Agentes con tecnología neuronal que atienden a tus clientes a toda hora' },
+    eco: { desc: 'Tecnología neuronal que atiende por ti' }, pie: true },
   { id: 'logrin', nombre: 'Logrin Negocio', href: 'https://logrin.flexgogroup.com/', logo: 'logrin.webp', tarjeta: true,
     menu: { desc: 'Ventas, inventario, clientes y cobros en un solo lugar' },
     eco: { desc: 'Gestión integral de tu negocio', nueva: true }, pie: true },

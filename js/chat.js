@@ -281,7 +281,7 @@
 
   const saludar = () => {
     saludado = true;
-    pinta('¡Hola! 👋 Soy Kivo, el asistente de IA de FlexGo. ¿Qué te gustaría resolver en tu negocio?');
+    pinta('¡Hola! 👋 Soy Kivo, el asistente de FlexGo con tecnología neuronal. ¿Qué te gustaría resolver en tu negocio?');
   };
 
   // En el celular el chat ocupa toda la pantalla: el botón «atrás» lo minimiza.
