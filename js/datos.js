@@ -140,7 +140,7 @@ window.FLEXGO_SERVICIOS = [
     eco: { desc: 'Gestión integral de tu negocio', nueva: true }, pie: true },
   { id: 'creago', nombre: 'CreaGo', href: 'creago.html', logo: 'creago.webp', tarjeta: true,
     acceso: { url: 'https://creago.flexgogroup.com/login' },
-    resenas: { proyecto: 'creago', rpc: 'creago_resenas_publicas' },
+    resenas: { proyecto: 'creago', rpc: 'creago_resenas_publicas', dejar: 'https://creago.flexgogroup.com/resena' },
     menu: { desc: 'Contenido para redes con IA y la voz de tu marca' },
     eco: { desc: 'Contenido con IA para tu marca' }, pie: true },
   // NormaGo (antes «Chat IA Legal»): isotipo oficial en todos los lugares, como Elio, Kivo y Logrin (pedido del usuario, 27-nov).
