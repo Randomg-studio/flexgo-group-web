@@ -108,7 +108,7 @@ window.FLEXGO_FAQ = [
 // se generan de aquí con `node scripts/servicios-estatico.mjs`, y `node scripts/revisar-servicios.mjs` comprueba
 // que todas las páginas coincidan. Para agregar o mover un servicio, cámbialo SOLO aquí y corre los dos scripts.
 // Campos: menu/eco/pie = dónde aparece; tarjeta = debe tener su tarjeta en «Ver todos los servicios» (#servicios);
-// logo = archivo en assets/imagenes/logos/ (si no hay, se usa icono); pronto = muestra «Próximamente» (o el texto de prontoTexto).
+// logo = archivo en assets/imagenes/logos/ (si no hay, se usa icono); pronto = muestra «Próximamente» (o el texto de prontoTexto); beta = muestra la etiqueta «Beta».
 window.FLEXGO_SERVICIOS = [
   { id: 'elio', nombre: 'Elio', href: 'elio.html', logo: 'elio.webp', tarjeta: true,
     menu: { desc: 'Tu asistente de IA para estudiar, investigar y trabajar' },
@@ -125,6 +125,10 @@ window.FLEXGO_SERVICIOS = [
   { id: 'creago', nombre: 'CreaGo', href: 'creago.html', logo: 'creago.webp', tarjeta: true,
     menu: { desc: 'Contenido para redes con IA y la voz de tu marca' },
     eco: { desc: 'Contenido con IA para tu marca' }, pie: true },
+  { id: 'chat-ia-legal', nombre: 'Chat IA Legal', href: 'https://legal.flexgogroup.com/', beta: true, tarjeta: true,
+    icono: '<path d="M12 3v18M7 21h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Zm14 0-3 7a3 3 0 0 0 6 0Z"/>',
+    menu: { desc: 'Chat de IA para abogados del Perú, con la fuente oficial de cada dato' },
+    eco: { desc: 'Consultas legales con fuente oficial', aria: 'Conoce Chat IA Legal, para abogados del Perú' }, pie: true, pieNueva: true },
   { id: 'mercadito', nombre: 'Mi Mercadito', href: 'https://logrin.flexgogroup.com/?mercadito', tarjeta: true,
     icono: '<path d="M5 8h14l-1.2 12H6.2Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
     menu: { desc: 'Tu tienda en línea para compartir por WhatsApp' },
@@ -155,8 +159,4 @@ window.FLEXGO_SERVICIOS = [
     ecoIcono: '<path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/>',
     menu: { desc: 'Chatbots, automatizaciones y sistemas con integraciones' },
     eco: { desc: 'Chatbots y automatizaciones' } },
-  { id: 'chat-ia-legal', nombre: 'Chat IA Legal', href: 'https://legal.flexgogroup.com/', pronto: true, prontoTexto: 'Muy pronto', tarjeta: true,
-    icono: '<path d="M12 3v18M7 21h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Zm14 0-3 7a3 3 0 0 0 6 0Z"/>',
-    menu: { desc: 'Para abogados: consultas legales del Perú con la fuente oficial a la vista (muy pronto)' },
-    eco: { desc: 'Consultas legales con fuente oficial', aria: 'Conoce Chat IA Legal, para abogados del Perú' }, pie: true, pieNueva: true },
 ];

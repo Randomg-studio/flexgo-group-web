@@ -35,7 +35,7 @@ export const htmlMenu = (S, f) => S.filter((s) => s.menu).map((s) => {
     ? `<span class="ms-ico ms-ico--logo" aria-hidden="true">${img(s, f, 32)}</span>`
     : `<span class="ms-ico" aria-hidden="true">${SVG_MENU}${s.icono}</svg></span>`;
   const actual = s.href === f ? ' aria-current="page"' : '';
-  return `<a class="ms-item" href="${esc(ruta(s.href, f))}"${actual}>${ico}<span><strong>${esc(s.nombre)}</strong><small>${esc(s.menu.desc)}</small></span></a>`;
+  return `<a class="ms-item" href="${esc(ruta(s.href, f))}"${actual}>${ico}<span><strong>${esc(s.nombre)}${s.beta ? ' <em class="ms-beta">Beta</em>' : ''}</strong><small>${esc(s.menu.desc)}</small></span></a>`;
 }).join('');
 
 const BOLSA = '<svg class="pie-logo pie-logo--ico" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">';
@@ -53,7 +53,7 @@ const itemEco = (s) => {
     ? `<span class="eco-ico eco-ico--logo"><img src="assets/imagenes/logos/${s.logo}" width="34" height="34" alt="" loading="lazy" decoding="async"></span>`
     : `<span class="eco-ico">${SVG_ECO}${s.ecoIcono || s.icono}</svg></span>`;
   const nueva = e.nueva || externo(href) ? ' target="_blank" rel="noopener"' : '';
-  const pronto = s.pronto ? `<em class="eco-pronto">${esc(s.prontoTexto || 'Próximamente')}</em>` : '';
+  const pronto = s.pronto ? `<em class="eco-pronto">${esc(s.prontoTexto || 'Próximamente')}</em>` : s.beta ? '<em class="eco-pronto eco-beta">Beta</em>' : '';
   return `<li class="eco-item${s.pronto ? ' es-pronto' : ''}">${ico}<span class="eco-txt"><strong>${esc(nombre)}</strong><small>${esc(e.desc)}</small>${pronto}</span><a class="eco-mas" href="${esc(ruta(href, 'index.html'))}"${nueva} aria-label="${esc(e.aria || `Ver ${nombre}`)}"><span aria-hidden="true">+</span></a></li>`;
 };
 export const htmlEco = (S) => {

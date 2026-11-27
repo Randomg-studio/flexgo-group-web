@@ -101,3 +101,4 @@
 /* Productos con logo propio: se muestra su logo en vez del ícono genérico. */
 .ms-ico--logo { background: none; }
 .ms-ico--logo img { width: 32px; height: 32px; object-fit: contain; border-radius: 8px; }
+.ms-beta { display: inline-block; margin-left: 6px; padding: 1px 7px; border: 1px solid currentColor; border-radius: 999px; font-size: 10.5px; font-style: normal; font-weight: 600; vertical-align: 1px; opacity: .8; }
