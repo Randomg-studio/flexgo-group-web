@@ -127,7 +127,7 @@ window.FLEXGO_SERVICIOS = [
     eco: { desc: 'Contenido con IA para tu marca' }, pie: true },
   // NormaGo (antes «Chat IA Legal»): isotipo oficial en todos los lugares, como Elio, Kivo y Logrin (pedido del usuario, 27-nov).
   { id: 'normago', nombre: 'NormaGo', href: 'https://normago.flexgogroup.com/', logo: 'normago.webp', beta: true, tarjeta: true,
-    menu: { desc: 'Chat IA Legal para abogados: consultas del Perú con la fuente oficial a la vista' },
+    menu: { desc: 'Inteligencia artificial jurídica: investiga y analiza el derecho peruano con fuentes oficiales' },
     eco: { desc: 'Inteligencia artificial jurídica', aria: 'Conoce NormaGo, la inteligencia artificial jurídica de FlexGo Group' }, pie: true, pieNueva: true },
   { id: 'mercadito', nombre: 'Mi Mercadito', href: 'https://logrin.flexgogroup.com/?mercadito', tarjeta: true,
     icono: '<path d="M5 8h14l-1.2 12H6.2Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
