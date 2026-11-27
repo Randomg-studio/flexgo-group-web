@@ -109,27 +109,36 @@ window.FLEXGO_FAQ = [
 // que todas las páginas coincidan. Para agregar o mover un servicio, cámbialo SOLO aquí y corre los dos scripts.
 // Campos: menu/eco/pie = dónde aparece; tarjeta = debe tener su tarjeta en «Ver todos los servicios» (#servicios);
 // logo = archivo en assets/imagenes/logos/ (si no hay, se usa icono); pronto = muestra «Próximamente» (o el texto de prontoTexto); beta = muestra la etiqueta «Beta».
+// acceso = { url } lleva a la pantalla de iniciar sesión del producto (comprobada en vivo); { pronto: true } = «Muy pronto», sin enlace.
+//   En su propia página sale «Iniciar sesión en <nombre>» en la barra; en las demás, la lista «Iniciar sesión» con todos los que tienen url.
 window.FLEXGO_SERVICIOS = [
   { id: 'elio', nombre: 'Elio', href: 'elio.html', logo: 'elio.webp', tarjeta: true,
+    acceso: { url: 'https://elio.flexgogroup.com/' },
     menu: { desc: 'Tu asistente de IA para estudiar, investigar y trabajar' },
     eco: { desc: 'Para estudiar, investigar y trabajar', aria: 'Conoce Elio, asistente de IA de FlexGo Group' }, pie: true },
   { id: 'eleva', nombre: 'Eleva', href: 'eleva.html', logo: 'eleva.svg', pronto: true, tarjeta: true,
+    acceso: { pronto: true },
     menu: { desc: 'Educación en tecnología e IA (próximamente)' },
     eco: { desc: 'Aprende tecnología e IA', aria: 'Conoce Eleva, educación de FlexGo Group' }, pie: true },
   { id: 'kivo', nombre: 'Kivo Agentes', href: 'kivo.html', logo: 'kivo.webp', tarjeta: true,
+    acceso: { url: 'https://logrin.flexgogroup.com/', nota: 'Toca «Soy cliente»' },
     menu: { desc: 'Agentes con tecnología neuronal que atienden a tus clientes a toda hora' },
     eco: { desc: 'Tecnología neuronal que atiende por ti' }, pie: true },
   { id: 'logrin', nombre: 'Logrin Negocio', href: 'https://logrin.flexgogroup.com/', logo: 'logrin.webp', tarjeta: true,
+    acceso: { url: 'https://logrin.flexgogroup.com/', nota: 'Toca «Soy cliente»' },
     menu: { desc: 'Ventas, inventario, clientes y cobros en un solo lugar' },
     eco: { desc: 'Gestión integral de tu negocio', nueva: true }, pie: true },
   { id: 'creago', nombre: 'CreaGo', href: 'creago.html', logo: 'creago.webp', tarjeta: true,
+    acceso: { url: 'https://creago.flexgogroup.com/login' },
     menu: { desc: 'Contenido para redes con IA y la voz de tu marca' },
     eco: { desc: 'Contenido con IA para tu marca' }, pie: true },
   // NormaGo (antes «Chat IA Legal»): isotipo oficial en todos los lugares, como Elio, Kivo y Logrin (pedido del usuario, 27-nov).
   { id: 'normago', nombre: 'NormaGo', href: 'https://normago.flexgogroup.com/', logo: 'normago.webp', beta: true, tarjeta: true,
+    acceso: { url: 'https://normago.flexgogroup.com/chat.html' },
     menu: { desc: 'Inteligencia artificial jurídica: investiga y analiza el derecho peruano con fuentes oficiales' },
     eco: { desc: 'Inteligencia artificial jurídica', aria: 'Conoce NormaGo, la inteligencia artificial jurídica de FlexGo Group' }, pie: true, pieNueva: true },
   { id: 'mercadito', nombre: 'Mi Mercadito', href: 'https://logrin.flexgogroup.com/?mercadito', tarjeta: true,
+    acceso: { url: 'https://logrin.flexgogroup.com/', nota: 'Toca «Soy cliente»' },
     icono: '<path d="M5 8h14l-1.2 12H6.2Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
     menu: { desc: 'Tu tienda en línea para compartir por WhatsApp' },
     eco: { desc: 'Tu tienda en línea desde S/ 14.99', href: 'https://logrin.flexgogroup.com/?mercadito&vender', nueva: true }, pie: true, pieNueva: true },

@@ -62,6 +62,27 @@ export const htmlEco = (S) => {
   return [lista.filter((s) => s.pie).map(itemEco).join(''), lista.filter((s) => !s.pie).map(itemEco).join('')];
 };
 
+// «Iniciar sesión» en la barra (27-nov): en la página propia de un producto, un enlace a SU pantalla de ingreso;
+// en las demás páginas, una lista corta con todos los productos que tienen acceso.
+const ICO_ENTRAR = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5M15 12H3"/></svg>';
+export const htmlAcceso = (S, f) => {
+  const propio = S.find((s) => s.acceso && s.href === f);
+  if (propio?.acceso.url) {
+    return `<a class="barra-acceso" href="${esc(propio.acceso.url)}" title="Iniciar sesión en ${esc(propio.nombre)}">${ICO_ENTRAR}<span class="barra-acceso-txt">Iniciar sesión <span class="barra-acceso-en">en ${esc(propio.nombre)}</span></span></a>`;
+  }
+  if (propio?.acceso.pronto) {
+    return `<span class="barra-acceso es-pronto" title="Iniciar sesión en ${esc(propio.nombre)}: muy pronto">${ICO_ENTRAR}<span class="barra-acceso-txt">Iniciar sesión <span class="barra-acceso-en">en ${esc(propio.nombre)}</span> · Muy pronto</span></span>`;
+  }
+  const lista = S.filter((s) => s.acceso?.url).map((s) => {
+    const ico = s.logo ? img(s, f, 28) : `${SVG_MENU}${s.icono}</svg>`;
+    const nota = s.acceso.nota ? `<small>${esc(s.acceso.nota)}</small>` : '';
+    return `<a class="acc-item" href="${esc(s.acceso.url)}"><span class="acc-ico" aria-hidden="true">${ico}</span><span><strong>${esc(s.nombre)}</strong>${nota}</span></a>`;
+  }).join('');
+  return `<details class="acc"><summary class="barra-acceso" title="Iniciar sesión">${ICO_ENTRAR}<span class="barra-acceso-txt">Iniciar sesión</span></summary><div class="acc-panel"><p class="acc-titulo">Entra a tu cuenta de</p>${lista}</div></details>`;
+};
+const ACC_INI = '<!--acceso-->';
+const ACC_FIN = '<!--/acceso-->';
+
 const reemplazar = (s, ini, fin, nuevo, f, que) => {
   const i = s.indexOf(ini);
   if (i < 0) return s;
@@ -80,6 +101,14 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     s = reemplazar(s, '<div class="ms-panel" id="ms-panel">', '<a class="ms-todos"', htmlMenu(S, f), f, 'el menú');
     s = s.replace(/<a class="ms-todos" href="[^"]*">/, `<a class="ms-todos" href="${ruta('index.html#servicios', f)}">`);
     s = reemplazar(s, '<h2>Productos</h2>', '</div>', htmlPie(S, f), f, 'el pie');
+    if (s.includes('id="barra-nav"')) {
+      if (!s.includes(ACC_INI)) {
+        const n = s.indexOf('id="barra-nav"');
+        const fin = s.indexOf('</nav>', n);
+        s = `${s.slice(0, fin)}${ACC_INI}${ACC_FIN}${s.slice(fin)}`;
+      }
+      s = reemplazar(s, ACC_INI, ACC_FIN, htmlAcceso(S, f), f, 'el acceso');
+    }
     if (f === 'index.html') {
       const [izq, der] = htmlEco(S);
       s = reemplazar(s, '<ul class="eco-lista eco-izq">', '</ul>', izq, f, 'el círculo (izquierda)');

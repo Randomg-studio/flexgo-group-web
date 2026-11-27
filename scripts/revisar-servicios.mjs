@@ -1,6 +1,7 @@
 // Revisor de servicios de flexgogroup.com.
 // Compara el menú «Servicios», el pie (Productos), el círculo de la portada y las tarjetas de «Ver todos los servicios»
-// con la lista única FLEXGO_SERVICIOS de js/datos.js; revisa que los logos existan y que los enlaces respondan 200.
+// con la lista única FLEXGO_SERVICIOS de js/datos.js; revisa «Iniciar sesión» de la barra, que los logos existan
+// y que los enlaces (también los de acceso) respondan 200.
 // Opcional: compara con lo que sabe Kivo (tabla kivo_ecosistema exportada a JSON).
 //
 // Uso:
@@ -12,7 +13,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { cargarServicios, paginas, htmlMenu, htmlPie, htmlEco } from './servicios-estatico.mjs';
+import { cargarServicios, paginas, htmlMenu, htmlPie, htmlEco, htmlAcceso } from './servicios-estatico.mjs';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITIO = 'https://flexgogroup.com/';
@@ -60,6 +61,10 @@ for (const f of paginas()) {
     const d = orden(nombres(menu, /<strong>(.*?)<\/strong>/g), S.filter((x) => x.menu).map((x) => x.nombre));
     mal(`${f}: el menú «Servicios» no coincide con la lista única${d || ' (cambió un enlace, un texto o un logo)'}`);
   }
+  // «Iniciar sesión» de la barra (27-nov): enlace del producto en su página y lista en las demás.
+  const acceso = tramo(s, '<!--acceso-->', '<!--/acceso-->');
+  if (acceso === null) mal(`${f}: la barra no tiene «Iniciar sesión»`);
+  else if (acceso !== htmlAcceso(S, f)) mal(`${f}: «Iniciar sesión» de la barra no coincide con los accesos de la lista única`);
   const empresa = tramo(s, '<h2>Empresa</h2>', '</div>');
   if (empresa !== null && !empresa.includes('aliados.html">Sé nuestro aliado</a>')) mal(`${f}: el pie (Empresa) no enlaza «Sé nuestro aliado»`);
   const pie = tramo(s, '<h2>Productos</h2>', '</div>');
@@ -93,7 +98,7 @@ if (portada && !portada.includes('href="aliados.html"')) mal('index.html: la por
 // Logos y enlaces
 for (const x of S) {
   if (x.logo && !existsSync(join(RAIZ, 'assets/imagenes/logos', x.logo))) mal(`Falta el logo de ${x.nombre}: assets/imagenes/logos/${x.logo}`);
-  for (const h of [x.href, x.eco?.href].filter(Boolean)) enlaces.add(h);
+  for (const h of [x.href, x.eco?.href, x.acceso?.url].filter(Boolean)) enlaces.add(h);
 }
 for (const h of enlaces) {
   if (/^https:\/\/wa\.me\/\d+/.test(h)) continue; // WhatsApp no deja revisar por robot; el formato es correcto
