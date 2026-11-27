@@ -22,7 +22,7 @@
 <link rel="preload" href="assets/fuentes/Poppins-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/nosotros.css?v=11">
 <link rel="stylesheet" href="css/contacto.css?v=7">
-<link rel="stylesheet" href="css/elio.css?v=7">
+<link rel="stylesheet" href="css/elio.css?v=8">
 <link rel="stylesheet" href="css/menu-servicios.css?v=3">
 <link rel="stylesheet" href="css/barra.css?v=3">
 <link rel="stylesheet" href="css/pie.css?v=2">
@@ -135,15 +135,15 @@
   </div>
 </section>
 
-<section class="el-sec" id="resenas" aria-labelledby="el-resenas">
+<section class="el-sec" id="resenas" aria-labelledby="el-resenas" data-resenas="elio">
   <div class="el-wrap el-centro">
     <p class="el-rotulo">Reseñas</p>
     <h2 class="el-titulo" id="el-resenas">Lo que dicen quienes usan Elio</h2>
-    <p class="el-lead" id="resenas-lead">Aquí solo mostramos reseñas de usuarios reales, con su fecha. Todavía no hay reseñas publicadas: sé de los primeros en opinar. Entra a Elio con tu cuenta y busca «Reseñas reales».</p>
+    <p class="el-lead rs-lead" id="resenas-lead">Aquí solo mostramos reseñas de usuarios reales, con su fecha. Todavía no hay reseñas publicadas: sé de los primeros en opinar. Entra a Elio con tu cuenta y busca «Reseñas reales».</p>
     </div>
-  <div class="el-wrap el-resenas" id="resenas-lista" hidden></div>
+  <div class="el-wrap el-resenas rs-lista" id="resenas-lista" hidden></div>
   <div class="el-wrap el-centro">
-    <div class="el-acciones"><a class="el-btn principal" href="https://elio.flexgogroup.com/" target="_blank" rel="noopener">Dejar mi reseña</a></div>
+    <div class="el-acciones"><a class="el-btn principal rs-dejar" href="https://elio.flexgogroup.com/" target="_blank" rel="noopener">Dejar mi reseña</a></div>
   </div>
 </section>
 
@@ -174,12 +174,12 @@
   </form>
   <p class="chat-note" id="chat-aviso">No compartas contraseñas ni datos de tarjetas. <a href="legal/privacidad.html">Privacidad</a></p>
 </section>
-<script src="js/datos.js?v=13"></script>
+<script src="js/datos.js?v=14"></script>
 <script src="js/chat.js?v=6"></script>
 <script src="js/kivo.js?v=2"></script>
 <script src="js/menu-servicios.js"></script>
 <script src="js/barra.js?v=2"></script>
-<script src="js/elio-resenas.js?v=1"></script>
+<script src="js/resenas.js?v=1"></script>
 <script src="js/encuesta.js?v=4" data-pagina="elio"></script>
 <script src="js/cookies.js?v=1" data-politica="legal/cookies.html"></script>
 </body>
