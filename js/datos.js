@@ -145,7 +145,7 @@ window.FLEXGO_SERVICIOS = [
   // NormaGo (antes «Chat IA Legal»): isotipo oficial en todos los lugares, como Elio, Kivo y Logrin (pedido del usuario, 27-nov).
   { id: 'normago', nombre: 'NormaGo', href: 'https://normago.flexgogroup.com/', logo: 'normago.webp', beta: true, tarjeta: true,
     acceso: { url: 'https://normago.flexgogroup.com/chat.html' },
-    // resenas: { proyecto: 'normago', rpc: 'normago_resenas_publicas' }, // se activa cuando la función exista (hoy 404)
+    resenas: { proyecto: 'normago', rpc: 'normago_resenas_publicas' },
     menu: { desc: 'Inteligencia artificial jurídica: investiga y analiza el derecho peruano con fuentes oficiales' },
     eco: { desc: 'Inteligencia artificial jurídica', aria: 'Conoce NormaGo, la inteligencia artificial jurídica de FlexGo Group' }, pie: true, pieNueva: true },
   // KipuGo (27-nov, chat «Finanzas Chat IA»): simulador gratis de créditos; no tiene cuentas, por eso no lleva acceso.

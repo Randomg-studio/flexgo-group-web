@@ -24,3 +24,6 @@
 /* Temas */
 .rs-sec[data-tema="creago"]{--rs-acento:#ff3aa8;--rs-tarjeta:#ffffff0a;--rs-linea:#c9b2ff2b}
 .rs-sec[data-tema="kivo"]{--rs-acento:#00eaff}
+/* Botón «Dejar mi reseña» en las tarjetas de la portada */
+.sv-resena{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;color:#ffd27a;font-size:14.5px;font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.sv-resena:hover{color:#fff}

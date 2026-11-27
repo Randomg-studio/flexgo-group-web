@@ -35,14 +35,14 @@ export const htmlMenu = (S, f) => S.filter((s) => s.menu).map((s) => {
     ? `<span class="ms-ico ms-ico--logo" aria-hidden="true">${img(s, f, 32)}</span>`
     : `<span class="ms-ico" aria-hidden="true">${SVG_MENU}${s.icono}</svg></span>`;
   const actual = s.href === f ? ' aria-current="page"' : '';
-  return `<a class="ms-item" href="${esc(ruta(s.href, f))}"${actual}>${ico}<span><strong>${esc(s.nombre)}${s.beta ? ' <em class="ms-beta">Beta</em>' : ''}</strong><small>${esc(s.menu.desc)}</small></span></a>`;
+  return `<a class="ms-item" data-sv="${s.id}" href="${esc(ruta(s.href, f))}"${actual}>${ico}<span><strong>${esc(s.nombre)}${s.beta ? ' <em class="ms-beta">Beta</em>' : ''}</strong><small>${esc(s.menu.desc)}</small></span></a>`;
 }).join('');
 
 const BOLSA = '<svg class="pie-logo pie-logo--ico" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">';
 export const htmlPie = (S, f) => S.filter((s) => s.pie).map((s) => {
   const extra = s.pieNueva ? ' target="_blank" rel="noopener noreferrer"' : '';
   const ico = s.logo ? img(s, f, 20, 'pie-logo') : `${BOLSA}${s.icono}</svg>`;
-  return `<a href="${esc(ruta(s.href, f))}"${extra}>${ico}${esc(s.nombre)}</a>`;
+  return `<a data-sv="${s.id}" href="${esc(ruta(s.href, f))}"${extra}>${ico}${esc(s.nombre)}</a>`;
 }).join('');
 
 const itemEco = (s) => {
@@ -54,7 +54,7 @@ const itemEco = (s) => {
     : `<span class="eco-ico">${SVG_ECO}${s.ecoIcono || s.icono}</svg></span>`;
   const nueva = e.nueva || externo(href) ? ' target="_blank" rel="noopener"' : '';
   const pronto = s.pronto ? `<em class="eco-pronto">${esc(s.prontoTexto || 'Próximamente')}</em>` : s.beta ? '<em class="eco-pronto eco-beta">Beta</em>' : '';
-  return `<li class="eco-item${s.pronto ? ' es-pronto' : ''}">${ico}<span class="eco-txt"><strong>${esc(nombre)}</strong><small>${esc(e.desc)}</small>${pronto}</span><a class="eco-mas" href="${esc(ruta(href, 'index.html'))}"${nueva} aria-label="${esc(e.aria || `Ver ${nombre}`)}"><span aria-hidden="true">+</span></a></li>`;
+  return `<li class="eco-item${s.pronto ? ' es-pronto' : ''}" data-sv="${s.id}">${ico}<span class="eco-txt"><strong>${esc(nombre)}</strong><small>${esc(e.desc)}</small>${pronto}</span><a class="eco-mas" href="${esc(ruta(href, 'index.html'))}"${nueva} aria-label="${esc(e.aria || `Ver ${nombre}`)}"><span aria-hidden="true">+</span></a></li>`;
 };
 export const htmlEco = (S) => {
   // Izquierda: productos propios (los que van en el pie); derecha: servicios y soluciones.
@@ -68,15 +68,15 @@ const ICO_ENTRAR = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stro
 export const htmlAcceso = (S, f) => {
   const propio = S.find((s) => s.acceso && s.href === f);
   if (propio?.acceso.url) {
-    return `<a class="barra-acceso" href="${esc(propio.acceso.url)}" title="Iniciar sesión en ${esc(propio.nombre)}">${ICO_ENTRAR}<span class="barra-acceso-txt">Iniciar sesión <span class="barra-acceso-en">en ${esc(propio.nombre)}</span></span></a>`;
+    return `<a class="barra-acceso" data-sv="${propio.id}" href="${esc(propio.acceso.url)}" title="Iniciar sesión en ${esc(propio.nombre)}">${ICO_ENTRAR}<span class="barra-acceso-txt">Iniciar sesión <span class="barra-acceso-en">en ${esc(propio.nombre)}</span></span></a>`;
   }
   if (propio?.acceso.pronto) {
-    return `<span class="barra-acceso es-pronto" title="Iniciar sesión en ${esc(propio.nombre)}: muy pronto">${ICO_ENTRAR}<span class="barra-acceso-txt">Iniciar sesión <span class="barra-acceso-en">en ${esc(propio.nombre)}</span> · Muy pronto</span></span>`;
+    return `<span class="barra-acceso es-pronto" data-sv="${propio.id}" title="Iniciar sesión en ${esc(propio.nombre)}: muy pronto">${ICO_ENTRAR}<span class="barra-acceso-txt">Iniciar sesión <span class="barra-acceso-en">en ${esc(propio.nombre)}</span> · Muy pronto</span></span>`;
   }
   const lista = S.filter((s) => s.acceso?.url).map((s) => {
     const ico = s.logo ? img(s, f, 28) : `${SVG_MENU}${s.icono}</svg>`;
     const nota = s.acceso.nota ? `<small>${esc(s.acceso.nota)}</small>` : '';
-    return `<a class="acc-item" href="${esc(s.acceso.url)}"><span class="acc-ico" aria-hidden="true">${ico}</span><span><strong>${esc(s.nombre)}</strong>${nota}</span></a>`;
+    return `<a class="acc-item" data-sv="${s.id}" href="${esc(s.acceso.url)}"><span class="acc-ico" aria-hidden="true">${ico}</span><span><strong>${esc(s.nombre)}</strong>${nota}</span></a>`;
   }).join('');
   return `<details class="acc"><summary class="barra-acceso" title="Iniciar sesión">${ICO_ENTRAR}<span class="barra-acceso-txt">Iniciar sesión</span></summary><div class="acc-panel"><p class="acc-titulo">Entra a tu cuenta de</p>${lista}</div></details>`;
 };

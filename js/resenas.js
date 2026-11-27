@@ -54,6 +54,7 @@
       el('p', { className: 'rs-texto' }, `«${String(x.texto).trim().slice(0, 400)}»`),
       el('p', { className: 'rs-autor' }, pie));
   };
+  const tarjetaFranja = (s, x) => { const t = tarjeta(s, x, true); t.dataset.sv = s.id; return t; };
 
   // Datos estructurados: solo con reseñas reales y desde 3 reseñas.
   const datosEstructurados = (s, d) => {
@@ -67,6 +68,16 @@
     });
     document.head.append(ld);
   };
+
+  // Botón «Dejar mi reseña» en las tarjetas de «Ver todos los servicios» (27-nov): lleva al producto, donde la persona
+  // entra con su correo y escribe la reseña. La web no guarda reseñas. Solo en productos con su función de reseñas.
+  document.querySelectorAll('.sv-card[data-servicio]').forEach((card) => {
+    const s = S.find((x) => x.id === card.dataset.servicio);
+    const url = s?.resenas && (s.resenas.dejar || s.acceso?.url);
+    const acciones = card.querySelector('.sv-acciones');
+    if (!url || !acciones || acciones.querySelector('.sv-resena')) return;
+    acciones.append(el('a', { className: 'sv-resena', href: url, target: '_blank', rel: 'noopener' }, '★ Dejar mi reseña'));
+  });
 
   // Secciones de cada producto
   document.querySelectorAll('section[data-resenas]').forEach(async (sec) => {
@@ -91,15 +102,18 @@
   // Franja de la portada: la reseña más reciente de cada producto (no «la mejor»), solo si hay reseñas reales.
   const franja = document.querySelector('section[data-resenas-franja]');
   if (franja) {
-    const conResenas = S.filter((s) => s.resenas);
-    Promise.all(conResenas.map((s) => traer(s).then((d) => ({ s, d })))).then((todos) => {
+    // Respeta los interruptores de la consola (js/visibles.js): un servicio apagado no sale en la franja.
+    (window.FLEXGO_VISIBLES || Promise.resolve(new Map())).then((vis) => {
+    const conResenas = S.filter((s) => s.resenas && vis.get(s.id)?.visible !== false);
+    return Promise.all(conResenas.map((s) => traer(s).then((d) => ({ s, d })))).then((todos) => {
       const cards = todos.filter(({ d }) => d?.lista.length).map(({ s, d }) => {
         const x = [...d.lista].sort((a, b) => String(b.fecha).localeCompare(String(a.fecha)))[0];
-        return tarjeta(s, x, true);
+        return tarjetaFranja(s, x);
       });
       if (!cards.length) return;
       franja.querySelector('.rs-lista').replaceChildren(...cards);
       franja.hidden = false;
+    });
     });
   }
 })();

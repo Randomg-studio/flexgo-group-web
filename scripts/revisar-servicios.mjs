@@ -48,6 +48,24 @@ if (S[0]?.id !== 'elio') mal(`Elio debe ir primero en la lista de servicios (hoy
 if (S.find((x) => x.id === 'elio')?.pronto) mal('Elio está activo: no debe decir «Próximamente»');
 for (const x of S) if (/investigaci|tareas con ia/i.test(`${x.nombre} ${x.eco?.desc || ''}`) && x.id !== 'elio') mal(`${x.nombre}: investigación y tareas con IA son parte de Elio; no lo pongas como servicio aparte`);
 
+// Interruptores de la consola (27-nov): servicios apagados en Logrin (servicios_visibles). La web los oculta al cargar,
+// así que el revisor no exige que sus enlaces respondan. Si la función no responde, se revisa todo como siempre.
+const apagados = new Set();
+if (!SIN_RED) {
+  try {
+    const ctx = { window: {} };
+    (await import('node:vm')).runInNewContext(readFileSync(join(RAIZ, 'js/datos.js'), 'utf8'), ctx);
+    const L = ctx.window.FLEXGO?.kivo;
+    const r = await fetch(`${L.url}/rest/v1/rpc/servicios_visibles`, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: L.clave, Authorization: `Bearer ${L.clave}` }, body: '{}' });
+    if (r.ok) {
+      for (const x of await r.json()) if (x?.visible === false) apagados.add(String(x.id));
+    } else {
+      ojo(`servicios_visibles responde ${r.status}: reviso todos los servicios como encendidos`);
+    }
+  } catch { ojo('No pude leer servicios_visibles: reviso todos los servicios como encendidos'); }
+  if (apagados.size) ojo(`Apagados desde la consola (ocultos en la web): ${[...apagados].join(', ')}`);
+}
+
 const enlaces = new Set();
 const html = {};
 for (const f of paginas()) {
@@ -62,6 +80,7 @@ for (const f of paginas()) {
     mal(`${f}: el menú «Servicios» no coincide con la lista única${d || ' (cambió un enlace, un texto o un logo)'}`);
   }
   // «Iniciar sesión» de la barra (27-nov): enlace del producto en su página y lista en las demás.
+  if (!s.includes('js/visibles.js')) mal(`${f}: no carga js/visibles.js (los interruptores de la consola no la ocultarían)`);
   const acceso = tramo(s, '<!--acceso-->', '<!--/acceso-->');
   if (acceso === null) mal(`${f}: la barra no tiene «Iniciar sesión»`);
   else if (acceso !== htmlAcceso(S, f)) mal(`${f}: «Iniciar sesión» de la barra no coincide con los accesos de la lista única`);
@@ -98,6 +117,7 @@ if (portada && !portada.includes('href="aliados.html"')) mal('index.html: la por
 // Logos y enlaces
 for (const x of S) {
   if (x.logo && !existsSync(join(RAIZ, 'assets/imagenes/logos', x.logo))) mal(`Falta el logo de ${x.nombre}: assets/imagenes/logos/${x.logo}`);
+  if (apagados.has(x.id)) continue; // apagado: no se exige que su enlace responda
   for (const h of [x.href, x.eco?.href, x.acceso?.url].filter(Boolean)) enlaces.add(h);
 }
 for (const h of enlaces) {
