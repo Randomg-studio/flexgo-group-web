@@ -53,7 +53,7 @@ const itemEco = (s) => {
     ? `<span class="eco-ico eco-ico--logo"><img src="assets/imagenes/logos/${s.logo}" width="34" height="34" alt="" loading="lazy" decoding="async"></span>`
     : `<span class="eco-ico">${SVG_ECO}${s.ecoIcono || s.icono}</svg></span>`;
   const nueva = e.nueva || externo(href) ? ' target="_blank" rel="noopener"' : '';
-  const pronto = s.pronto ? '<em class="eco-pronto">Próximamente</em>' : '';
+  const pronto = s.pronto ? `<em class="eco-pronto">${esc(s.prontoTexto || 'Próximamente')}</em>` : '';
   return `<li class="eco-item${s.pronto ? ' es-pronto' : ''}">${ico}<span class="eco-txt"><strong>${esc(nombre)}</strong><small>${esc(e.desc)}</small>${pronto}</span><a class="eco-mas" href="${esc(ruta(href, 'index.html'))}"${nueva} aria-label="${esc(e.aria || `Ver ${nombre}`)}"><span aria-hidden="true">+</span></a></li>`;
 };
 export const htmlEco = (S) => {
