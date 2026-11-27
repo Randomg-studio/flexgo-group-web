@@ -125,10 +125,8 @@ window.FLEXGO_SERVICIOS = [
   { id: 'creago', nombre: 'CreaGo', href: 'creago.html', logo: 'creago.webp', tarjeta: true,
     menu: { desc: 'Contenido para redes con IA y la voz de tu marca' },
     eco: { desc: 'Contenido con IA para tu marca' }, pie: true },
-  // NormaGo (antes «Chat IA Legal»): su manual pide el isotipo a 40 px o más, por eso en el menú, el círculo y el pie
-  // (32, 34 y 20 px) va el ícono de balanza, y el isotipo oficial (logos/normago.webp) solo en su tarjeta.
-  { id: 'normago', nombre: 'NormaGo', href: 'https://normago.flexgogroup.com/', beta: true, tarjeta: true,
-    icono: '<path d="M12 3v18M7 21h10M5 7h14"/><path d="m5 7-3 7a3 3 0 0 0 6 0Zm14 0-3 7a3 3 0 0 0 6 0Z"/>',
+  // NormaGo (antes «Chat IA Legal»): isotipo oficial en todos los lugares, como Elio, Kivo y Logrin (pedido del usuario, 27-nov).
+  { id: 'normago', nombre: 'NormaGo', href: 'https://normago.flexgogroup.com/', logo: 'normago.webp', beta: true, tarjeta: true,
     menu: { desc: 'Chat IA Legal para abogados: consultas del Perú con la fuente oficial a la vista' },
     eco: { desc: 'Inteligencia artificial jurídica', aria: 'Conoce NormaGo, la inteligencia artificial jurídica de FlexGo Group' }, pie: true, pieNueva: true },
   { id: 'mercadito', nombre: 'Mi Mercadito', href: 'https://logrin.flexgogroup.com/?mercadito', tarjeta: true,
