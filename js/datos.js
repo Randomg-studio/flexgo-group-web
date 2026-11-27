@@ -24,6 +24,8 @@ window.FLEXGO = {
   elio: { url: 'https://dpipmmocrooizngopayz.supabase.co', clave: 'sb_publishable_sN1BFTi0lGSGaQO4aw5UGg_KddEbewg' },
   // NormaGo (proyecto chat-ia-legal): solo URL y clave pública (publishable), para leer sus reseñas aprobadas.
   normago: { url: 'https://venygswvufoanerexlnk.supabase.co', clave: 'sb_publishable_a6haAJD2Nree6OFJqkTMqQ_MWDxTPFz' },
+  // CreaGo: solo URL y clave pública (publishable), para leer sus reseñas aprobadas.
+  creago: { url: 'https://dojbyklwgzbefbfknhks.supabase.co', clave: 'sb_publishable_BETDUSfuMo9w77BQk18eog_HRMMQPFo' },
   kivo: { url: 'https://owtweebqlmoarbsvtiau.supabase.co', clave: 'sb_publishable_YvFAhbXHG1UxlXDnUny5Uw_sRVWE0Wv' },
 };
 
@@ -137,6 +139,7 @@ window.FLEXGO_SERVICIOS = [
     eco: { desc: 'Gestión integral de tu negocio', nueva: true }, pie: true },
   { id: 'creago', nombre: 'CreaGo', href: 'creago.html', logo: 'creago.webp', tarjeta: true,
     acceso: { url: 'https://creago.flexgogroup.com/login' },
+    resenas: { proyecto: 'creago', rpc: 'creago_resenas_publicas' },
     menu: { desc: 'Contenido para redes con IA y la voz de tu marca' },
     eco: { desc: 'Contenido con IA para tu marca' }, pie: true },
   // NormaGo (antes «Chat IA Legal»): isotipo oficial en todos los lugares, como Elio, Kivo y Logrin (pedido del usuario, 27-nov).
