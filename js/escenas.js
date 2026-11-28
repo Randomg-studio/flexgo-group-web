@@ -192,9 +192,17 @@
   };
   const eco = $('.eco');
   const pista = $('.eco-pista');
-  const slides = $$('.eco-slide');
+  const todasSlides = $$('.eco-slide');
+  let slides = todasSlides;
   const contador = $('.contador-actual');
   const ROMANOS = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
+  // Interruptores de la consola (js/visibles.js): un producto apagado sale del carrusel y del contador.
+  (window.FLEXGO_VISIBLES || Promise.resolve(new Map())).then((vis) => {
+    slides = todasSlides.filter((s) => vis.get(s.dataset.sv)?.visible !== false);
+    const total = document.querySelector('.contador-total');
+    if (total && slides.length) total.textContent = ROMANOS[slides.length - 1];
+    window.dispatchEvent(new Event('scroll'));
+  });
   const ecoPin = $('.eco-pin');
   const salida = $('.eco-salida');
   const mision = $('.mision');
