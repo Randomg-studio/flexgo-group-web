@@ -10,7 +10,7 @@ vm.runInNewContext(readFileSync(new URL('js/datos.js', raiz), 'utf8'), ctx);
 const faq = ctx.window.FLEXGO_FAQ;
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-const html = faq.map(({ p, r }, i) => `<div class="faq-item${i === 0 ? ' abierta' : ''}"><h3><button type="button" id="faq-p-${i}" aria-controls="faq-r-${i}" aria-expanded="${i === 0}"><span>${esc(p)}</span><i></i></button></h3><div class="faq-resp" id="faq-r-${i}" role="region" aria-labelledby="faq-p-${i}"><div><p>${esc(r)}</p></div></div></div>`).join('');
+const html = faq.map(({ p, r, sv }, i) => `<div class="faq-item${i === 0 ? ' abierta' : ''}"${sv ? ` data-sv="${esc(sv)}"` : ''}><h3><button type="button" id="faq-p-${i}" aria-controls="faq-r-${i}" aria-expanded="${i === 0}"><span>${esc(p)}</span><i></i></button></h3><div class="faq-resp" id="faq-r-${i}" role="region" aria-labelledby="faq-p-${i}"><div><p>${esc(r)}</p></div></div></div>`).join('');
 const schema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',

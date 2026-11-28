@@ -25,9 +25,10 @@
   // index.html ya trae las preguntas en HTML (scripts/faq-estatico.mjs) para que los robots las lean;
   // si faltaran, se arman aquí con la misma lista. Luego solo se conectan los botones.
   if (!lista.children.length) {
-    window.FLEXGO_FAQ.forEach(({ p, r }, i) => {
+    window.FLEXGO_FAQ.forEach(({ p, r, sv }, i) => {
       const item = document.createElement('div');
       item.className = 'faq-item';
+      if (sv) item.dataset.sv = sv;
       const h = document.createElement('h3');
       const b = document.createElement('button');
       b.type = 'button';
@@ -198,7 +199,12 @@
   const ROMANOS = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
   // Interruptores de la consola (js/visibles.js): un producto apagado sale del carrusel y del contador.
   (window.FLEXGO_VISIBLES || Promise.resolve(new Map())).then((vis) => {
-    slides = todasSlides.filter((s) => vis.get(s.dataset.sv)?.visible !== false);
+    const ve = (el) => vis.get(el.dataset.sv)?.visible !== false;
+    slides = todasSlides.filter(ve);
+    // «Soluciones a medida»: igual con sus servicios y sus puntos
+    servicios = todosServicios.filter(ve);
+    puntos = todosPuntos.filter((_, i) => ve(todosServicios[i]));
+    todosPuntos.forEach((li, i) => { li.hidden = !ve(todosServicios[i]); });
     const total = document.querySelector('.contador-total');
     if (total && slides.length) total.textContent = ROMANOS[slides.length - 1];
     window.dispatchEvent(new Event('scroll'));
@@ -214,8 +220,10 @@
   const pinAstro = $('.astro-pin');
   const textoAstro = $('.astro-texto');
   const marco = $('.pantalla-marco');
-  const servicios = $$('.servicio');
-  const puntos = $$('.pantalla-puntos li');
+  const todosServicios = $$('.servicio');
+  const todosPuntos = $$('.pantalla-puntos li');
+  let servicios = todosServicios;
+  let puntos = todosPuntos;
   const reloj = $('.reloj');
   const pinReloj = $('.reloj-pin');
   const rejilla = $('.reloj-grid');
@@ -439,7 +447,7 @@
       marco.style.setProperty('--mo', m.toFixed(3));
       marco.classList.toggle('apagada', m === 0);
 
-      const { pos } = paradas(tramo(p, 0.5, 1), servicios.length);
+      const { pos } = paradas(tramo(p, 0.5, 1), Math.max(1, servicios.length));
       servicios.forEach((s, i) => {
         const d = i - pos;
         s.style.setProperty('--so', clamp(1 - Math.abs(d) * 1.9).toFixed(3));
@@ -449,7 +457,7 @@
         const activo = Math.abs(d) < 0.5 && m > 0.98;
         s.classList.toggle('activo', activo);
         s.inert = !activo;
-        puntos[i].classList.toggle('activo', Math.abs(d) < 0.5);
+        puntos[i]?.classList.toggle('activo', Math.abs(d) < 0.5);
       });
     }
 
