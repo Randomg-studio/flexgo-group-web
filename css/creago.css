@@ -337,3 +337,9 @@ dialog img{width:100%;max-height:70vh;object-fit:contain;border-radius:12px}
 .plan-extra h3{margin:0 0 6px;font-size:18px}
 .plan-extra h3 span{margin-left:8px;color:#ff3aa8;white-space:nowrap}
 .plan-extra p{margin:0;color:var(--suave);font-size:15px;line-height:1.55}
+
+/* Botón «Elegir [plan]» en cada tarjeta (27-nov) */
+.plan{display:flex;flex-direction:column}
+.plan-description{margin-bottom:22px}
+.plan .plan-elegir{margin-top:auto;min-height:46px;font-size:15px}
+.plan-extra .plan-elegir{margin-top:16px;min-height:44px;font-size:15px}

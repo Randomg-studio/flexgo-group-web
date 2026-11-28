@@ -272,3 +272,7 @@ main{position:relative;isolation:isolate;background:var(--fondo) url("../assets/
 .kv-faq details p{padding:0 0 20px;color:var(--suave);font-size:15.5px;line-height:1.6}
 .actualizado{margin-top:26px;color:var(--tenue);font-size:13.5px;text-align:center}
 @media(max-width:720px){.arm,.kv-faq{padding-top:72px}.kv-faq{padding-bottom:72px}.arm-tabla{padding:4px 12px}.arm-tabla th,.arm-tabla td{padding:12px 8px;font-size:14px}}
+
+/* Botón «Elegir [plan]» al pie de cada tarjeta (27-nov) */
+.plan-elegir{margin-top:auto;align-self:stretch}
+.plan>p{margin-bottom:22px}

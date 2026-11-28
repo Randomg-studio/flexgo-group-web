@@ -29,6 +29,21 @@ window.FLEXGO = {
   kivo: { url: 'https://owtweebqlmoarbsvtiau.supabase.co', clave: 'sb_publishable_YvFAhbXHG1UxlXDnUny5Uw_sRVWE0Wv' },
 };
 
+// Cómo se paga un plan desde los botones «Elegir [plan]» (js/elegir.js). Hoy: WhatsApp con el mensaje ya escrito,
+// y se paga por Yape, Plin o PayPal. Cuando esté Culqi, cambia solo esta función (por ejemplo, que devuelva
+// la página de pago de Culqi según producto y plan) y todos los botones de todas las páginas la usarán.
+window.FLEXGO_PAGO = {
+  nota: 'Pagas por Yape, Plin o PayPal; te atendemos por WhatsApp.',
+  enlace({ producto, plan, precio, tipo }) {
+    const S = window.FLEXGO_SERVICIOS || [];
+    const nombre = S.find((x) => x.id === producto)?.nombre || producto;
+    const texto = tipo === 'extra' ? `Hola, quiero contratar ${plan} para ${nombre} (${precio}).`
+      : tipo === 'cotizar' ? `Hola, quiero cotizar el plan ${plan} de ${nombre} (${precio}).`
+        : `Hola, quiero el plan ${plan} de ${nombre} (${precio}).`;
+    return `https://wa.me/${window.FLEXGO.whatsapp}?text=${encodeURIComponent(texto)}`;
+  },
+};
+
 // El chat y la sección de preguntas leen esta misma lista: así nunca se contradicen.
 window.FLEXGO_FAQ = [
   {

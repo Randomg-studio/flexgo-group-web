@@ -86,3 +86,8 @@
 }
 .wp-precio b em{font-size:.5em;font-style:normal;font-weight:500;color:var(--suave)}
 .combina>:last-child:nth-child(3n+1){grid-column:1/-1}
+
+/* Botones «Elegir [plan]» y línea de pago (27-nov) */
+.webs-pago{margin:22px 0 0;color:var(--suave);font-size:15.5px;text-align:center}
+.webs-nota>div>div{display:flex;flex-direction:column;align-items:flex-start}
+.wp-mant{margin-top:14px}
